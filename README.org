@@ -1,5 +1,24 @@
 #+STARTUP: showall
 
-* About
+* About this repository
 
-This repository contains my Emacs configuration files.
+I have developed a set of configuration files that allow me to carry
+out my daily work in Emacs efficiently. This repository contains these
+configuration files in the hope that they will be useful to others.
+
+* Repository structure
+
+The Emacs initialisation file, =.emacs=, is located in the root of the
+repository. It loads several other features from the =elisp=
+folder. As an example, =elisp/mu4e-config.el= contains my =mu4e=
+(email cient) configuration.
+
+* Configuration highlights
+
+The configuration files are used to:
+
+- Manage multiple email accounts using [[http://www.djcbsoftware.nl/code/mu/mu4e.html][mu4e]]
+- Work with LaTeX using [[https://www.gnu.org/software/auctex/][AUCTeX]] and [[https://github.com/politza/pdf-tools][pdf-tools]]
+- Manage Git repositories
+- Manage calendars
+- Etc.
