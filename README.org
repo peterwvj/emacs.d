@@ -22,3 +22,16 @@ The configuration files are used to:
 - Manage Git repositories
 - Manage calendars
 - Etc.
+
+* Screenshots
+
+Below are some examples of how Emacs looks when the configuration is
+loaded.
+
+Using LaTeX:
+
+[[http://i68.tinypic.com/1zo88bt.jpg]]
+
+Managing emails using =mu4e=:
+
+[[http://i66.tinypic.com/21erthj.png]]
