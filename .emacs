@@ -5,7 +5,7 @@
                          ("melpa" . "https://melpa.org/packages/")))
 (package-initialize)
 
-(add-to-list 'load-path "~/git-repos/linux-config/elisp/")
+(add-to-list 'load-path "~/git-repos/emacs-config-pvj/elisp/")
 
 ;;
 ;; Use persistent scratch buffer
