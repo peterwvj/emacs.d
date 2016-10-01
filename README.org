@@ -1,0 +1,5 @@
+#+STARTUP: showall
+
+* About
+
+This repository contains my Emacs configuration files.
