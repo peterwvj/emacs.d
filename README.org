@@ -2,9 +2,11 @@
 
 * About this repository
 
-I have developed a set of configuration files that allow me to carry
-out my daily work in Emacs efficiently. This repository contains these
-configuration files in the hope that they will be useful to others.
+I have developed a set of configuration files that allow me to
+efficiently carry out my daily work in Emacs. This repository contains
+these configuration files in the hope that they will be useful to
+others. To synchronise emails I use OfflineIMAP. I keep my OfflineIMAP
+configuration files in one of my other [[https://github.com/peterwvj/offlineimap-config-pvj/][repositories]].
 
 * Repository structure
 
