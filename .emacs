@@ -39,6 +39,12 @@
 (setq helm-split-window-in-side-p t)
 
 ;;
+;; Helm interface for Emacs 'describe-bindings
+;;
+(require 'helm-descbinds)
+(helm-descbinds-mode)
+
+;;
 ;; Enable winner-mode
 ;;
 (winner-mode 1)
@@ -224,6 +230,7 @@
 ;; mu4e configuration
 ;;
 (require 'mu4e-config)
+(global-set-key (kbd "<f2>") 'mu4e)
 
 ;; Start mu4e
 (mu4e)
