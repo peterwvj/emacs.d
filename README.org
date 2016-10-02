@@ -25,6 +25,33 @@ The configuration files are used to:
 - Manage calendars
 - Etc.
 
+* Using the configuration
+
+Comprehensive Emacs configuration usually take a bit of time to
+load. To address this, I launch an Emacs daemon on system startup:
+
+#+BEGIN_SRC bash
+emacs --daemon
+#+END_SRC
+
+In addition, I define a function =e= that I use to launch Emacs or
+open files with Emacs from the terminal:
+
+#+BEGIN_SRC bash
+function e {
+  emacsclient -c -a emacs "$@" > /dev/null 2>&1 & disown
+}
+#+END_SRC
+
+So for example, in order to open a =file= one simply types:
+
+#+BEGIN_SRC bash
+e file
+#+END_SRC
+
+By launching Emacs as a client you don't have to wait for the
+configuration to load every time you need to use Emacs.
+
 * Screenshots
 
 Below are some examples of how Emacs looks when the configuration is
