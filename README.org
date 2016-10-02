@@ -27,15 +27,19 @@ The configuration files are used to:
 
 * Using the configuration
 
-Comprehensive Emacs configuration usually take a bit of time to
-load. To address this, I launch an Emacs daemon on system startup:
+Comprehensive Emacs configurations usually take a bit of time to
+load. To address this, I launch Emacs as a /daemon/ on system startup,
+and every time I need to use Emacs I launch it as a /client/. In this
+way, the configuration only needs to be loaded once during system
+startup.
+
+To launch Emacs as a daemon execute:
 
 #+BEGIN_SRC bash
 emacs --daemon
 #+END_SRC
 
-In addition, I define a function =e= that I use to launch Emacs or
-open files with Emacs from the terminal:
+In addition, I use a function =e= to launch Emacs as a client:
 
 #+BEGIN_SRC bash
 function e {
@@ -43,14 +47,11 @@ function e {
 }
 #+END_SRC
 
-So for example, in order to open a =file= one simply types:
+Now, to open a file with Emacs you simply run:
 
 #+BEGIN_SRC bash
-e file
+e <file>
 #+END_SRC
-
-By launching Emacs as a client you don't have to wait for the
-configuration to load every time you need to use Emacs.
 
 * Screenshots
 
