@@ -19,4 +19,4 @@
   "Emacs quick move minor mode"
   t)
 
-(provide 'navigation-config)
+(provide 'navigation-config-pvj)

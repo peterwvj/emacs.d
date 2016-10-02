@@ -22,4 +22,4 @@
     (cfw:ical-create-source "Work" (pvj/text-from-file "~/.work-calendar") "White")
     )))
 
-(provide 'calfw-config)
+(provide 'calfw-config-pvj)

@@ -194,4 +194,4 @@
 
 (add-hook 'message-send-hook 'check-for-attachment)
 
-(provide 'mu4e-config)
+(provide 'mu4e-config-pvj)

@@ -88,4 +88,4 @@
 (define-key cm-map "b" 'outline-backward-same-level)       ; Backward - same level
 (global-set-key "\M-o" cm-map)
 
-(provide 'latex-config)
+(provide 'latex-config-pvj)

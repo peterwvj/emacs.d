@@ -68,4 +68,4 @@ there's a region, all lines that region covers will be duplicated."
 ;; Disable automatic indentation of newlines
 (electric-indent-mode -1)
 
-(provide 'text-config)
+(provide 'text-config-pvj)

@@ -62,7 +62,7 @@
 ;;
 ;; Setup LateX
 ;;
-(require 'latex-config)
+(require 'latex-config-pvj)
 
 ;;
 ;; For viewing PDF files
@@ -80,7 +80,7 @@
 ;;
 ;; Functionality that supports text editing
 ;;
-(require 'text-config)
+(require 'text-config-pvj)
 (global-set-key (kbd "<f8>")   'pvj/switch-dictionary)
 (global-set-key (kbd "C-q") 'pvj/duplicate-current-line-or-region)
 (global-set-key (kbd "C-d") 'kill-whole-line)
@@ -229,7 +229,7 @@
 ;;
 ;; mu4e configuration
 ;;
-(require 'mu4e-config)
+(require 'mu4e-config-pvj)
 (global-set-key (kbd "<f2>") 'mu4e)
 
 ;; Start mu4e
@@ -331,7 +331,7 @@ scroll-down-aggressively 0.01)
 ;;
 ;; Calendar configuration
 ;;
-(require 'calfw-config)
+(require 'calfw-config-pvj)
 (global-set-key (kbd "<f10>")   'show-calendar)
 
 ;;
@@ -357,7 +357,7 @@ scroll-down-aggressively 0.01)
 ;;
 ;; Navigation
 ;;
-(require 'navigation-config)
+(require 'navigation-config-pvj)
 (global-set-key (kbd "<f1>")   'pvj/copy-file-path)
 (global-set-key (kbd "<f11>")   'set-default-directory)
 (define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
@@ -366,4 +366,4 @@ scroll-down-aggressively 0.01)
 ;;
 ;; Utility functions
 ;;
-(require 'pvj-util)
+(require 'util-pvj)
