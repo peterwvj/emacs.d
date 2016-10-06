@@ -364,6 +364,11 @@ scroll-down-aggressively 0.01)
 (global-set-key (kbd "C-l") 'goto-line)
 
 ;;
+;; Support for Python
+;;
+(elpy-enable)
+
+;;
 ;; Utility functions
 ;;
 (require 'util-pvj)
