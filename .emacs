@@ -243,7 +243,7 @@
     (goto-char (point-max))
     (insert "---\n")
     (call-process "imapfilter" nil (current-buffer) nil "-v"))
-  (message "[imapfilter]...done filtering mailsRunning imapfilter"))
+  (message "[imapfilter] ...done"))
 
 ;; Start mu4e
 (mu4e)
