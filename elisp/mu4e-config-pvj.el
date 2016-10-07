@@ -142,7 +142,7 @@
 
 ;; Fetching emails
 (setq
-  mu4e-get-mail-command "offlineimap -q"
+  mu4e-get-mail-command "offlineimap"
   mu4e-update-interval (* 5 60))
 
 ;; Spell-check emails
