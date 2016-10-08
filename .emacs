@@ -272,22 +272,10 @@ scroll-down-aggressively 0.01)
 ;; Also applies to new clients that connect to the Emacs server
 (add-to-list 'default-frame-alist '(fullscreen . maximized)) 
 
-(require 'auto-complete)
-(require 'auto-complete-config)
-
-;; Basic auto-completion config
-(ac-config-default)
-(define-key ac-complete-mode-map [tab] 'ac-expand)
-(ac-set-trigger-key "<tab>")
-
-;; Do not show completion map when hittin the 'down' or 'up' key
-(define-key ac-completing-map [down] nil)
-(define-key ac-completing-map [up] nil)
-
-(add-to-list 'ac-modes 'org-mode)
-
-(require 'ac-math) 
-(add-to-list 'ac-modes 'latex-mode)   ; make auto-complete aware of `latex-mode`
+;;
+;; Auto-completion configuration
+;;
+(require 'auto-complete-config-pvj)
 
 ;;
 ;; org-mode
