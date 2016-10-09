@@ -42,10 +42,29 @@
      (with-face (eshell/pwd) '(:foreground "LightSkyBlue" :weight bold))
      (if (= (user-uid) 0)
        (with-face " #" :foreground "red")
-       " $")
-     " ")))
+       "\nλ "))))
 
 (setq eshell-prompt-function 'pvj/eshell-prompt)
-(setq eshell-highlight-prompt nil)
+
+(add-hook 'eshell-mode-hook
+(lambda ()
+  (defun eshell-emit-prompt ()
+    "Emit a prompt if eshell is being used interactively. I
+am redefining it here so that it doesn't screw up my colors"
+    (run-hooks 'eshell-before-prompt-hook)
+    (if (not eshell-prompt-function)
+        (set-marker eshell-last-output-end (point))
+      (let ((prompt (funcall eshell-prompt-function)))
+        (and eshell-highlight-prompt
+             (add-text-properties 0 (length prompt)
+                                  '(read-only t
+                                              ;; face eshell-prompt
+                                              rear-nonsticky (face read-only))
+                                  prompt))
+        (eshell-interactive-print prompt)))
+    (run-hooks 'eshell-after-prompt-hook))))
+
+(setq eshell-highlight-prompt t)
+(setq eshell-prompt-regexp "\λ ")
 
 (provide 'eshell-config-pvj)
