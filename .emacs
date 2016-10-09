@@ -183,6 +183,12 @@
 (setq ring-bell-function 'ignore) ;; Completely turn off the alarm bell
 
 ;;
+;; eshell configuration
+;;
+(require 'eshell-config-pvj)
+(global-set-key (kbd "<f3>") 'eshell)
+
+;;
 ;; ansi-term config
 ;;
 
@@ -368,11 +374,6 @@ scroll-down-aggressively 0.01)
 ;; Support for Python
 ;;
 (elpy-enable)
-
-;;
-;; eshell configuration
-;;
-(require 'eshell-config-pvj)
 
 ;;
 ;; Utility functions
