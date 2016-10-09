@@ -1,6 +1,11 @@
 ;;
 ;; eshell configuration
 ;;
+
+;;
+;; eshell config inspired by https://github.com/porterjamesj/.emacs.d/blob/master/user-lisp/setup-eshell.el
+;;
+
 (setq eshell-banner-message "")
 
 (setq eshell-aliases-file "~/.eshell.aliases")
@@ -30,6 +35,23 @@
 (defmacro with-face (str &rest properties)
   `(propertize ,str 'face (list ,@properties)))
 
+(defun pvj/curr-dir-git-branch (pwd)
+  "Returns current git branch as a string, or the empty string if
+PWD is not in a git repo (or the git command is not found)."
+  (interactive)
+  (if (and (eshell-search-path "git")
+           (locate-dominating-file pwd ".git"))
+      (let ((git-output (shell-command-to-string (concat "git branch | grep '\\*' | sed -e 's/^\\* //'"))))
+        (propertize
+         (concat "[±:"
+                 (if (> (length git-output) 0)
+                     (substring git-output 0 -1)
+                   "no branch")
+                 "]")
+         'face `(:foreground "#D1D62D")))
+    (propertize
+     "[±]" 'face `(:foreground "#555555"))))
+
 (defun pvj/eshell-prompt ()
   (let ((header-bg "#fff"))
     (concat
@@ -40,6 +62,7 @@
      "@"
      (with-face (concat (system-name) ":") '(:foreground "yellow" :weight bold))
      (with-face (eshell/pwd) '(:foreground "LightSkyBlue" :weight bold))
+     (with-face (pvj/curr-dir-git-branch (eshell/pwd)) '(:foreground "white" :weight bold))
      (if (= (user-uid) 0)
        (with-face " #" :foreground "red")
        "\nλ "))))
