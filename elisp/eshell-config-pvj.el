@@ -6,6 +6,9 @@
 ;; eshell config inspired by https://github.com/porterjamesj/.emacs.d/blob/master/user-lisp/setup-eshell.el
 ;;
 
+(require 'eshell)
+(require 'xterm-color)
+
 (setq eshell-banner-message "")
 
 (setq eshell-aliases-file "~/.eshell.aliases")
@@ -15,6 +18,21 @@
   (let ((inhibit-read-only t))
     (erase-buffer)
     (eshell-send-input)))
+
+;; Coloring output
+(add-hook 'eshell-mode-hook
+          (lambda () (progn
+            (setq xterm-color-preserve-properties t)
+            (setenv "TERM" "xterm-256color")
+            ;; Clearing the buffer ensures that the prompt is rendered
+            ;; using the desired faces
+            (eshell-clear-buffer)
+            )))
+
+(add-to-list 'eshell-preoutput-filter-functions 'xterm-color-filter)
+
+(setq eshell-output-filter-functions
+    (remove 'eshell-handle-ansi-color eshell-output-filter-functions))
 
 (add-hook 'eshell-mode-hook
           '(lambda()
