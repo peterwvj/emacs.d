@@ -87,6 +87,17 @@ am redefining it here so that it doesn't screw up my colors"
         (eshell-interactive-print prompt)))
     (run-hooks 'eshell-after-prompt-hook))))
 
+(add-hook 'eshell-mode-hook (lambda ()
+                              (setq eshell-pwd-convert-function (lambda (f)
+                                                                  (if (file-equal-p (file-truename f) "/")
+                                                                      "/" f)))
+                              (setq eshell-cmpl-ignore-case t
+                                    eshell-hist-ignoredups t)
+                              ;; Use helm completion in eshell
+                              (define-key eshell-mode-map [remap eshell-pcomplete] 'helm-esh-pcomplete)
+                              ;; Use helm to browse history
+                              (define-key eshell-mode-map (kbd "M-p") 'helm-eshell-history)))
+
 (setq eshell-highlight-prompt t)
 (setq eshell-prompt-regexp "\λ ")
 
