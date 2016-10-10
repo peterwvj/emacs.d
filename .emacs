@@ -182,6 +182,10 @@
 ;;
 (setq ring-bell-function 'ignore) ;; Completely turn off the alarm bell
 
+
+;; up for eshell
+(require 'up-config-pvj)
+
 ;;
 ;; eshell configuration
 ;;
@@ -370,6 +374,7 @@ scroll-down-aggressively 0.01)
 (global-set-key (kbd "<f11>")   'set-default-directory)
 (define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
 (global-set-key (kbd "C-l") 'goto-line)
+
 
 ;;
 ;; Support for Python

@@ -19,6 +19,11 @@ alias dl cd ~/Downloads/
 alias phd cd ~/Dropbox/PhD/
 
 ;;
+;; Navigation
+;;
+alias up up-goto-dir $1
+
+;;
 ;; Maven
 ;;
 alias mvni mvn install -DskipTests -Dmaven.javadoc.skip=true
