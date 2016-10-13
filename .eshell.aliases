@@ -1,34 +1,18 @@
-
-;;
-;; File handling
-;;
-alias f dired .
-alias e find-file $1
-alias ls ls -1 $*
-
-;;
-;; Folder shortcuts
-;;
-alias d cd ..
-alias ovt cd ~/git-repos/ovt/
-alias dev cd ~/dev/
-alias joint cd ~/svn-repos/joint/
-alias phds cd ~/svn-repos/joint/phds/
-alias pvj cd ~/svn-repos/joint/phds/PeterJorgensen/
-alias dl cd ~/Downloads/
-alias phd cd ~/Dropbox/PhD/
-
-;;
-;; Navigation
-;;
-alias up up-goto-dir $1
-
-;;
-;; Maven
-;;
-alias mvni mvn install -DskipTests -Dmaven.javadoc.skip=true
-alias mvnci mvn clean install -DskipTests -Dmaven.javadoc.skip=true
-alias mvnall mvn install -Dmaven.test.skip=true -Dmaven.javadoc.skip=true -PWith-IDE
-alias mvncall mvn clean -PWith-IDE -Dtycho.mode=maven
-alias mvnc mvn clean -Dtycho.mode=maven
 alias mvnt mvn test -Dmaven.test.skip=false -Dmaven.javadoc.skip=true -DexternalTestsPath=/home/peter/git-repos/ext-tests/ -q -Dmaven.test.redirectTestOutputToFile=true
+alias mvnc mvn clean -Dtycho.mode=maven
+alias mvncall mvn clean -PWith-IDE -Dtycho.mode=maven
+alias mvnall mvn install -Dmaven.test.skip=true -Dmaven.javadoc.skip=true -PWith-IDE
+alias mvnci mvn clean install -DskipTests -Dmaven.javadoc.skip=true
+alias up up-goto-dir $1
+alias phd cd ~/Dropbox/PhD/
+alias dl cd ~/Downloads/
+alias pvj cd ~/svn-repos/joint/phds/PeterJorgensen/
+alias phds cd ~/svn-repos/joint/phds/
+alias joint cd ~/svn-repos/joint/
+alias dev cd ~/dev/
+alias ovt cd ~/git-repos/ovt/
+alias d cd ..
+alias ls ls -1 $*
+alias v view-file $1
+alias e find-file $1
+alias f dired .
