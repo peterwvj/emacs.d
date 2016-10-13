@@ -16,3 +16,4 @@ alias ls ls -1 $*
 alias v view-file $1
 alias e find-file $1
 alias f dired .
+alias m meld $1
