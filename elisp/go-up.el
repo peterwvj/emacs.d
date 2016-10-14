@@ -55,9 +55,9 @@
 
 ;;; Code:
 
-;;
-;; TODO: Change 'ignore-case' to global variable
-;;
+;; User-definable variables
+
+(defvar go-up-ignore-case t "Non-nil if searches must ignore case")
 
 (defun get-sep (os)
   "Utility function to get file separator, e.g. '/', for an operating system, OS.
@@ -74,17 +74,16 @@ Argument STR the string to reverse."
          (reverse
           (string-to-list str))))
 
-(defun find-parent-dir (match path sep ignore-case)
+(defun find-parent-dir (match path sep)
   "Find parent directory of PATH identified by MATCH.
 Argument MATCH a string that identifies the parent directory to search for.
 Argument PATH the source directory to search from.
-Argument SEP the file separator, e.g. '/'.
-Argument IGNORE-CASE non-nil if searches must ignore case."
+Argument SEP the file separator, e.g. '/'."
   (if (or (not (stringp match)) (string= "" match))
       path
     (let* ((path-rev (str-rev path))
            (match-rev (str-rev match))
-           (case-fold-search ignore-case)
+           (case-fold-search go-up-ignore-case)
            (idx-rev (string-match (regexp-quote match-rev) path-rev)))
       (if (not (null idx-rev))
           (let* ((path-length (length path))
@@ -105,12 +104,11 @@ Argument SEP the file separator."
         (find-sub-str (+ i 1) path sep)))))
 
 
-(defun go-up (match &optional ignore-case)
+(defun go-up (match)
   "Go to parent directory in eshell. This is the main function of the package.
-Argument MATCH a string that identifies the parent directory to go to.
-Argument IGNORE-CASE non-nil if searches must ignore case"
+Argument MATCH a string that identifies the parent directory to go to."
   (let* ((path default-directory)
-         (parent-dir (find-parent-dir match path (get-sep system-type) ignore-case)))
+         (parent-dir (find-parent-dir match path (get-sep system-type))))
     (eshell/cd parent-dir)))
 
 (provide 'go-up)
