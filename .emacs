@@ -183,8 +183,8 @@
 (setq ring-bell-function 'ignore) ;; Completely turn off the alarm bell
 
 
-;; up for eshell
-(require 'up-config-pvj)
+;; go-up for eshell
+(require 'go-up)
 
 ;;
 ;; eshell configuration

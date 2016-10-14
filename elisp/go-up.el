@@ -1,4 +1,4 @@
-;;; up-config-pvj.el --- Summary here
+;;; go-up.el --- Summary here
 
 ;;
 ;; TODO: Add silent flag (global variable)
@@ -26,7 +26,7 @@ Argument STR the string to reverse."
          (reverse
           (string-to-list str))))
 
-(defun up-find-parent-dir (match path sep ignore-case)
+(defun find-parent-dir (match path sep ignore-case)
   "Find parent directory of PATH identified by MATCH.
 Argument MATCH a string that identifies the parent directory to search for.
 Argument PATH the source directory to search from.
@@ -57,14 +57,14 @@ Argument SEP the file separator."
         (find-sub-str (+ i 1) path sep)))))
 
 
-(defun up-goto-dir (match &optional ignore-case)
+(defun go-up (match &optional ignore-case)
   "Go to parent directory in eshell. This is the main function of the package.
 Argument MATCH a string that identifies the parent directory to go to.
 Argument IGNORE-CASE non-nil if searches must ignore case"
   (let* ((path default-directory)
-         (parent-dir (up-find-parent-dir match path (get-sep system-type) ignore-case)))
+         (parent-dir (find-parent-dir match path (get-sep system-type) ignore-case)))
     (eshell/cd parent-dir)))
 
-(provide 'up-config-pvj)
+(provide 'go-up)
 
-;;; up-config-pvj.el ends here
+;;; go-up.el ends here
