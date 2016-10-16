@@ -180,4 +180,6 @@ am redefining it here so that it doesn't screw up my colors"
    (t
     (while (pcomplete-here (pcomplete-entries))))))
 
+(setq eshell-scroll-to-bottom-on-input t)
+
 (provide 'eshell-config-pvj)
