@@ -36,7 +36,13 @@
 
 (add-hook 'eshell-mode-hook
           '(lambda()
-             (local-set-key (kbd "C-l") 'eshell-clear-buffer)))
+             (local-set-key (kbd "C-l") 'eshell-clear-buffer)
+             (local-set-key (kbd "C-u") (lambda ()
+                                          (interactive)
+                                          (progn 
+                                            (end-of-buffer)
+                                            (eshell-bol)
+                                            (kill-visual-line))))))
 
 (add-hook 'eshell-mode-hook
           (lambda ()
