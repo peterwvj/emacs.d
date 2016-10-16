@@ -21,6 +21,7 @@ The configuration files are used to:
 
 - Manage multiple email accounts using mu4e
 - Work with LaTeX using [[https://www.gnu.org/software/auctex/][AUCTeX]] and [[https://github.com/politza/pdf-tools][pdf-tools]]
+- Configure my terminal, =eshell=
 - Manage Git repositories
 - Manage calendars
 - Etc.
@@ -65,3 +66,7 @@ Using LaTeX:
 Managing emails using =mu4e=:
 
 [[http://i66.tinypic.com/21erthj.png]]
+
+Using =eshell=:
+
+[[http://i68.tinypic.com/28m32te.jpg]]
