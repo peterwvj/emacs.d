@@ -369,14 +369,12 @@ scroll-down-aggressively 0.01)
 ;;
 (setq magit-repository-directories '("~/git-repos/" "~/git-repos/ovt/externals/"))
 (global-set-key (kbd "C-x g") 'magit-status)
-(global-set-key (kbd "C-z") 'magit-list-repositories)
 
 ;;
 ;; Navigation
 ;;
 (require 'navigation-config-pvj)
 (global-set-key (kbd "<f1>")   'pvj/copy-file-path)
-(global-set-key (kbd "<f11>")   'set-default-directory)
 (define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
 (global-set-key (kbd "C-l") 'goto-line)
 (global-set-key (kbd "<home>") 'pvj/smart-move-to-line-beginning)
