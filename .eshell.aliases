@@ -1,9 +1,10 @@
 alias mvnt mvn test -Dmaven.test.skip=false -Dmaven.javadoc.skip=true -DexternalTestsPath=/home/peter/git-repos/ext-tests/ -q -Dmaven.test.redirectTestOutputToFile=true
+alias mvni mvn install -DskipTests -Dmaven.javadoc.skip=true
 alias mvnc mvn clean -Dtycho.mode=maven
 alias mvncall mvn clean -PWith-IDE -Dtycho.mode=maven
 alias mvnall mvn install -Dmaven.test.skip=true -Dmaven.javadoc.skip=true -PWith-IDE
 alias mvnci mvn clean install -DskipTests -Dmaven.javadoc.skip=true
-alias up go-up $1
+alias up eshell-up $1
 alias phd cd ~/Dropbox/PhD/
 alias dl cd ~/Downloads/
 alias pvj cd ~/svn-repos/joint/phds/PeterJorgensen/
