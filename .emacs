@@ -390,4 +390,4 @@ scroll-down-aggressively 0.01)
 ;; Utility functions
 ;;
 (require 'util-pvj)
-
+(global-set-key (kbd "<f5>") 'pvj/toggle-window-split)
