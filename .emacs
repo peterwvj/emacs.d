@@ -379,6 +379,7 @@ scroll-down-aggressively 0.01)
 (global-set-key (kbd "C-l") 'goto-line)
 (global-set-key (kbd "<home>") 'pvj/smart-move-to-line-beginning)
 (global-set-key (kbd "C-a")    'pvj/smart-move-to-line-beginning)
+(global-set-key (kbd "C-z")    'delete-other-windows)
 
 ;;
 ;; Support for Python
