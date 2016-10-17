@@ -182,4 +182,7 @@ am redefining it here so that it doesn't screw up my colors"
 
 (setq eshell-scroll-to-bottom-on-input t)
 
+;; Jump to recently visited directories
+(require 'eshell-z)
+
 (provide 'eshell-config-pvj)
