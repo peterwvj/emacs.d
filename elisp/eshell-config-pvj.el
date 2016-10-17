@@ -126,6 +126,24 @@ am redefining it here so that it doesn't screw up my colors"
 (setq eshell-highlight-prompt t)
 (setq eshell-prompt-regexp "\λ ")
 
+(defun eshell-here ()
+  "Opens up a new shell in the directory associated with the
+current buffer's file. The eshell is renamed to match that
+directory to make multiple eshell windows easier."
+  (interactive)
+  (let* ((parent (if (buffer-file-name)
+                     (file-name-directory (buffer-file-name))
+                   default-directory))
+         (height (/ (window-total-width) 2))
+         (name   (car (last (split-string parent "/" t)))))
+    (split-window-horizontally (- height))
+    ;;(other-window 1)
+    (eshell "new")
+    (rename-buffer (concat "*eshell: " name "*"))
+
+    (insert (concat "ls"))
+    (eshell-send-input)))
+
 ;;
 ;; Git Completion for eshell - inspired by https://tsdh.wordpress.com/2013/05/31/eshell-completion-for-git-bzr-and-hg/
 ;;
