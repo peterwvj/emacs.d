@@ -85,7 +85,7 @@ PWD is not in a git repo (or the git command is not found)."
      (with-face user-login-name '(:foreground "orange" :weight bold))
      "@"
      (with-face (concat (system-name) ":") '(:foreground "yellow" :weight bold))
-     (with-face (eshell/pwd) '(:foreground "LightSkyBlue" :weight bold))
+     (with-face (abbreviate-file-name (eshell/pwd)) '(:foreground "LightSkyBlue" :weight bold))
      (with-face (pvj/curr-dir-git-branch (eshell/pwd)) '(:foreground "white" :weight bold))
      (if (= (user-uid) 0)
        (with-face " #" :foreground "red")
