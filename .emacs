@@ -88,6 +88,7 @@
 (global-set-key (kbd "C-q") 'pvj/duplicate-current-line-or-region)
 (global-set-key (kbd "C-d") 'kill-whole-line)
 (delete-selection-mode 1)
+(global-set-key (kbd "C-w") 'pvj/kill-word-or-region)
 
 (require 'langtool)
 (setq langtool-language-tool-jar "/home/peter/tools/LanguageTool-3.4/languagetool-commandline.jar")

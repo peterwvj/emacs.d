@@ -58,6 +58,26 @@ there's a region, all lines that region covers will be duplicated."
       (message "Found duplicated word.")
     (message "End of buffer")))
 
+;; Inspired by https://github.com/jhaubrich/emacs
+(defun pvj/lorem-ipsum ()
+  "Insert a lorem ipsum."
+  (interactive)
+  (insert "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do "
+          "eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim"
+          "ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut "
+          "aliquip ex ea commodo consequat. Duis aute irure dolor in "
+          "reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla "
+          "pariatur. Excepteur sint occaecat cupidatat non proident, sunt in "
+          "culpa qui officia deserunt mollit anim id est laborum."))
+
+;; Can be used to overload C-w so if no region is selected then the
+;; last word is deleted.
+(defun pvj/kill-word-or-region (begining end)
+  (interactive "r")
+  (if (use-region-p)
+      (kill-region begining end)
+    (backward-kill-word 1)))
+
 ;; Use spaces for indentation
 (setq-default indent-tabs-mode nil)
 
