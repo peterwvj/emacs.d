@@ -187,7 +187,7 @@
 
 
 ;; go-up for eshell
-(require 'go-up)
+(require 'eshell-up)
 
 ;;
 ;; eshell configuration
