@@ -23,6 +23,8 @@
         (imagemagick-register-types))
 
 
+;; Do not show mu4e index messages
+(setq mu4e-hide-index-messages t)
 
 ;; Do not highlight current line in main view and view mode
 (add-hook 'mu4e-main-mode-hook (lambda ()
