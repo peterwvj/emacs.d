@@ -79,9 +79,6 @@ PWD is not in a git repo (or the git command is not found)."
 (defun pvj/eshell-prompt ()
   (let ((header-bg "#fff"))
     (concat
-     (with-face
-      (or (ignore-errors (format "(%s)" (vc-responsible-backend default-directory))) "")
-      :background header-bg)
      (with-face user-login-name '(:foreground "orange" :weight bold))
      "@"
      (with-face (concat (system-name) ":") '(:foreground "yellow" :weight bold))
