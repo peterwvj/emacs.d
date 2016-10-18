@@ -1,4 +1,6 @@
 
+(require 'browse-kill-ring)
+
 ;;
 ;; Spell checking
 ;;
