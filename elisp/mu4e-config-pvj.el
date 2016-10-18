@@ -175,7 +175,7 @@
 (add-to-list 'mu4e-bookmarks
              '(draft-folders "All drafts"     ?d))
 (add-to-list 'mu4e-bookmarks
-             '((concat not-spam " AND (flag:unread OR flag:flagged) AND NOT flag:trashed")
+             '((concat not-spam " AND flag:unread AND NOT flag:trashed")
                "Unread messages"      ?u))
 
 ;; C-c C-a	` attach a file (pro-tip: drag & drop works as well)
