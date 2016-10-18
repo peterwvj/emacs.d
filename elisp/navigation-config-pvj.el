@@ -14,14 +14,13 @@
   "Emacs quick move minor mode"
   t)
 
-;; Inspired by https://github.com/jhaubrich/emacs
+;; Inspired by http://stackoverflow.com/questions/145291/smart-home-in-emacs/
 (defun pvj/smart-move-to-line-beginning ()
-  "Move point to the beginning of text on the current line; if that is already
-the current position of point, then move it to the beginning of the line."
-  (interactive)
-  (let ((pt (point)))
-    (beginning-of-line-text)
-    (when (eq pt (point))
-      (beginning-of-line))))
+  "Move point to first non-whitespace character or beginning-of-line."
+  (interactive "^") ; Use (interactive) in Emacs 22 or older
+  (let ((oldpos (point)))
+    (back-to-indentation)
+    (and (= oldpos (point))
+         (beginning-of-line))))
 
 (provide 'navigation-config-pvj)
