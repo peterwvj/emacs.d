@@ -255,12 +255,10 @@
 ;;
 (add-hook 'mu4e-update-pre-hook 'pvj/imapfilter)
 (defun pvj/imapfilter ()
-  (message "[imapfilter] filtering mails...")
   (with-current-buffer (get-buffer-create " *imapfilter*")
     (goto-char (point-max))
     (insert "---\n")
-    (call-process "imapfilter" nil (current-buffer) nil "-v"))
-  (message "[imapfilter] ...done"))
+    (call-process "imapfilter" nil (current-buffer) nil "-v")))
 
 ;; Start mu4e
 (mu4e)
