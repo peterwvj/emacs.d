@@ -22,4 +22,8 @@
 (require 'ac-math) 
 (add-to-list 'ac-modes 'latex-mode)   ; make auto-complete aware of `latex-mode`
 
+;; Fix for issue with line numbers and auto-completion. See
+;; http://stackoverflow.com/questions/11484225/fix-an-auto-complete-mode-and-linum-mode-annoyance
+(ac-linum-workaround)
+
 (provide 'auto-complete-config-pvj)
