@@ -18,6 +18,7 @@
 (define-key ac-complete-mode-map [up] 'ac-previous)
 
 (add-to-list 'ac-modes 'org-mode)
+(add-to-list 'ac-modes 'text-mode)
 
 (require 'ac-math) 
 (add-to-list 'ac-modes 'latex-mode)   ; make auto-complete aware of `latex-mode`
