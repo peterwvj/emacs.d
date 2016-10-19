@@ -24,6 +24,7 @@
 
 (add-to-list 'ac-modes 'org-mode)
 (add-to-list 'ac-modes 'text-mode)
+(add-to-list 'ac-modes 'mu4e-compose-mode)
 
 (require 'ac-math) 
 (add-to-list 'ac-modes 'latex-mode)   ; make auto-complete aware of `latex-mode`
