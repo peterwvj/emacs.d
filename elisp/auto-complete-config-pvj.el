@@ -32,4 +32,8 @@
 ;; http://stackoverflow.com/questions/11484225/fix-an-auto-complete-mode-and-linum-mode-annoyance
 (ac-linum-workaround)
 
+;; Fix conflict between auto-completion and fly-spell. See
+;; https://lists.gnu.org/archive/html/help-gnu-emacs/2011-01/msg00737.html
+(ac-flyspell-workaround)
+
 (provide 'auto-complete-config-pvj)
