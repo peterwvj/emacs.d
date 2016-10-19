@@ -5,6 +5,7 @@ alias mvncall mvn clean -PWith-IDE -Dtycho.mode=maven
 alias mvnall mvn install -Dmaven.test.skip=true -Dmaven.javadoc.skip=true -PWith-IDE
 alias mvnci mvn clean install -DskipTests -Dmaven.javadoc.skip=true
 alias up eshell-up $1
+alias pk eshell-up-peek $1
 alias phd cd ~/Dropbox/PhD/
 alias dl cd ~/Downloads/
 alias pvj cd ~/svn-repos/joint/phds/PeterJorgensen/
