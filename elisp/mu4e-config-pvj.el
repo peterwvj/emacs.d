@@ -162,6 +162,7 @@
 ;; https://github.com/munen/emacs.d/blob/master/mu4e-config.el
 (defvar spam-folders "maildir:/private/[Gmail].Spam OR maildir:/work/\"Junk E-Mail\"")
 (defvar draft-folders "maildir:/private/[Gmail].Drafts OR maildir:/work/Drafts")
+(defvar not-trash "NOT (maildir:/private/[Gmail].Trash OR maildir:/work/\"Deleted Items\")")
 (defvar not-spam (concat "NOT (" spam-folders ")"))
 
 (add-to-list 'mu4e-bookmarks
@@ -175,7 +176,7 @@
 (add-to-list 'mu4e-bookmarks
              '(draft-folders "All drafts"     ?d))
 (add-to-list 'mu4e-bookmarks
-             '((concat not-spam " AND flag:unread AND NOT flag:trashed")
+             '((concat not-spam " AND flag:unread AND " not-trash)
                "Unread messages"      ?u))
 
 ;; C-c C-a	` attach a file (pro-tip: drag & drop works as well)
