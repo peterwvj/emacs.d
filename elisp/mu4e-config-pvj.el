@@ -124,7 +124,13 @@
         ))
 
 ;; a V opens the current message in the default web browsers.
-(add-to-list 'mu4e-view-actions '("ViewInBrowser" . mu4e-action-view-in-browser) t)
+(add-to-list 'mu4e-view-actions 
+             '("ViewInBrowser" . mu4e-action-view-in-browser) t)
+
+;; a x opens with xwidget
+(add-to-list 'mu4e-view-actions 
+             '("xViewXWidget" . mu4e-action-view-with-xwidget) t) 
+
 (setq mu4e-view-show-images t)
 (setq mu4e-html2text-command 'mu4e-shr2text)
 ;; When using a dark theme the messages are difficult to read
