@@ -13,12 +13,6 @@
 ;;
 (setq max-specpdl-size 2600)  
 
-;; Email notifications
-(mu4e-alert-set-default-style 'libnotify)
-;; (add-hook 'after-init-hook #'mu4e-alert-enable-notifications)
-(add-hook 'after-init-hook #'mu4e-alert-enable-mode-line-display)
-;; (setq mu4e-alert-notify-repeated-mails t)
-
 (when (fboundp 'imagemagick-register-types)
         (imagemagick-register-types))
 
@@ -170,6 +164,7 @@
 (defvar draft-folders "maildir:/private/[Gmail].Drafts OR maildir:/work/Drafts")
 (defvar not-trash "NOT (maildir:/private/[Gmail].Trash OR maildir:/work/\"Deleted Items\")")
 (defvar not-spam (concat "NOT (" spam-folders ")"))
+(defvar unread (concat not-spam " AND flag:unread AND " not-trash))
 
 (add-to-list 'mu4e-bookmarks
              '((concat not-spam " AND date:today..now")                  "Today's messages"     ?t))
@@ -182,8 +177,14 @@
 (add-to-list 'mu4e-bookmarks
              '(draft-folders "All drafts"     ?d))
 (add-to-list 'mu4e-bookmarks
-             '((concat not-spam " AND flag:unread AND " not-trash)
-               "Unread messages"      ?u))
+             '(unread "Unread messages"      ?u))
+
+;; Email notifications
+(mu4e-alert-set-default-style 'libnotify)
+;; (add-hook 'after-init-hook #'mu4e-alert-enable-notifications)
+(add-hook 'after-init-hook #'mu4e-alert-enable-mode-line-display)
+;; (setq mu4e-alert-notify-repeated-mails t)
+(setq mu4e-alert-interesting-mail-query unread)
 
 ;; C-c C-a	` attach a file (pro-tip: drag & drop works as well)
 
