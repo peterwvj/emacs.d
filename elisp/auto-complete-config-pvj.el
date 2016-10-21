@@ -11,7 +11,7 @@
 (ac-config-default)
 
 ;; (setq ac-auto-show-menu 1.0)
-(setq ac-delay  0.1)
+(setq ac-delay  0.3)
 ;; (setq ac-menu-height 20)
 (setq ac-auto-start t)
 (define-key ac-complete-mode-map [tab] 'ac-expand)

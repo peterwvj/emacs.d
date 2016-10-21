@@ -34,6 +34,7 @@
 (global-set-key (kbd "C-x C-f") 'helm-find-files)
 (global-set-key (kbd "C-x C-r") 'helm-recentf)
 (global-set-key (kbd "C-c m") 'helm-mu-contacts)
+(global-set-key (kbd "C-x C-b") 'helm-buffers-list)
 (setq helm-M-x-fuzzy-match t)
 (setq helm-buffers-fuzzy-matching t
       helm-recentf-fuzzy-match t)
@@ -136,11 +137,6 @@
 (put 'upcase-region 'disabled nil)
 
 ;;
-;; Buffer configuration
-;;
-(global-set-key (kbd "C-x C-b") 'ibuffer)
-
-;;
 ;; Convenient way to tell emacs 'yes' or 'no'
 ;;
 (defalias 'yes-or-no-p 'y-or-n-p)
@@ -166,6 +162,12 @@
 (global-set-key (kbd "C-x <down>") 'windmove-down)
 (global-set-key (kbd "C-x <right>") 'windmove-right)
 (global-set-key (kbd "C-x <left>") 'windmove-left)
+
+;;
+;; Prefer vertical split
+;;
+(setq split-height-threshold nil) 
+(setq split-width-threshold 0) 
 
 ;; Always follow symlinks
 (setq vc-follow-symlinks t)
@@ -310,6 +312,8 @@ scroll-down-aggressively 0.01)
 ;; For moving buffers around
 ;;
 (require 'buffer-move)
+
+(global-set-key (kbd "<f9>") 'revert-buffer)
 
 ;; Page down/up move the point, not the screen.
 ;; In practice, this means that they can move the
