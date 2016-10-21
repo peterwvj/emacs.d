@@ -91,6 +91,8 @@
 (delete-selection-mode 1)
 (global-set-key (kbd "C-w") 'pvj/kill-word-or-region)
 (global-set-key (kbd "<f6>") 'browse-kill-ring)
+(global-set-key (kbd "C-c ;") 'comment-or-uncomment-region)
+
 
 (require 'langtool)
 (setq langtool-language-tool-jar "/home/peter/tools/LanguageTool-3.4/languagetool-commandline.jar")
