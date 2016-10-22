@@ -156,6 +156,11 @@
 ;; skip the confirmation
 (setq confirm-nonexistent-file-or-buffer nil)
 
+;; Kill buffers that have a live process attached - without asking!
+(setq kill-buffer-query-functions
+  (remq 'process-kill-buffer-query-function
+         kill-buffer-query-functions))
+
 ;; Move text
 (require 'move-text)
 (move-text-default-bindings)
