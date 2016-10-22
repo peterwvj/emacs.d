@@ -8,6 +8,10 @@
 
 (add-to-list 'load-path "~/git-repos/emacs-config-pvj/elisp/")
 
+;; Get rid of the splash screen and echo area message
+(setq inhibit-startup-message t
+      inhibit-startup-echo-area-message t)
+
 ;;
 ;; Use persistent scratch buffer
 ;;
