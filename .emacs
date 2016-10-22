@@ -23,6 +23,9 @@
 
 ;; C-x R to view recently opened files
 (require 'dired+)
+(setq diredp-hide-details-initially-flag nil)
+(setq diredp-hide-details-propagate-flag nil)
+(setq dired-listing-switches "-alh")
 
 ;;
 ;; Configure helm mode
