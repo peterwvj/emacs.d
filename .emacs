@@ -41,7 +41,10 @@
 (global-set-key (kbd "C-x C-f") 'helm-find-files)
 (global-set-key (kbd "C-x C-r") 'helm-recentf)
 (global-set-key (kbd "C-c m") 'helm-mu-contacts)
+
+;; Mark buffers with C-SPACE and kill them with M-D
 (global-set-key (kbd "C-x C-b") 'helm-buffers-list)
+
 (setq helm-M-x-fuzzy-match t)
 (setq helm-buffers-fuzzy-matching t
       helm-recentf-fuzzy-match t)
