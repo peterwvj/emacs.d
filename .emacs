@@ -41,6 +41,7 @@
 (setq helm-M-x-fuzzy-match t)
 (setq helm-buffers-fuzzy-matching t
       helm-recentf-fuzzy-match t)
+(setq helm-ff-newfile-prompt-p nil)
 
 ;; I used to have a problem where C-x C-f, i.e. helm-find-files would make emacs hang.
 ;; Workaround: by setting this flag I can prevent Emacs from hanging...
@@ -143,6 +144,10 @@
 ;; Convenient way to tell emacs 'yes' or 'no'
 ;;
 (defalias 'yes-or-no-p 'y-or-n-p)
+
+;; If a file or buffer does not exist when using C-x C-f or C-x b then
+;; skip the confirmation
+(setq confirm-nonexistent-file-or-buffer nil)
 
 ;; Move text
 (require 'move-text)
