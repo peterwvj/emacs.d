@@ -26,4 +26,17 @@
 	  (select-window first-win)
 	  (if this-win-2nd (other-window 1))))))
 
+(defun pvj/get-file-contents (filePath)
+  "Return the contents of a file as a string."
+  (with-temp-buffer
+    (insert-file-contents filePath)
+    (buffer-string)))
+
+(defun pvj/copy-file-contents (filePath)
+  "Copy the contents of a file to the kill ring."
+  (let ((contents (pvj/get-file-contents filePath)))
+    (progn
+      (kill-new contents)
+      filePath)))
+
 (provide 'util-pvj)

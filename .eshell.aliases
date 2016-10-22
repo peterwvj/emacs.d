@@ -20,3 +20,4 @@ alias e find-file $1
 alias f dired .
 alias m meld $1
 alias cplink kill-new {readlink -f $1}
+alias cpf pvj/copy-file-contents $1
