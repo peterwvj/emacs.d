@@ -19,3 +19,4 @@ alias v view-file $1
 alias e find-file $1
 alias f dired .
 alias m meld $1
+alias cplink kill-new {readlink -f $1}
