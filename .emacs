@@ -30,6 +30,7 @@
 (setq diredp-hide-details-initially-flag nil)
 (setq diredp-hide-details-propagate-flag nil)
 (setq dired-listing-switches "-alh")
+(define-key dired-mode-map (kbd "M-s") 'diredp-find-a-file)
 
 ;;
 ;; Configure helm mode
