@@ -3,6 +3,7 @@
 ;;
 (add-to-list 'load-path "/usr/local/share/emacs/site-lisp/mu4e")
 
+(require 'xwidget)
 (require 'mu4e)
 (require 'org-mu4e)
 (require 'mu4e-contrib)
@@ -203,5 +204,9 @@
         (error "No message sent")))))
 
 (add-hook 'message-send-hook 'check-for-attachment)
+
+
+;; Disable "kill buffer with xwidgets" question
+(remove-hook 'kill-buffer-query-functions 'xwidget-kill-buffer-query-function)
 
 (provide 'mu4e-config-pvj)
