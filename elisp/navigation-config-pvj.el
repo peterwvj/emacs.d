@@ -14,6 +14,9 @@
   "Emacs quick move minor mode"
   t)
 
+(require 'ace-window)
+(global-set-key (kbd "M-p") 'ace-window)
+
 ;; Inspired by http://stackoverflow.com/questions/145291/smart-home-in-emacs/
 (defun pvj/smart-move-to-line-beginning ()
   "Move point to first non-whitespace character or beginning-of-line."
