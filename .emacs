@@ -46,6 +46,8 @@
 
 ;; Mark buffers with C-SPACE and kill them with M-D
 (global-set-key (kbd "C-x C-b") 'helm-buffers-list)
+(global-set-key (kbd "C-x k") 'kill-this-buffer)
+
 
 (setq helm-M-x-fuzzy-match t)
 (setq helm-buffers-fuzzy-matching t
