@@ -187,11 +187,6 @@
 (global-set-key (kbd "C-x <right>") 'windmove-right)
 (global-set-key (kbd "C-x <left>") 'windmove-left)
 
-;;
-;; Prefer vertical split
-;;
-(setq split-height-threshold nil) 
-(setq split-width-threshold 0) 
 
 ;; Always follow symlinks
 (setq vc-follow-symlinks t)
