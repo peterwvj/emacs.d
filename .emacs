@@ -130,6 +130,22 @@
 (define-key isearch-mode-map [remap isearch-query-replace-regexp] #'anzu-isearch-query-replace-regexp)
 
 ;;
+;; Indent code automatically
+;;
+(require 'aggressive-indent)
+
+;; Turn it on in every programming mode
+(global-aggressive-indent-mode 1)
+(add-to-list 'aggressive-indent-excluded-modes 'html-mode)
+
+;; Avoid annoying identation issue in C++ and Java
+(add-to-list
+ 'aggressive-indent-dont-indent-if
+ '(or (derived-mode-p 'c++-mode) (derived-mode-p 'java-mode) (derived-mode-p 'c-mode)
+      (null (string-match "\\([;{}]\\|\\b\\(if\\|for\\|while\\)\\b\\)"
+                          (thing-at-point 'line)))))
+
+;;
 ;; For language analysis
 ;;
 (require 'langtool)
