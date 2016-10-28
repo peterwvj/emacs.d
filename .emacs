@@ -129,6 +129,14 @@
 (show-paren-mode 1)
 (setq show-paren-delay 0)
 
+
+;;
+;; Highlights delimiters such as parentheses, brackets or braces according to their depth
+;;
+(require 'rainbow-delimiters)
+;; To start the mode automatically in most programming modes (Emacs 24 and above):
+(add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
+
 ;;
 ;; No blinking cursor
 ;;
