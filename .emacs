@@ -110,6 +110,9 @@
 (global-set-key (kbd "C-c ;") 'comment-or-uncomment-region)
 
 
+;;
+;; For language analysis
+;;
 (require 'langtool)
 (setq langtool-language-tool-jar "/home/peter/tools/LanguageTool-3.4/languagetool-commandline.jar")
 
