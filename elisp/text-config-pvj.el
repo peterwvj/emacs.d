@@ -90,6 +90,9 @@ there's a region, all lines that region covers will be duplicated."
 ;; Disable automatic indentation of newlines
 (electric-indent-mode -1)
 
+;; Enable smart paring
+(electric-pair-mode)
+
 ;; Make lambdas appear as λ and so on
 (setq prettify-symbols-unprettify-at-point 'right-edge)
 (global-prettify-symbols-mode)
