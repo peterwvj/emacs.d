@@ -442,6 +442,11 @@ scroll-down-aggressively 0.01)
 (global-set-key (kbd "C-x g") 'magit-status)
 
 ;;
+;; Validate commit messages
+;;
+(require 'git-commit)
+
+;;
 ;; Navigation
 ;;
 (require 'navigation-config-pvj)
