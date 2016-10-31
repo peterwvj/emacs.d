@@ -68,6 +68,12 @@
 (require 'helm-descbinds)
 (helm-descbinds-mode)
 
+;; helm interface for projectile
+(require 'helm-projectile)
+(projectile-mode)
+(setq projectile-completion-system 'helm)
+(helm-projectile-on)
+
 ;;
 ;; Enable winner-mode
 ;;
