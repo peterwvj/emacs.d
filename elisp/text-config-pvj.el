@@ -16,12 +16,18 @@
 (dolist (hook '(change-log-mode-hook log-edit-mode-hook))
   (add-hook hook (lambda () (flyspell-mode -1))))
 
-;; Toggle between british and danish dictionaries
-(defun pvj/switch-dictionary()
+;; Toggle between british/danish dictionaries and input methods. Note
+;; that when the input mode is set to danish (i.e. danish-postfix)
+;; then 'oe', 'aa' and 'ae' are translated to ø, å and æ,
+;; respectively.
+(defun pvj/switch-language()
   (interactive)
   (let* ((dic ispell-current-dictionary)
-         (change (if (string= dic british-dictionary) danish-dictionary british-dictionary)))
-    (ispell-change-dictionary change)
+         (change (if (string= dic british-dictionary)
+                     '("danish" . "danish-postfix")
+                   '("british" . nil))))
+    (ispell-change-dictionary (car change))
+    (set-input-method (cdr change))
     (message "Dictionary switched from %s to %s" dic change)))
 
 ;; Duplicate line or region
