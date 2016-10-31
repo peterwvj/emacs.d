@@ -176,7 +176,9 @@
 ;;
 (show-paren-mode 1)
 (setq show-paren-delay 0)
-
+(set-face-background 'show-paren-match "deep sky blue")
+(set-face-foreground 'show-paren-match "black")
+(set-face-attribute 'show-paren-match nil :weight 'extra-bold)
 
 ;;
 ;; Highlights delimiters such as parentheses, brackets or braces according to their depth
