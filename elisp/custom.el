@@ -25,7 +25,7 @@
  '(cfw:face-select ((t (:background "dim gray"))))
  '(cfw:face-title ((t (:inherit variable-pitch :foreground "white" :weight bold :height 2.0))))
  '(cfw:face-toolbar ((t nil)))
- '(cursor ((t (:background "lime green"))))
+ '(cursor ((t (:background "yellow"))))
  '(eshell-prompt ((t (:foreground "green yellow" :weight bold))))
  '(mu4e-replied-face ((t (:inherit font-lock-builtin-face :foreground "yellow" :weight normal))))
  '(region ((t (:background "DeepSkyBlue4"))))
