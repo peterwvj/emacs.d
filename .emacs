@@ -116,7 +116,7 @@
 (global-set-key (kbd "C-d") 'kill-whole-line)
 (delete-selection-mode 1)
 (global-set-key (kbd "C-w") 'pvj/kill-word-or-region)
-(global-set-key (kbd "<f6>") 'browse-kill-ring)
+(global-set-key (kbd "<f6>") 'helm-show-kill-ring)
 (global-set-key (kbd "C-c ;") 'comment-or-uncomment-region)
 
 
