@@ -341,13 +341,8 @@
 ;;
 ;; Scrolling
 ;;
-;; scroll-conservatively setting: Only scroll one line when moving the cursor past the top or bottom of the window
-;; Other settings: help avoid the "text jumps"
-;; See - https://www.emacswiki.org/emacs/SmoothScrollign
-(setq scroll-margin 1
-scroll-conservatively 10000 
-scroll-up-aggressively 0.01
-scroll-down-aggressively 0.01)
+(require 'smooth-scrolling)
+(smooth-scrolling-mode 1)
 
 ;; Also applies to new clients that connect to the Emacs server
 (add-to-list 'default-frame-alist '(fullscreen . maximized)) 
