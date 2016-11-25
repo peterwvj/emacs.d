@@ -18,9 +18,13 @@
 
 (ac-set-trigger-key "<tab>")
 
+;; Prevent use of "up" and "down" keys
+(define-key ac-completing-map [down] nil)
+(define-key ac-completing-map [up] nil)
+
 ;; Use UP and DOWN keys to select proposals
-(define-key ac-complete-mode-map [down] 'ac-next)
-(define-key ac-complete-mode-map [up] 'ac-previous)
+(define-key ac-complete-mode-map (kbd "C-<down>") 'ac-next)
+(define-key ac-complete-mode-map (kbd "C-<up>") 'ac-previous)
 
 (add-to-list 'ac-modes 'org-mode)
 (add-to-list 'ac-modes 'text-mode)
