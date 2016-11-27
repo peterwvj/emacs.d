@@ -392,9 +392,11 @@
 (add-to-list 'default-frame-alist '(fullscreen . maximized)) 
 
 ;;
-;; Auto-completion configuration
+;; Company mode (auto completion)
 ;;
-(require 'auto-complete-config-pvj)
+(require 'company)
+(add-hook 'after-init-hook 'global-company-mode)
+(global-set-key (kbd "M-C-/") 'company-complete)
 
 ;;
 ;; Use YASnippet templates
