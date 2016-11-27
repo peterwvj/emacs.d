@@ -385,8 +385,9 @@
 ;;
 ;; Scrolling
 ;;
-(require 'smooth-scrolling)
-(smooth-scrolling-mode 1)
+;; This seems to be the best way to achieve "smooth scrolling"
+;; See - https://www.emacswiki.org/emacs/SmoothScrolling
+(setq scroll-conservatively 10000)
 
 ;; Also applies to new clients that connect to the Emacs server
 (add-to-list 'default-frame-alist '(fullscreen . maximized)) 
