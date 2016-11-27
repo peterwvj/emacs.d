@@ -491,6 +491,31 @@
 (elpy-enable)
 
 ;;
+;; Diminish
+;;
+(require 'diminish)
+
+(eval-after-load "undo-tree"
+  '(diminish 'undo-tree-mode))
+
+(eval-after-load "projectile"
+  '(diminish 'projectile-mode))
+
+(eval-after-load "helm"
+  '(diminish 'helm-mode))
+
+;; Use '✈' to show that flyspell is enabled
+(eval-after-load "flyspell"
+  '(diminish 'flyspell-mode (string 32 #x2708)))
+
+(eval-after-load "reftex"
+  '(diminish 'reftex-mode))
+
+(diminish 'visual-line-mode)
+
+(diminish 'outline-minor-mode)
+
+;;
 ;; Utility functions
 ;;
 (require 'util-pvj)
