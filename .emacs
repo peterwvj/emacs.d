@@ -520,6 +520,9 @@
 (eval-after-load "reftex"
   '(diminish 'reftex-mode))
 
+(eval-after-load "abbrev"
+    '(diminish 'abbrev-mode))
+
 (diminish 'visual-line-mode)
 
 (diminish 'outline-minor-mode)
