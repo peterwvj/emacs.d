@@ -484,7 +484,7 @@
 (global-set-key (kbd "<home>") 'pvj/smart-move-to-line-beginning)
 (global-set-key (kbd "C-a")    'pvj/smart-move-to-line-beginning)
 (global-set-key (kbd "C-z")    'delete-other-windows)
-(global-set-key (kbd "M-p") 'ace-window)
+(global-set-key (kbd "C-x o") 'ace-window)
 
 ;;
 ;; Support for Python
