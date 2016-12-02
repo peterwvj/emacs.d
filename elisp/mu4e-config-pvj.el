@@ -7,6 +7,7 @@
 (require 'mu4e)
 (require 'org-mu4e)
 (require 'mu4e-contrib)
+(require 'mu4e-maildirs-extension)
 
 ;;
 ;; To prevent issue with long email conversations - see
@@ -208,5 +209,26 @@
 
 ;; Disable "kill buffer with xwidgets" question
 (remove-hook 'kill-buffer-query-functions 'xwidget-kill-buffer-query-function)
+
+;; Add a maildir summary to the mu4e-main-view
+(defun pvj/mu4e-maildirs-extension-propertize-unread-only (item)
+  "Propertize only the maildir unread count using ITEM plist."
+  (let ((unread (or (plist-get item :unread) 0))
+        (total (or (plist-get item :total) 0)))
+    (format "\t%s%s %s (%s/%s)"
+            (plist-get item :indent)
+            (plist-get item :prefix)
+            (plist-get item :name)
+            (propertize (number-to-string unread)
+                        'face (cond
+                               ((> unread 0) 'mu4e-maildirs-extension-maildir-hl-face)
+                               (t            'mu4e-maildirs-extension-maildir-face)))
+            total)))
+
+(setq mu4e-maildirs-extension-propertize-func 'pvj/mu4e-maildirs-extension-propertize-unread-only)
+
+(setq mu4e-maildirs-extension-custom-list '("/private/INBOX" "/work/INBOX" "/work/Overture"))
+
+(mu4e-maildirs-extension)
 
 (provide 'mu4e-config-pvj)
