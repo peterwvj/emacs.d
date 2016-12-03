@@ -30,6 +30,7 @@
 ;;
 ;; Use persistent scratch buffer
 ;;
+(use-package persistent-scratch)
 (setq initial-scratch-message "")
 (persistent-scratch-setup-default)
 
