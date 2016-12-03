@@ -374,31 +374,32 @@
 (use-package mu4e-config-pvj
   :if (string-equal system-type "gnu/linux")
   :ensure f
-  :bind (("<f2>" . mu4e)))
+  :bind (("<f2>" . mu4e))
+  :config
+  (progn
+    ;;
+    ;; imapfilter configuration
+    ;; Inspired by https://www.reddit.com/r/emacs/comments/202fon/email_filters_in_mu4e/
+    ;;
+    (add-hook 'mu4e-update-pre-hook 'pvj/imapfilter)
+    (defun pvj/imapfilter ()
+      (with-current-buffer (get-buffer-create " *imapfilter*")
+        (goto-char (point-max))
+        (insert "---\n")
+        (call-process "imapfilter" nil (current-buffer) nil "-v")))
 
-;;
-;; imapfilter configuration
-;; Inspired by https://www.reddit.com/r/emacs/comments/202fon/email_filters_in_mu4e/
-;;
-(add-hook 'mu4e-update-pre-hook 'pvj/imapfilter)
-(defun pvj/imapfilter ()
-  (with-current-buffer (get-buffer-create " *imapfilter*")
-    (goto-char (point-max))
-    (insert "---\n")
-    (call-process "imapfilter" nil (current-buffer) nil "-v")))
+    ;; Start mu4e
+    (mu4e)
 
-;; Start mu4e
-(mu4e)
+    ;; Make sure the gnutls command-line utils are installed, package
+    ;; 'gnutls-bin' in Debian/Ubuntu.
+    (use-package smtpmail)
 
-;; Make sure the gnutls command-line utils are installed, package
-;; 'gnutls-bin' in Debian/Ubuntu.
-(use-package smtpmail)
-
-;; Use same authinfo file for work and private emails
-(setq message-send-mail-function 'smtpmail-send-it
-      starttls-use-gnutls t
-      smtpmail-auth-credentials (expand-file-name "~/.authinfo.gpg")
-      smtpmail-debug-info t)
+    ;; Use same authinfo file for work and private emails
+    (setq message-send-mail-function 'smtpmail-send-it
+          starttls-use-gnutls t
+          smtpmail-auth-credentials (expand-file-name "~/.authinfo.gpg")
+          smtpmail-debug-info t)))
 
 ;;
 ;; Scrolling
