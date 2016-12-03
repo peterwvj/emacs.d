@@ -509,6 +509,7 @@
 ;;
 ;; Support for Python
 ;;
+(use-package elpy)
 (elpy-enable)
 
 ;;
