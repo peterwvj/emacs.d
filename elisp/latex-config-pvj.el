@@ -1,5 +1,6 @@
-(require 'tex-site)
-(require 'latex)
+
+(use-package tex
+  :ensure auctex)
 
 ;;
 ;; Set AuxTex to PDF mode
@@ -7,7 +8,10 @@
 (setq TeX-PDF-mode t)
 
 ;; Generate sync file and sync with C-v
-(add-to-list 'TeX-command-list '("latexmk" "latexmk -pdf %t --synctex=1" TeX-run-TeX))
+(eval-after-load
+    "tex" '(add-to-list 'TeX-command-list
+                        '("latexmk" "latexmk -pdf %t --synctex=1" TeX-run-TeX)))
+
 (setq latex-run-command "pdflatex")
 (setq LaTeX-command "latex --synctex=1")
 
@@ -28,14 +32,12 @@
 (setq auto-revert-interval 0.5)
 
 (add-hook 'pdf-view-mode-hook
-  (lambda ()
-    (linum-mode -1)
-  ))
+          (lambda ()
+            (linum-mode -1) ))
 
 (add-hook 'pdf-view-mode-hook
-  (lambda ()
-    (pdf-view-fit-page-to-window)
-  ))
+          (lambda ()
+            (pdf-view-fit-page-to-window) ))
 
 ;; LateX keywords that need colouring
  (setq font-latex-match-reference-keywords

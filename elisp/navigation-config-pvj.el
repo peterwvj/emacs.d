@@ -1,5 +1,5 @@
 
-(require 'ace-window)
+(use-package ace-window)
 
 ;; Copy file path
 (defun pvj/copy-file-path ()
@@ -9,12 +9,7 @@
                 (kill-new buffer-file-name) )))
     (message (concat "Latest kill: " kill))))
 
-(add-to-list 'load-path "~/.emacs.d/elpa/ace-jump-mode-20140616.115/ace-jump-mode.el/in")
-(autoload
-  'ace-jump-mode
-  "ace-jump-mode"
-  "Emacs quick move minor mode"
-  t)
+(use-package ace-jump-mode)
 
 ;; Inspired by http://stackoverflow.com/questions/145291/smart-home-in-emacs/
 (defun pvj/smart-move-to-line-beginning ()

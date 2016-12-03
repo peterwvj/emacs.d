@@ -6,8 +6,8 @@
 ;; eshell config inspired by https://github.com/porterjamesj/.emacs.d/blob/master/user-lisp/setup-eshell.el
 ;;
 
-(require 'eshell)
-(require 'xterm-color)
+(use-package eshell)
+(use-package xterm-color)
 
 (setq eshell-banner-message "")
 
@@ -199,6 +199,6 @@ directory to make multiple eshell windows easier."
 (setq eshell-scroll-to-bottom-on-input t)
 
 ;; Jump to recently visited directories
-(require 'eshell-z)
+(use-package eshell-z)
 
 (provide 'eshell-config-pvj)

@@ -1,13 +1,20 @@
 ;;
 ;; Configuration related to emails
 ;;
-(add-to-list 'load-path "/usr/local/share/emacs/site-lisp/mu4e")
 
-(require 'xwidget)
-(require 'mu4e)
-(require 'org-mu4e)
-(require 'mu4e-contrib)
-(require 'mu4e-maildirs-extension)
+(use-package xwidget)
+
+(use-package mu4e
+  :load-path "/usr/local/share/emacs/site-lisp/mu4e"
+  :ensure f
+  :config 
+  (progn
+    (use-package org-mu4e
+      :ensure f)
+    (use-package mu4e-contrib
+      :ensure f)
+    (use-package mu4e-maildirs-extension
+      :ensure f)))
 
 ;;
 ;; To prevent issue with long email conversations - see

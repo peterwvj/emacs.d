@@ -1,8 +1,10 @@
 ;;
 ;; Calendar configuration
 ;;
-(require 'calfw-cal)
-(require 'calfw-ical)
+(use-package calfw
+  :config 
+  (use-package calfw-ical
+    :ensure f))
 
 (defun pvj/text-from-file (file)
   "Return a file contant as a string"

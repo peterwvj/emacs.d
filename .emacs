@@ -6,6 +6,17 @@
                          ("melpa-stable" . "https://stable.melpa.org/packages/")))
 (package-initialize)
 
+;;
+;; Use 'use-package'
+;;
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
+
+(use-package use-package)
+(setq use-package-always-ensure t)
+(setq use-package-always-pin "melpa")
+
 (add-to-list 'load-path "~/git-repos/emacs-config-pvj/elisp/")
 
 ;; Set the custom file
@@ -25,12 +36,11 @@
 ;;
 ;; Remember recently opened files
 ;;
-(require 'recentf)
 (setq recentf-exclude '("/Maildir/" "/.emacs.d/" ".aspell."))
 (setq recentf-max-saved-items 50)
 
 ;; C-x R to view recently opened files
-(require 'dired+)
+(use-package dired+)
 (setq diredp-hide-details-initially-flag nil)
 (setq diredp-hide-details-propagate-flag nil)
 (setq dired-listing-switches "-alh")
@@ -39,7 +49,7 @@
 ;;
 ;; Configure helm mode
 ;;
-(require 'helm-config)
+(use-package helm)
 (helm-mode 1)
 (global-set-key (kbd "M-x") 'helm-M-x)
 (global-set-key (kbd "C-x r b") 'helm-filtered-bookmarks)
@@ -65,17 +75,17 @@
 ;;
 ;; Helm interface for Emacs 'describe-bindings
 ;;
-(require 'helm-descbinds)
+(use-package helm-descbinds)
 (helm-descbinds-mode)
 
 ;; helm interface for projectile
-(require 'helm-projectile)
+(use-package helm-projectile)
 (projectile-mode)
 (setq projectile-completion-system 'helm)
 (helm-projectile-on)
 
 ;; helm swoop
-(require 'helm-swoop)
+(use-package helm-swoop)
 
 (global-set-key (kbd "M-i") 'helm-swoop)
 (global-set-key (kbd "M-I") 'helm-swoop-back-to-last-point)
@@ -141,7 +151,7 @@
 ;;
 ;; For viewing PDF files
 ;;
-(require 'pdf-tools)
+(use-package pdf-tools)
 (pdf-tools-install)
 
 ;;
@@ -167,7 +177,7 @@
 ;;
 ;; Display current match and total matches in the mode-line in various search modes
 ;;
-(require 'anzu)
+(use-package anzu)
 (global-anzu-mode +1)
 
 (set-face-attribute 'anzu-mode-line nil
@@ -186,7 +196,7 @@
 ;;
 ;; For language analysis
 ;;
-(require 'langtool)
+(use-package langtool)
 (setq langtool-language-tool-jar "/home/peter/tools/LanguageTool-3.4/languagetool-commandline.jar")
 
 ;;
@@ -211,7 +221,7 @@
 ;;
 ;; Highlights delimiters such as parentheses, brackets or braces according to their depth
 ;;
-(require 'rainbow-delimiters)
+(use-package rainbow-delimiters)
 ;; To start the mode automatically in most programming modes (Emacs 24 and above):
 (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
 
@@ -252,7 +262,7 @@
          kill-buffer-query-functions))
 
 ;; Move text
-(require 'move-text)
+(use-package move-text)
 (move-text-default-bindings)
 
 ;;
@@ -299,7 +309,7 @@
 
 
 ;; go-up for eshell
-(require 'eshell-up)
+(use-package eshell-up)
 
 ;;
 ;; eshell configuration
@@ -329,7 +339,7 @@
 ;;
 ;; Highlight the current line
 ;;
-(require 'color)
+(use-package color)
 
 (defun set-hl-line-color-based-on-theme ()
   "Sets the hl-line face to have no foregorund and a background
@@ -374,7 +384,7 @@
 
 ;; Make sure the gnutls command-line utils are installed, package
 ;; 'gnutls-bin' in Debian/Ubuntu.
-(require 'smtpmail)
+(use-package smtpmail)
 
 ;; Use same authinfo file for work and private emails
 (setq message-send-mail-function 'smtpmail-send-it
@@ -395,14 +405,14 @@
 ;;
 ;; Company mode (auto completion)
 ;;
-(require 'company)
+(use-package company)
 (add-hook 'after-init-hook 'global-company-mode)
 (global-set-key (kbd "M-C-/") 'company-complete)
 
 ;;
 ;; Use YASnippet templates
 ;;
-(require 'yasnippet)
+(use-package yasnippet)
 (yas-global-mode 1)
 ;; Remove Yasnippet's default tab key binding
 (define-key yas-minor-mode-map (kbd "<tab>") nil)
@@ -420,14 +430,14 @@
 ;;
 ;; Highlight current line number
 ;;
-(require 'hlinum)
+(use-package hlinum)
 (hlinum-activate)
 (setq linum-highlight-in-all-buffersp t)
 
 ;;
 ;; For moving buffers around
 ;;
-(require 'buffer-move)
+(use-package buffer-move)
 
 (global-set-key (kbd "<f9>") 'revert-buffer)
 
@@ -472,7 +482,7 @@
 ;;
 ;; Validate commit messages
 ;;
-(require 'git-commit)
+(use-package git-commit)
 
 ;;
 ;; Navigation
