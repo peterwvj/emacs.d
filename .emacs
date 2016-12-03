@@ -480,6 +480,7 @@
 (add-hook 'text-mode-hook 'add-current-dictionary)
 
 ;; Setup smart-mode-line
+(use-package smart-mode-line)
 (sml/setup)
 
 ;;
