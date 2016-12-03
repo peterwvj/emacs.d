@@ -153,8 +153,11 @@
 ;;
 ;; For viewing PDF files
 ;;
-(use-package pdf-tools)
-(pdf-tools-install)
+(use-package pdf-tools
+  :if (string-equal system-type "gnu/linux")
+  :config 
+  (pdf-tools-install))
+
 
 ;;
 ;; Disable line numbers in doc-view-mode (avoid Emacs hanging)
