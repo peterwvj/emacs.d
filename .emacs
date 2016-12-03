@@ -238,6 +238,7 @@
 ;; Use the naquadah theme. In addition, the cursor color has been
 ;; changed to green, and the text-selection color (the region face)
 ;; has been changed to blue
+(use-package naquadah-theme)
 (load-theme 'naquadah t)
 
 ;; Display the current column
