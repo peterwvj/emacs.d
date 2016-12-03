@@ -371,8 +371,10 @@
 ;;
 ;; mu4e configuration
 ;;
-(require 'mu4e-config-pvj)
-(global-set-key (kbd "<f2>") 'mu4e)
+(use-package mu4e-config-pvj
+  :if (string-equal system-type "gnu/linux")
+  :ensure f
+  :bind (("<f2>" . mu4e)))
 
 ;;
 ;; imapfilter configuration
