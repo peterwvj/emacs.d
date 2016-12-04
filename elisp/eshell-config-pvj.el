@@ -11,7 +11,7 @@
 
 (setq eshell-banner-message "")
 
-(setq eshell-aliases-file "~/.eshell.aliases")
+(setq eshell-aliases-file (expand-file-name ".eshell.aliases" user-emacs-directory))
 
 (defun eshell-clear-buffer ()
   (interactive)

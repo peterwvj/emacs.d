@@ -16,10 +16,10 @@
 (setq use-package-always-ensure t)
 (setq use-package-always-pin "melpa")
 
-(add-to-list 'load-path "~/git-repos/emacs-config-pvj/elisp/")
+(add-to-list 'load-path (expand-file-name "elisp" user-emacs-directory))
 
 ;; Set the custom file
-(setq custom-file "~/git-repos/emacs-config-pvj/elisp/custom.el")
+(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 (load custom-file)
 
 ;; Get rid of the splash screen and echo area message
@@ -486,7 +486,7 @@
 ;; Magit
 ;;
 (use-package magit)
-(setq magit-repository-directories '("~/git-repos/" "~/git-repos/ovt/externals/"))
+(setq magit-repository-directories '("~/git-repos/" "~/git-repos/ovt/externals/" "~/.emacs.d/"))
 (global-set-key (kbd "C-x g") 'magit-status)
 
 ;;

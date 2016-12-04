@@ -1,4 +1,16 @@
-
-# Emacs
 *~
 \#*
+/session.*
+*.elc
+/.persistent-scratch
+/projectile-bookmarks.eld
+/recentf
+/bookmarks
+/projectile.cache
+/abbrev_defs
+/tramp
+elpa/
+image-dired/
+semanticdb/
+games/
+eshell/
