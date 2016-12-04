@@ -2,6 +2,8 @@
 
 * About this repository
 
+[[https://travis-ci.org/peterwvj/emacs.d.svg?branch=master]]
+
 I have developed a set of configuration files that allow me to
 efficiently carry out my daily work in Emacs. This repository contains
 these configuration files in the hope that they will be useful to
