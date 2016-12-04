@@ -56,6 +56,14 @@ Now, to open a file with Emacs you simply run:
 e <file>
 #+END_SRC
 
+* Testing the configuration
+
+I use [[https://travis-ci.org/][Travis CI]] to test that the configuration works with the most
+recent versions of Emacs. Specifically, I check that it loads with
+Emacs 24.5, 25.1 and bleeding edge snapshots. The approach that I take
+to testing that the configuration loads successfully is inspired by
+that of [[https://github.com/purcell/emacs.d][Steve Purcell]].
+
 * Screenshots
 
 Below are some examples of how Emacs looks when the configuration is
