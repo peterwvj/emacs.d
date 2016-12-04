@@ -201,7 +201,7 @@
 ;; For language analysis
 ;;
 (use-package langtool)
-(setq langtool-language-tool-jar "/home/peter/tools/LanguageTool-3.4/languagetool-commandline.jar")
+(setq langtool-language-tool-jar "~/tools/LanguageTool-3.4/languagetool-commandline.jar")
 
 ;;
 ;; Enable word wrapping
