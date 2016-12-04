@@ -1,27 +1,29 @@
 #+STARTUP: showall
 
-* About this repository
+* My Emacs configuration
 
 [[https://travis-ci.org/peterwvj/emacs.d.svg?branch=master]]
 
 I have developed a set of configuration files that allow me to
 efficiently carry out my daily work in Emacs. This repository contains
 these configuration files in the hope that they will be useful to
-others. To synchronise emails I use OfflineIMAP. I keep my OfflineIMAP
-configuration files in one of my other [[https://github.com/peterwvj/offlineimap-config-pvj/][repositories]].
+others.
 
 * Repository structure
 
 The Emacs initialisation file, =init.el=, is located in the root of
-the repository. It loads several other features from the =elisp=
-folder. As an example, =elisp/mu4e-config.el= contains my [[http://www.djcbsoftware.nl/code/mu/mu4e.html][mu4e]] (email
-client) configuration.
+this repository. It loads several other configuration files contained
+in the =elisp= folder. As an example, =elisp/mu4e-config.el= contains
+my [[http://www.djcbsoftware.nl/code/mu/mu4e.html][mu4e]] (email client) configuration.
 
 * Configuration highlights
 
 The configuration files are used to:
 
 - Manage multiple email accounts using mu4e
+  - To synchronise and filter emails I use OfflineIMAP and
+    [[https://github.com/lefcha/imapfilter][imapfilter]]. I keep my OfflineIMAP and imapfilter configuration
+    files in one of my other [[https://github.com/peterwvj/offlineimap-config-pvj/][repositories]].
 - Work with LaTeX using [[https://www.gnu.org/software/auctex/][AUCTeX]] and [[https://github.com/politza/pdf-tools][pdf-tools]]
 - Configure my terminal, =eshell=
 - Manage Git repositories
