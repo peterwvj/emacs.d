@@ -486,6 +486,7 @@
 ;;
 ;; Magit
 ;;
+(use-package magit)
 (setq magit-repository-directories '("~/git-repos/" "~/git-repos/ovt/externals/"))
 (global-set-key (kbd "C-x g") 'magit-status)
 
