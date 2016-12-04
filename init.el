@@ -305,7 +305,8 @@
 ;;
 ;; Hide scroll-bar
 ;;
-(scroll-bar-mode -1)
+(when (null noninteractive)
+  (scroll-bar-mode -1))
 
 ;;
 ;; Alarm bell config
