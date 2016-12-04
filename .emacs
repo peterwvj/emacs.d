@@ -153,7 +153,7 @@
 ;; For viewing PDF files
 ;;
 (use-package pdf-tools
-  :if (string-equal system-type "gnu/linux")
+  :if (and (string-equal system-type "gnu/linux") (null noninteractive))
   :config 
   (pdf-tools-install))
 
