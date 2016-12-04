@@ -10,8 +10,8 @@ configuration files in one of my other [[https://github.com/peterwvj/offlineimap
 
 * Repository structure
 
-The Emacs initialisation file, =.emacs=, is located in the root of the
-repository. It loads several other features from the =elisp=
+The Emacs initialisation file, =init.el=, is located in the root of
+the repository. It loads several other features from the =elisp=
 folder. As an example, =elisp/mu4e-config.el= contains my [[http://www.djcbsoftware.nl/code/mu/mu4e.html][mu4e]] (email
 client) configuration.
 
