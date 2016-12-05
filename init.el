@@ -201,7 +201,7 @@
 ;;
 ;; Put backup files in same directory (to avoid having emacs creating files everywhere)
 ;;
-(setq backup-directory-alist `(("." . "~/.saves")))
+(setq backup-directory-alist `(("." . ,(expand-file-name ".emacs-backup" user-emacs-directory))))
 
 ;;
 ;;  Show matching parentheses
