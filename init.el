@@ -496,6 +496,13 @@
 (use-package git-commit)
 
 ;;
+;; Highlight changes in the fringe
+;;
+(use-package diff-hl
+  :config
+  (global-diff-hl-mode))
+
+;;
 ;; Navigation
 ;;
 (require 'navigation-config-pvj)
