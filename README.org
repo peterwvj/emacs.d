@@ -27,7 +27,6 @@ The configuration files are used to:
 - Work with LaTeX using [[https://www.gnu.org/software/auctex/][AUCTeX]] and [[https://github.com/politza/pdf-tools][pdf-tools]]
 - Configure my terminal, =eshell=
 - Manage Git repositories
-- Manage calendars
 - Etc.
 
 * Using the configuration

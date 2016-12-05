@@ -464,12 +464,6 @@
                     (beginning-of-buffer (goto-char (point-min))))))
 
 ;;
-;; Calendar configuration
-;;
-(require 'calfw-config-pvj)
-(global-set-key (kbd "<f10>")   'show-calendar)
-
-;;
 ;;  Mode-line configuration
 ;;
 (defun add-current-dictionary ()
