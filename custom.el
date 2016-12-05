@@ -27,4 +27,5 @@
  '(mu4e-replied-face ((t (:inherit font-lock-builtin-face :foreground "yellow" :weight normal))))
  '(mu4e-unread-face ((t (:inherit font-lock-keyword-face :foreground "green" :weight bold))))
  '(region ((t (:background "DeepSkyBlue4"))))
+ '(show-paren-match ((t (:background "deep sky blue" :foreground "black" :weight extra-bold))))
  '(term-color-blue ((t (:background "deep sky blue" :foreground "deep sky blue"))) t))
