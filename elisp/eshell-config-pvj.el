@@ -66,13 +66,9 @@ PWD is not in a git repo (or the git command is not found)."
   (interactive)
   (if (and (eshell-search-path "git")
            (locate-dominating-file pwd ".git"))
-      (let ((git-output (shell-command-to-string (concat "git branch | grep '\\*' | sed -e 's/^\\* //'"))))
+      (let ((git-output (shell-command-to-string (concat "git rev-parse --abbrev-ref HEAD"))))
         (propertize
-         (concat "[±:"
-                 (if (> (length git-output) 0)
-                     (substring git-output 0 -1)
-                   "no branch")
-                 "]")
+         (concat "[±:" (substring git-output 0 -1) "]")
          'face `(:foreground "#D1D62D")))
     (propertize
      "[±]" 'face `(:foreground "#555555"))))
