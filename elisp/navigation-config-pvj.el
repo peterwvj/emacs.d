@@ -1,5 +1,6 @@
 
 (use-package ace-window)
+(setq aw-scope 'frame)
 
 ;; Copy file path
 (defun pvj/copy-file-path ()
