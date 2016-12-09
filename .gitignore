@@ -3,6 +3,7 @@
 /session.*
 *.elc
 /.persistent-scratch
+/network-security.data
 /projectile-bookmarks.eld
 /recentf
 /bookmarks
