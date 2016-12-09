@@ -359,7 +359,7 @@
 ;; mu4e configuration
 ;;
 (use-package mu4e-config-pvj
-  :if (string-equal system-type "gnu/linux")
+  :if (and (string-equal system-type "gnu/linux") (null noninteractive))
   :ensure f
   :demand
   :bind (("<f2>" . mu4e))
