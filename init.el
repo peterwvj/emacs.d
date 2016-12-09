@@ -36,7 +36,7 @@
 ;;
 ;; Remember recently opened files
 ;;
-(setq recentf-exclude '("/Maildir/" "/.emacs.d/" ".aspell."))
+(setq recentf-exclude '("/Maildir/" ".aspell."))
 (setq recentf-max-saved-items 50)
 
 ;; C-x R to view recently opened files
