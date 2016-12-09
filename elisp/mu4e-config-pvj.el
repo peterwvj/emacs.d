@@ -2,8 +2,6 @@
 ;; Configuration related to emails
 ;;
 
-(use-package xwidget)
-
 (use-package mu4e
   :load-path "/usr/local/share/emacs/site-lisp/mu4e"
   :ensure f
