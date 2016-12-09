@@ -508,6 +508,11 @@
 (require 'diminish-config-pvj)
 
 ;;
+;; Clojure Interactive Development Environment that Rocks
+;;
+(use-package cider)
+
+;;
 ;; Utility functions
 ;;
 (require 'util-pvj)
