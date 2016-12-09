@@ -361,6 +361,7 @@
 (use-package mu4e-config-pvj
   :if (string-equal system-type "gnu/linux")
   :ensure f
+  :demand
   :bind (("<f2>" . mu4e))
   :config
   (progn
