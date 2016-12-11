@@ -27,6 +27,9 @@
 (eval-after-load "abbrev"
     '(diminish 'abbrev-mode))
 
+(eval-after-load "hungry-delete"
+    '(diminish 'hungry-delete-mode))
+
 (diminish 'visual-line-mode)
 
 (diminish 'outline-minor-mode)
