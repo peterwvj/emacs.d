@@ -24,6 +24,7 @@
  '(cursor ((t (:background "yellow"))))
  '(eshell-prompt ((t (:foreground "green yellow" :weight bold))))
  '(linum ((t (:inherit (shadow default) :foreground "gray40"))))
+ '(mu4e-header-highlight-face ((t (:inherit region))))
  '(mu4e-replied-face ((t (:inherit font-lock-builtin-face :foreground "yellow" :weight normal))))
  '(mu4e-unread-face ((t (:inherit font-lock-keyword-face :foreground "green" :weight bold))))
  '(region ((t (:background "DeepSkyBlue4"))))
