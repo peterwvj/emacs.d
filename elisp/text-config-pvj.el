@@ -3,6 +3,12 @@
 (global-set-key (kbd "C-=") 'er/expand-region)
 
 ;;
+;; Hungry deletion for programming modes
+;;
+(use-package hungry-delete)
+(global-hungry-delete-mode)
+
+;;
 ;; Spell checking
 ;;
 (defconst danish-dictionary "danish" "String used to represent the danish dictionary")
