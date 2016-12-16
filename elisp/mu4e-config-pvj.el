@@ -69,7 +69,7 @@
                      (smtpmail-smtp-service . 587)))
          ,(make-mu4e-context
            :name "Work"
-           :enter-func (lambda () (mu4e-message "Switch to the Work context"))
+           ;; :enter-func (lambda () (mu4e-message "Switch to the Work context"))
            ;; leave-fun not defined
            :match-func (lambda (msg)
                          (when msg 
