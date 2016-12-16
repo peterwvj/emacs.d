@@ -169,9 +169,8 @@
 ;; https://github.com/munen/emacs.d/blob/master/mu4e-config.el
 (defvar spam-folders "maildir:/private/[Gmail].Spam OR maildir:/work/\"Junk E-Mail\"")
 (defvar draft-folders "maildir:/private/[Gmail].Drafts OR maildir:/work/Drafts")
-(defvar not-trash "NOT (maildir:/private/[Gmail].Trash OR maildir:/work/\"Deleted Items\")")
 (defvar not-spam (concat "NOT (" spam-folders ")"))
-(defvar unread (concat not-spam " AND flag:unread AND " not-trash))
+(defvar unread (concat not-spam " AND flag:unread"))
 
 (add-to-list 'mu4e-bookmarks
              '((concat not-spam " AND date:today..now")                  "Today's messages"     ?t))
