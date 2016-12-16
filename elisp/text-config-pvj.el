@@ -106,6 +106,11 @@ there's a region, all lines that region covers will be duplicated."
 ;; Enable smart paring
 (electric-pair-mode)
 
+(defun pvj/inhibit-electric-pair-mode (char)
+  (minibufferp))
+
+(setq electric-pair-inhibit-predicate #'pvj/inhibit-electric-pair-mode)
+
 ;; Make lambdas appear as λ and so on
 (setq prettify-symbols-unprettify-at-point 'right-edge)
 (global-prettify-symbols-mode)
