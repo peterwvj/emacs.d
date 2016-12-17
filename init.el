@@ -513,6 +513,19 @@
 (use-package cider)
 
 ;;
+;; Web feed reader
+;;
+(use-package elfeed)
+
+(setq elfeed-feeds
+      '("http://ekstrabladet.dk/rssfeed/all"
+        "https://newz.dk/rss"
+        "http://planet.emacsen.org/atom.xml"
+        "http://www.bold.dk/feed/rss"
+        "http://www.dr.dk/nyheder/service/feeds/allenyheder"
+        "http://feeds.tv2.dk/nyheder/rss"))
+
+;;
 ;; Utility functions
 ;;
 (require 'util-pvj)
