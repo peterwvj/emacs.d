@@ -9,6 +9,12 @@
 (global-hungry-delete-mode)
 
 ;;
+;; Visual feedback on text operations
+;;
+(use-package volatile-highlights)
+(volatile-highlights-mode t)
+
+;;
 ;; Spell checking
 ;;
 (defconst danish-dictionary "danish" "String used to represent the danish dictionary")
