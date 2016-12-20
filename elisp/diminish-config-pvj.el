@@ -30,6 +30,9 @@
 (eval-after-load "hungry-delete"
     '(diminish 'hungry-delete-mode))
 
+(eval-after-load "volatile-highlights"
+    '(diminish 'volatile-highlights-mode))
+
 (diminish 'visual-line-mode)
 
 (diminish 'outline-minor-mode)
