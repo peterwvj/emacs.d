@@ -518,10 +518,8 @@
 (use-package elfeed)
 
 (setq elfeed-feeds
-      '(("http://ekstrabladet.dk/rssfeed/all" eb)
-        ("https://newz.dk/rss" it)
+      '(("https://newz.dk/rss" it)
         ("http://planet.emacsen.org/atom.xml" emacs)
-        ("http://www.bold.dk/feed/rss" bold)
         ("http://feeds.tv2.dk/nyheder/rss" tv2)))
 
 ;;
