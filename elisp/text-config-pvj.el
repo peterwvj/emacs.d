@@ -29,10 +29,8 @@
 (setq ispell-dictionary british-dictionary)
 (setq ispell-current-dictionary british-dictionary)
 
-(dolist (hook '(text-mode-hook))
- (add-hook hook (lambda () (flyspell-mode 1))))
-(dolist (hook '(change-log-mode-hook log-edit-mode-hook))
-  (add-hook hook (lambda () (flyspell-mode -1))))
+(add-hook 'text-mode-hook 'flyspell-mode)
+(add-hook 'prog-mode-hook 'flyspell-prog-mode)
 
 ;; Toggle between british/danish dictionaries and input methods. Note
 ;; that when the input mode is set to danish (i.e. danish-postfix)
