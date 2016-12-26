@@ -9,6 +9,11 @@
 (global-hungry-delete-mode)
 
 ;;
+;; Go to last change
+;;
+(use-package goto-chg)
+
+;;
 ;; Visual feedback on text operations
 ;;
 (use-package volatile-highlights)
