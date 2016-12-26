@@ -533,3 +533,11 @@
 ;;
 (require 'util-pvj)
 (global-set-key (kbd "<f5>") 'pvj/toggle-window-split)
+
+;;
+;; ediff configuration
+;;
+;; To make ‘ediff’ operate on selected-frame use the following:
+(setq ediff-window-setup-function 'ediff-setup-windows-plain)
+;; To make ediff to be horizontally split use:
+(setq ediff-split-window-function 'split-window-horizontally)
