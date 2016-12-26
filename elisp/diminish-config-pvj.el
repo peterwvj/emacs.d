@@ -25,13 +25,16 @@
   '(diminish 'reftex-mode))
 
 (eval-after-load "abbrev"
-    '(diminish 'abbrev-mode))
+  '(diminish 'abbrev-mode))
 
 (eval-after-load "hungry-delete"
-    '(diminish 'hungry-delete-mode))
+  '(diminish 'hungry-delete-mode))
 
 (eval-after-load "volatile-highlights"
-    '(diminish 'volatile-highlights-mode))
+  '(diminish 'volatile-highlights-mode))
+
+(eval-after-load "google-this"
+  '(diminish 'google-this-mode))
 
 (diminish 'visual-line-mode)
 

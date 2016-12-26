@@ -523,6 +523,12 @@
         ("http://feeds.tv2.dk/nyheder/rss" tv2)))
 
 ;;
+;; Launch google searches from within Emacs
+;;
+(use-package google-this)
+(google-this-mode 1)
+
+;;
 ;; Utility functions
 ;;
 (require 'util-pvj)
