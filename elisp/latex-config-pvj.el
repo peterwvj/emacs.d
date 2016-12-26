@@ -63,6 +63,13 @@
              (reftex-mode)))
 
 ;;
+;; Retrieve BibTeX entries
+;;
+;; Call 'gscholar-bibtex' to retrieve BibTeX entries from Google
+;; Scholar, ACM Digital Library, IEEE Xplore and DBLP.
+(use-package gscholar-bibtex)
+
+;;
 ;; Outline minor mode
 ;;
 (add-hook 'LaTeX-mode-hook 'outline-minor-mode)
