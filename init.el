@@ -541,3 +541,11 @@
 (setq ediff-window-setup-function 'ediff-setup-windows-plain)
 ;; To make ediff to be horizontally split use:
 (setq ediff-split-window-function 'split-window-horizontally)
+
+;;
+;; Compile Elisp sources automatically
+;;
+(setq load-prefer-newer t)
+(use-package auto-compile)
+(auto-compile-on-load-mode)
+(auto-compile-on-save-mode)
