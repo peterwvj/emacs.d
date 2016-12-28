@@ -420,11 +420,6 @@
 (define-key yas-minor-mode-map (kbd "\C-c TAB") 'yas-expand)
 
 ;;
-;; org-mode
-;;
-(setq org-support-shift-select 'always) ;; Allow shift-selection in org-mode
-
-;;
 ;; Highlight current line number
 ;;
 (use-package hlinum)

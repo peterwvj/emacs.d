@@ -20,6 +20,13 @@
 (volatile-highlights-mode t)
 
 ;;
+;; org-mode configuration
+;;
+;; Allow shift-selection in org-mode
+(setq org-support-shift-select 'always) 
+
+(setq org-agenda-files '("~/agenda.org")) 
+;;
 ;; Show org-mode bullets as UTF-8 characters
 ;;
 (use-package org-bullets)
