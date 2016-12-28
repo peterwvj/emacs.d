@@ -231,11 +231,11 @@
 (setq column-number-mode t)
 
 ;;
-;; Show file name of current buffer (title frame currently disabled)
+;; Show file name of current buffer
 ;;
-(setq frame-title-format
-     (list (format "%s %%S: %%j " (system-name))
-       '(buffer-file-name "%f" (dired-directory dired-directory "%b"))))
+;; (setq frame-title-format
+;;      (list (format "%s %%S: %%j " (system-name))
+;;        '(buffer-file-name "%f" (dired-directory dired-directory "%b"))))
 
 (put 'upcase-region 'disabled nil)
 
