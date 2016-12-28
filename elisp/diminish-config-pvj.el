@@ -6,7 +6,7 @@
 (eval-after-load "projectile"
   '(diminish 'projectile-mode))
 
-(eval-after-load "helm"
+(eval-after-load "helm-mode"
   '(diminish 'helm-mode))
 
 ;; Use '✈' to show that flyspell is enabled
