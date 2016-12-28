@@ -20,6 +20,12 @@
 (volatile-highlights-mode t)
 
 ;;
+;; Show org-mode bullets as UTF-8 characters
+;;
+(use-package org-bullets)
+(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+
+;;
 ;; Spell checking
 ;;
 (defconst danish-dictionary "danish" "String used to represent the danish dictionary")
