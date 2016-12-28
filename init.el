@@ -458,6 +458,7 @@
 
 ;; Setup smart-mode-line
 (use-package smart-mode-line)
+(setq sml/theme 'respectful)
 (sml/setup)
 
 ;;
