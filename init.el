@@ -2,9 +2,7 @@
 ;; Increase the buffer size of *Messages*
 (setq message-log-max 20000)
 
-;;
 ;; Increase the garbage collection threshold during startup
-;;
 (defconst pvj/default-gc-cons-threshold gc-cons-threshold)
 (setq gc-cons-threshold (* 256 1024 1024))
 (add-hook 'after-init-hook
