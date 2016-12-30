@@ -173,23 +173,36 @@
 ;; Re-define all standard bookmarks to not include the spam folders
 ;; for searches - inspired by
 ;; https://github.com/munen/emacs.d/blob/master/mu4e-config.el
+
+;;
+;; 'unread' bookmark:
+;;
+;; A private mail is considered 'unread' only if it is contained in
+;; the private INBOX folder. The reason for not considering any of the
+;; other Gmail folders is that Gmail tend to mark mails as 'unread'
+;; after they have been marked as 'read' and moved from the INBOX to
+;; some other folder.
+;;
+;; A work related mail is considered 'unread' if it is flagged
+;; accordingly.
+;;
+;; Since I have configured imapfilter to flag spam as 'read' (or seen)
+;; these mails are not considered in this bookmark (as they will never
+;; be 'unread' anyway)
+;;
+(defvar unread "flag:unread AND (maildir:/private/INBOX OR maildir:/work/*)")
 (defvar spam-folders "maildir:/private/[Gmail].Spam OR maildir:/work/\"Junk E-Mail\"")
-(defvar draft-folders "maildir:/private/[Gmail].Drafts OR maildir:/work/Drafts")
 (defvar not-spam (concat "NOT (" spam-folders ")"))
-(defvar unread (concat not-spam " AND flag:unread"))
+(defvar draft-folders "maildir:/private/[Gmail].Drafts OR maildir:/work/Drafts")
 
 (add-to-list 'mu4e-bookmarks
-             '((concat not-spam " AND date:today..now")                  "Today's messages"     ?t))
+             '((concat not-spam " AND mime:image/*") "Messages with images" ?p))
 (add-to-list 'mu4e-bookmarks
-             '((concat not-spam " AND date:7d..now")                     "Last 7 days"          ?w))
+             '(spam-folders "All spambuckets" ?S))
 (add-to-list 'mu4e-bookmarks
-             '((concat not-spam " AND mime:image/*")                     "Messages with images" ?p))
+             '(draft-folders "All drafts" ?d))
 (add-to-list 'mu4e-bookmarks
-             '(spam-folders "All spambuckets"     ?S))
-(add-to-list 'mu4e-bookmarks
-             '(draft-folders "All drafts"     ?d))
-(add-to-list 'mu4e-bookmarks
-             '(unread "Unread messages"      ?u))
+             '(unread "Unread messages" ?u))
 
 ;; Email notifications
 (mu4e-alert-set-default-style 'libnotify)
