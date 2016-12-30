@@ -1,4 +1,7 @@
 
+;; Increase the buffer size of *Messages*
+(setq message-log-max 20000)
+
 (setq package-archives '(
                          ("gnu" . "https://elpa.gnu.org/packages/")
                          ("melpa" . "https://melpa.org/packages/")
