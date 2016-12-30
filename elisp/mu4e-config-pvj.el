@@ -237,16 +237,20 @@
 (defun pvj/mu4e-maildirs-extension-propertize-unread-only (item)
   "Propertize only the maildir unread count using ITEM plist."
   (let ((unread (or (plist-get item :unread) 0))
-        (total (or (plist-get item :total) 0)))
-    (format "\t%s%s %s (%s/%s)"
-            (plist-get item :indent)
-            (plist-get item :prefix)
-            (plist-get item :name)
-            (propertize (number-to-string unread)
-                        'face (cond
-                               ((> unread 0) 'mu4e-maildirs-extension-maildir-hl-face)
-                               (t            'mu4e-maildirs-extension-maildir-face)))
-            total)))
+        (total (or (plist-get item :total) 0))
+        (name (plist-get item :name)))
+    (concat (format "\t%s%s %s "
+                    (plist-get item :indent)
+                    (plist-get item :prefix)
+                    name)
+            (if (or (string-match-p "work" name) (string-match-p "private" name))
+                (concat "(" (number-to-string total) ")")
+              (format "(%s/%s)"
+                      (propertize (number-to-string unread)
+                                  'face (cond
+                                         ((> unread 0) 'mu4e-maildirs-extension-maildir-hl-face)
+                                         (t            'mu4e-maildirs-extension-maildir-face)))
+                      total)))))
 
 (setq mu4e-maildirs-extension-propertize-func 'pvj/mu4e-maildirs-extension-propertize-unread-only)
 
