@@ -39,4 +39,11 @@
       (kill-new contents)
       filePath)))
 
+(defun pvj/show-agenda ()
+  (interactive)
+  (delete-other-windows)
+  (find-file "~/agenda.org")
+  (org-agenda-list)
+  (other-window -1))
+
 (provide 'util-pvj)

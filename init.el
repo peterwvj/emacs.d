@@ -185,7 +185,7 @@
 (global-set-key (kbd "C-w") 'pvj/kill-word-or-region)
 (global-set-key (kbd "<f6>") 'helm-show-kill-ring)
 (global-set-key (kbd "C-c ;") 'comment-or-uncomment-region)
-
+(global-set-key (kbd "<f1>")   'pvj/show-agenda)
 
 ;;
 ;; Display current match and total matches in the mode-line in various search modes
@@ -493,7 +493,6 @@
 ;; Navigation
 ;;
 (require 'navigation-config-pvj)
-(global-set-key (kbd "<f1>")   'pvj/copy-file-path)
 (define-key global-map (kbd "C-c C-SPC") 'ace-jump-mode)
 (global-set-key (kbd "C-l") 'goto-line)
 (global-set-key (kbd "<home>") 'pvj/smart-move-to-line-beginning)
