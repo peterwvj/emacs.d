@@ -14,6 +14,11 @@
 (use-package goto-chg)
 
 ;;
+;; Look up the definition of a word
+;;
+(use-package define-word)
+
+;;
 ;; Visual feedback on text operations
 ;;
 (use-package volatile-highlights)
