@@ -39,6 +39,13 @@
 
 (setq org-src-tab-acts-natively t)
 
+(setq org-link-frame-setup '((vm . vm-visit-folder-other-frame)
+                             (vm-imap . vm-visit-imap-folder-other-frame)
+                             (gnus . org-gnus-no-new-news)
+                             ;; Open file in current window
+                             (file . find-file)
+                             (wl . wl-other-frame)))
+
 ;;
 ;; Spell checking
 ;;
