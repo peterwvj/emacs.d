@@ -198,6 +198,11 @@
 (defvar not-spam (concat "NOT (" spam-folders ")"))
 (defvar draft-folders "maildir:/private/[Gmail].Drafts OR maildir:/work/Drafts")
 
+
+(add-to-list 'mu4e-bookmarks
+             '((concat not-spam " AND date:today..now") "Today's messages" ?t))
+(add-to-list 'mu4e-bookmarks
+             '((concat not-spam " AND date:7d..now") "Last 7 days" ?w))
 (add-to-list 'mu4e-bookmarks
              '((concat not-spam " AND mime:image/*") "Messages with images" ?p))
 (add-to-list 'mu4e-bookmarks
