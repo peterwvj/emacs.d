@@ -110,8 +110,11 @@
 ;; Don't save message to Sent Messages, GMail/IMAP will take care of this
 ;; (setq mu4e-sent-messages-behavior 'delete)
 
-;; don't keep message buffers around
+;; Don't keep message buffers around
 (setq message-kill-buffer-on-exit t)
+
+;; Show the email in the address field (rather than only the name)
+(setq mu4e-view-show-addresses t)
 
 ;; Setup some handy shortcuts
 (setq mu4e-maildir-shortcuts
