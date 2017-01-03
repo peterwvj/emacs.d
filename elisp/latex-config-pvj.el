@@ -28,8 +28,11 @@
           '(lambda ()
              (TeX-source-correlate-mode 1)))
 
-(add-hook 'pdf-view-mode-hook 'auto-revert-mode)
-(setq auto-revert-interval 0.5)
+(add-hook 'TeX-after-compilation-finished-functions
+          #'TeX-revert-document-buffer)
+
+;; (add-hook 'pdf-view-mode-hook 'auto-revert-mode)
+;; (setq auto-revert-interval 0.5)
 
 (add-hook 'pdf-view-mode-hook
           (lambda ()
