@@ -157,8 +157,7 @@
 ;;
 ;; Enable undo-tree
 ;;
-(use-package undo-tree)
-(global-undo-tree-mode)
+(use-package undo-tree :config (global-undo-tree-mode))
 
 ;;
 ;; Show line numbers
@@ -177,7 +176,6 @@
   :if (and (string-equal system-type "gnu/linux") (null noninteractive))
   :config 
   (pdf-tools-install))
-
 
 ;;
 ;; Disable line numbers in doc-view-mode (avoid Emacs hanging)
@@ -207,17 +205,18 @@
 ;;
 ;; Display current match and total matches in the mode-line in various search modes
 ;;
-(use-package anzu)
-(global-anzu-mode +1)
-
-(define-key isearch-mode-map [remap isearch-query-replace]  #'anzu-isearch-query-replace)
-(define-key isearch-mode-map [remap isearch-query-replace-regexp] #'anzu-isearch-query-replace-regexp)
+(use-package anzu
+  :config
+  (global-anzu-mode +1)
+  (define-key isearch-mode-map [remap isearch-query-replace]  #'anzu-isearch-query-replace)
+  (define-key isearch-mode-map [remap isearch-query-replace-regexp] #'anzu-isearch-query-replace-regexp))
 
 ;;
 ;; For language analysis
 ;;
-(use-package langtool)
-(setq langtool-language-tool-jar "~/tools/LanguageTool-3.4/languagetool-commandline.jar")
+(use-package langtool
+  :config
+  (setq langtool-language-tool-jar "~/tools/LanguageTool-3.4/languagetool-commandline.jar"))
 
 ;;
 ;; Enable word wrapping
@@ -238,9 +237,10 @@
 ;;
 ;; Highlights delimiters such as parentheses, brackets or braces according to their depth
 ;;
-(use-package rainbow-delimiters)
-;; To start the mode automatically in most programming modes (Emacs 24 and above):
-(add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
+(use-package rainbow-delimiters
+  :config
+  ;; To start the mode automatically in most programming modes (Emacs 24 and above):
+  (add-hook 'prog-mode-hook #'rainbow-delimiters-mode))
 
 ;;
 ;; No blinking cursor
@@ -250,8 +250,10 @@
 ;; Use the naquadah theme. In addition, the cursor color has been
 ;; changed to green, and the text-selection color (the region face)
 ;; has been changed to blue
-(use-package naquadah-theme)
-(load-theme 'naquadah t)
+(use-package naquadah-theme
+  :demand
+  :config
+  (load-theme 'naquadah t))
 
 ;; Display the current column
 (setq column-number-mode t)
@@ -280,8 +282,9 @@
          kill-buffer-query-functions))
 
 ;; Move text
-(use-package move-text)
-(move-text-default-bindings)
+(use-package move-text
+  :config
+  (move-text-default-bindings))
 
 ;;
 ;; Disable auto-copy to clipboard for mouse
@@ -428,29 +431,33 @@
 ;;
 ;; Company mode (auto completion)
 ;;
-(use-package company)
-(add-hook 'after-init-hook 'global-company-mode)
-(global-set-key (kbd "M-C-/") 'company-complete)
+(use-package company
+  :config
+  (add-hook 'after-init-hook 'global-company-mode)
+  (global-set-key (kbd "M-C-/") 'company-complete))
 
 ;;
 ;; Use YASnippet templates
 ;;
-(use-package yasnippet)
-(yas-global-mode 1)
-;; Remove Yasnippet's default tab key binding
-(define-key yas-minor-mode-map (kbd "<tab>") nil)
-(define-key yas-minor-mode-map (kbd "TAB") nil)
-;; Set Yasnippet's key binding to shift+tab
-(define-key yas-minor-mode-map (kbd "<backtab>") 'yas-expand)
-;; Alternatively use Control-c + tab
-(define-key yas-minor-mode-map (kbd "\C-c TAB") 'yas-expand)
+(use-package yasnippet
+  :config
+  (yas-global-mode 1)
+  ;; Remove Yasnippet's default tab key binding
+  (define-key yas-minor-mode-map (kbd "<tab>") nil)
+  (define-key yas-minor-mode-map (kbd "TAB") nil)
+  ;; Set Yasnippet's key binding to shift+tab
+  (define-key yas-minor-mode-map (kbd "<backtab>") 'yas-expand)
+  ;; Alternatively use Control-c + tab
+  (define-key yas-minor-mode-map (kbd "\C-c TAB") 'yas-expand))
 
 ;;
 ;; Highlight current line number
 ;;
-(use-package hlinum)
-(hlinum-activate)
-(setq linum-highlight-in-all-buffersp t)
+(use-package hlinum
+  :demand
+  :config
+  (hlinum-activate)
+  (setq linum-highlight-in-all-buffersp t))
 
 ;;
 ;; For moving buffers around
@@ -483,16 +490,20 @@
 (add-hook 'text-mode-hook 'add-current-dictionary)
 
 ;; Setup smart-mode-line
-(use-package smart-mode-line)
-(setq sml/theme 'respectful)
-(sml/setup)
+(use-package smart-mode-line
+  :demand
+  :config
+  (setq sml/theme 'respectful)
+  (sml/setup))
 
 ;;
-;; Magit
+;; Git Porcelain inside Emacs
 ;;
-(use-package magit)
-(setq magit-repository-directories `("~/git-repos/" "~/git-repos/ovt/externals/" ,user-emacs-directory))
-(global-set-key (kbd "C-x g") 'magit-status)
+(use-package magit
+  :bind
+  (("C-x g" . magit-status))
+  :config
+  (setq magit-repository-directories `("~/git-repos/" "~/git-repos/ovt/externals/" ,user-emacs-directory)))
 
 ;;
 ;; Validate commit messages
@@ -520,8 +531,9 @@
 ;;
 ;; Support for Python
 ;;
-(use-package elpy)
-(elpy-enable)
+(use-package elpy
+  :config
+  (elpy-enable))
 
 ;;
 ;; Diminish
@@ -536,18 +548,19 @@
 ;;
 ;; Web feed reader
 ;;
-(use-package elfeed)
-
-(setq elfeed-feeds
-      '(("https://newz.dk/rss" it)
-        ("http://planet.emacsen.org/atom.xml" emacs)
-        ("http://feeds.tv2.dk/nyheder/rss" tv2)))
+(use-package elfeed
+  :config
+  (setq elfeed-feeds
+        '(("https://newz.dk/rss" it)
+          ("http://planet.emacsen.org/atom.xml" emacs)
+          ("http://feeds.tv2.dk/nyheder/rss" tv2))))
 
 ;;
 ;; Launch google searches from within Emacs
 ;;
-(use-package google-this)
-(google-this-mode 1)
+(use-package google-this
+  :config
+  (google-this-mode 1))
 
 ;;
 ;; Utility functions
@@ -567,6 +580,7 @@
 ;; Compile Elisp sources automatically
 ;;
 (setq load-prefer-newer t)
-(use-package auto-compile)
-(auto-compile-on-load-mode)
-(auto-compile-on-save-mode)
+(use-package auto-compile
+  :config
+  (auto-compile-on-load-mode)
+  (auto-compile-on-save-mode))
