@@ -21,9 +21,10 @@
   (package-refresh-contents)
   (package-install 'use-package))
 
-(use-package use-package)
-(setq use-package-always-ensure t)
-(setq use-package-always-pin "melpa")
+(use-package use-package
+  :config
+  (setq use-package-always-ensure t)
+  (setq use-package-always-pin "melpa"))
 
 (add-to-list 'load-path (expand-file-name "elisp" user-emacs-directory))
 
@@ -38,9 +39,10 @@
 ;;
 ;; Use persistent scratch buffer
 ;;
-(use-package persistent-scratch)
-(setq initial-scratch-message "")
-(persistent-scratch-setup-default)
+(use-package persistent-scratch
+  :config
+  (setq initial-scratch-message "")
+  (persistent-scratch-setup-default))
 
 ;;
 ;; Remember recently opened files
@@ -48,12 +50,15 @@
 (setq recentf-exclude '("/Maildir/" ".aspell."))
 (setq recentf-max-saved-items 50)
 
-;; C-x R to view recently opened files
-(use-package dired+)
-(setq diredp-hide-details-initially-flag nil)
-(setq diredp-hide-details-propagate-flag nil)
-(setq dired-listing-switches "-alh")
-(define-key dired-mode-map (kbd "M-s") 'diredp-find-a-file)
+;;
+;; dired+ configuration
+;;
+(use-package dired+
+  :config
+  (setq diredp-hide-details-initially-flag nil)
+  (setq diredp-hide-details-propagate-flag nil)
+  (setq dired-listing-switches "-alh")
+  (define-key dired-mode-map (kbd "M-s") 'diredp-find-a-file))
 
 ;;
 ;; Tree-based file explorer
@@ -72,28 +77,26 @@
 ;;
 ;; Configure helm mode
 ;;
-(use-package helm)
-(helm-mode 1)
-(global-set-key (kbd "M-x") 'helm-M-x)
-(global-set-key (kbd "C-x r b") 'helm-filtered-bookmarks)
-;; To open as SU type C-c r (after typing C-x C-f)
-(global-set-key (kbd "C-x C-f") 'helm-find-files)
-(global-set-key (kbd "C-x C-r") 'helm-recentf)
-(global-set-key (kbd "C-c m") 'helm-mu-contacts)
+(use-package helm
+  :bind
+  (("M-x" . helm-M-x)
+   ("C-x r b" . helm-filtered-bookmarks)
+   ("C-x C-f" . helm-find-files)
+   ("C-x C-r" . helm-recentf)
+   ("C-c m" . helm-mu-contacts)
+   ;; Mark buffers with C-SPACE and kill them with M-D
+   ("C-x C-b" . helm-buffers-list))
+  :config
+  (helm-mode 1)
+  (setq helm-M-x-fuzzy-match t)
+  (setq helm-buffers-fuzzy-matching t
+        helm-recentf-fuzzy-match t)
+  (setq helm-ff-newfile-prompt-p nil)
+  ;; I used to have a problem where C-x C-f, i.e. helm-find-files would make emacs hang.
+  ;; Workaround: by setting this flag I can prevent Emacs from hanging...
+  (setq helm-split-window-in-side-p t))
 
-;; Mark buffers with C-SPACE and kill them with M-D
-(global-set-key (kbd "C-x C-b") 'helm-buffers-list)
 (global-set-key (kbd "C-x k") 'kill-this-buffer)
-
-
-(setq helm-M-x-fuzzy-match t)
-(setq helm-buffers-fuzzy-matching t
-      helm-recentf-fuzzy-match t)
-(setq helm-ff-newfile-prompt-p nil)
-
-;; I used to have a problem where C-x C-f, i.e. helm-find-files would make emacs hang.
-;; Workaround: by setting this flag I can prevent Emacs from hanging...
-(setq helm-split-window-in-side-p t)
 
 ;;
 ;; Helm interface for Emacs 'describe-bindings
