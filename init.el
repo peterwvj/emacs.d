@@ -202,6 +202,11 @@
 (global-set-key (kbd "<f1>")   'pvj/show-agenda)
 
 ;;
+;; org-mode configuration
+;;
+(require 'org-pvj)
+
+;;
 ;; Display current match and total matches in the mode-line in various search modes
 ;;
 (use-package anzu)
