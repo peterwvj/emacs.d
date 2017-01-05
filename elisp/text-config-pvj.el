@@ -1,12 +1,14 @@
 
-(use-package expand-region)
-(global-set-key (kbd "C-=") 'er/expand-region)
+(use-package expand-region
+  :config
+  (global-set-key (kbd "C-=") 'er/expand-region))
 
 ;;
 ;; Hungry deletion for programming modes
 ;;
-(use-package hungry-delete)
-(global-hungry-delete-mode)
+(use-package hungry-delete
+  :config
+  (global-hungry-delete-mode))
 
 ;;
 ;; Go to last change
@@ -21,8 +23,9 @@
 ;;
 ;; Visual feedback on text operations
 ;;
-(use-package volatile-highlights)
-(volatile-highlights-mode t)
+(use-package volatile-highlights
+  :config
+  (volatile-highlights-mode t))
 
 ;;
 ;; Spell checking
