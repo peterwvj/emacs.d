@@ -1,6 +1,9 @@
 
-(use-package ace-window)
-(setq aw-scope 'frame)
+(use-package ace-window
+  :config
+  (setq aw-scope 'frame))
+
+(use-package ace-jump-mode)
 
 ;; Copy file path
 (defun pvj/copy-file-path ()
@@ -10,12 +13,10 @@
                 (kill-new buffer-file-name) )))
     (message (concat "Latest kill: " kill))))
 
-(use-package ace-jump-mode)
-
 ;; Inspired by http://stackoverflow.com/questions/145291/smart-home-in-emacs/
 (defun pvj/smart-move-to-line-beginning ()
   "Move point to first non-whitespace character or beginning-of-line."
-  (interactive "^") ; Use (interactive) in Emacs 22 or older
+  (interactive)
   (let ((oldpos (point)))
     (back-to-indentation)
     (and (= oldpos (point))
