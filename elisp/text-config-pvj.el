@@ -27,6 +27,14 @@
   :config
   (volatile-highlights-mode t))
 
+
+;;
+;; Revert the buffer when changes are detected
+;;
+(global-auto-revert-mode)
+(setq global-auto-revert-non-file-buffers t
+      auto-revert-verbose nil)
+
 ;;
 ;; Spell checking
 ;;
