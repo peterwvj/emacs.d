@@ -25,6 +25,7 @@
  '(eshell-prompt ((t (:foreground "green yellow" :weight bold))))
  '(linum ((t (:inherit (shadow default) :foreground "gray40"))))
  '(match ((t (:background "dim gray" :foreground "yellow" :weight bold))))
+ '(mode-line ((t (:background "#0c191C" :foreground "#eeeeec" :inverse-video nil :box (:line-width 1 :color "#2e3436" :style released-button)))))
  '(mu4e-header-highlight-face ((t (:inherit region))))
  '(mu4e-replied-face ((t (:inherit font-lock-builtin-face :foreground "yellow" :weight normal))))
  '(mu4e-unread-face ((t (:inherit font-lock-keyword-face :foreground "green" :weight bold))))
