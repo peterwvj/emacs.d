@@ -15,8 +15,11 @@
 
 ;; Inspired by http://stackoverflow.com/questions/145291/smart-home-in-emacs/
 (defun pvj/smart-move-to-line-beginning ()
-  "Move point to first non-whitespace character or beginning-of-line."
-  (interactive)
+  "Move point to first non-whitespace character or
+beginning-of-line. Note that if the string begins with ^ and
+shift-select-mode' is non-nil, Emacs first calls the function
+`handle-shift-select'"
+  (interactive "^")
   (let ((oldpos (point)))
     (back-to-indentation)
     (and (= oldpos (point))
