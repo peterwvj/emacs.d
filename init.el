@@ -584,3 +584,6 @@
   :config
   (auto-compile-on-load-mode)
   (auto-compile-on-save-mode))
+
+(use-package highlight-numbers
+  :init (add-hook 'prog-mode-hook 'highlight-numbers-mode))
