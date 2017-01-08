@@ -21,7 +21,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(anzu-mode-line ((t (:foreground "yellow" :weight bold))))
- '(cursor ((t (:background "yellow"))))
+ '(cursor ((t (:background "red"))))
  '(eshell-prompt ((t (:foreground "green yellow" :weight bold))))
  '(linum ((t (:inherit (shadow default) :foreground "gray40"))))
  '(match ((t (:background "dim gray" :foreground "yellow" :weight bold))))
