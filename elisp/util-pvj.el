@@ -39,6 +39,11 @@
       (kill-new contents)
       filePath)))
 
+(defun pvj/kill-other-buffers ()
+  "Kill all other buffers."
+  (interactive)
+  (mapc 'kill-buffer (delq (current-buffer) (buffer-list))))
+
 (defun pvj/show-agenda ()
   (interactive)
   (delete-other-windows)
