@@ -585,5 +585,14 @@
   (auto-compile-on-load-mode)
   (auto-compile-on-save-mode))
 
+(use-package auto-highlight-symbol
+  :init (add-hook 'prog-mode-hook 'auto-highlight-symbol-mode)
+  :config 
+  (setq ahs-idle-interval 1.0)
+  (setq ahs-default-range 'ahs-range-whole-buffer) ;; highlight every occurence in buffer
+  :bind (:map auto-highlight-symbol-mode-map
+              ("M-p" . ahs-backward)
+              ("M-n" . ahs-forward)))
+
 (use-package highlight-numbers
   :init (add-hook 'prog-mode-hook 'highlight-numbers-mode))
