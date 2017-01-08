@@ -125,8 +125,8 @@ there's a region, all lines that region covers will be duplicated."
 (setq-default tab-width 2)
 (setq indent-line-function 'insert-tab)
 
-;; Disable automatic indentation of newlines
-(electric-indent-mode -1)
+;; Indent lines automatically
+(electric-indent-mode 1)
 
 ;; Enable smart paring
 (electric-pair-mode)
