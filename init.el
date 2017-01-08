@@ -596,3 +596,8 @@
 
 (use-package highlight-numbers
   :init (add-hook 'prog-mode-hook 'highlight-numbers-mode))
+
+(use-package google-translate
+  :config
+  (setq google-translate-default-source-language "da")
+  (setq google-translate-default-target-language "en"))
