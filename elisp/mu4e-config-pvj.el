@@ -97,13 +97,14 @@
 
   ;; a  list of user's e-mail addresses
   (setq mu4e-user-mail-address-list '("peter.w.v.jorgensen@gmail.com" "pvj@eng.au.dk"))
-
+  
   ;; header fields
   (setq mu4e-headers-fields
-        '( (:date       . 18)
-           (:flags   . 6)
-           (:from-or-to . 22) ;; Determined using mu4e-user-mail-address-list
-           (:subject    . nil)))
+        '((:date . 18)
+           (:flags . 6)
+           (:from-or-to . 25) ;; Determined using mu4e-user-mail-address-list
+           (:maildir . 25)
+           (:subject . nil)))
 
   ;; Don't save message to Sent Messages, GMail/IMAP will take care of this
   ;; (setq mu4e-sent-messages-behavior 'delete)
