@@ -36,6 +36,9 @@
   (add-hook 'mu4e-view-mode-hook (lambda ()
                                    (setq-local global-hl-line-mode nil)))
 
+  ;; Use helm completion (rather than ido)
+  (setq mu4e-completing-read-function 'completing-read)
+  
   (setq mu4e-maildir "~/Maildir")
 
   ;; Setup environment for main account
