@@ -36,8 +36,14 @@
   (add-hook 'mu4e-view-mode-hook (lambda ()
                                    (setq-local global-hl-line-mode nil)))
 
-  ;; Use helm completion (rather than ido)
-  (setq mu4e-completing-read-function 'completing-read)
+  ;; Invoke built-in completion but ignore the initial input
+  (defun pvj/mu4e-completing-read (prompt collection &optional predicate require-match
+                                          initial-input hist def inherit-input-method)
+    (completing-read prompt collection predicate require-match nil hist def inherit-input-method))
+  
+  ;; Use helm completion (rather than ido) and ignore the initial
+  ;; completion input
+  (setq mu4e-completing-read-function 'pvj/mu4e-completing-read)
   
   (setq mu4e-maildir "~/Maildir")
 
