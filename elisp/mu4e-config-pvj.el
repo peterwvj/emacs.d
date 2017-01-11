@@ -104,6 +104,10 @@
 
   (setq mu4e-headers-date-format "%d/%b/%Y %H:%M")
 
+  ;; Set the number of lines to be shown in the headers view when it
+  ;; is split
+  (setq mu4e-headers-visible-lines 18)
+  
   ;; a  list of user's e-mail addresses
   (setq mu4e-user-mail-address-list '("peter.w.v.jorgensen@gmail.com" "pvj@eng.au.dk"))
   
