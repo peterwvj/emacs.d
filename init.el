@@ -609,3 +609,11 @@
   :demand
   :config
   (popwin-mode 1))
+
+;;
+;; Highlight TODOs
+;;
+(use-package hl-todo
+  :init (global-hl-todo-mode)
+  :config
+  (setq hl-todo-activate-in-modes '(prog-mode)))
