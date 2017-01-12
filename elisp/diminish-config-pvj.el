@@ -40,6 +40,9 @@
   (eval-after-load "google-this"
     '(diminish 'google-this-mode))
 
+  (eval-after-load "auto-highlight-symbol"
+    '(diminish 'auto-highlight-symbol-mode))
+  
   (diminish 'visual-line-mode)
 
   (diminish 'outline-minor-mode))
