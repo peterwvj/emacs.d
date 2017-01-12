@@ -106,7 +106,10 @@
 
   ;; Set the number of lines to be shown in the headers view when it
   ;; is split
-  (setq mu4e-headers-visible-lines 18)
+  ;; (setq mu4e-headers-visible-lines 18)
+
+  ;; Don't split the headers view when viewing messages
+  (setq mu4e-split-view 'anything)
   
   ;; a  list of user's e-mail addresses
   (setq mu4e-user-mail-address-list '("peter.w.v.jorgensen@gmail.com" "pvj@eng.au.dk"))
