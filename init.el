@@ -601,3 +601,11 @@
   :config
   (setq google-translate-default-source-language "da")
   (setq google-translate-default-target-language "en"))
+
+;;
+;; Better handling of temporary buffers
+;;
+(use-package popwin
+  :demand
+  :config
+  (popwin-mode 1))
