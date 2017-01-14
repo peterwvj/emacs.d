@@ -130,7 +130,7 @@
 ;;
 ;; org-mode configuration
 ;;
-(require 'org-pvj)
+(require 'org-config-pvj)
 
 ;;
 ;; Display current match and total matches in the mode-line in various search modes
