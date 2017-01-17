@@ -42,6 +42,9 @@
 
   (eval-after-load "auto-highlight-symbol"
     '(diminish 'auto-highlight-symbol-mode))
+
+  (eval-after-load "which-key"
+    '(diminish 'which-key-mode))
   
   (diminish 'visual-line-mode)
 
