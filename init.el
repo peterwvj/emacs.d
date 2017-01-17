@@ -547,3 +547,8 @@
   :init (global-hl-todo-mode)
   :config
   (setq hl-todo-activate-in-modes '(prog-mode)))
+
+;; Display key bindings
+(use-package which-key
+  :config
+  (which-key-mode))
