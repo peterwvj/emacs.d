@@ -24,6 +24,7 @@
 (use-package use-package
   :config
   (setq use-package-always-ensure t)
+  (setq use-package-always-demand t)
   (setq use-package-always-pin "melpa"))
 
 (add-to-list 'load-path (expand-file-name "elisp" user-emacs-directory))
@@ -181,7 +182,6 @@
 ;; changed to green, and the text-selection color (the region face)
 ;; has been changed to blue
 (use-package naquadah-theme
-  :demand
   :config
   (load-theme 'naquadah t))
 
@@ -320,7 +320,6 @@
 (use-package mu4e-config-pvj
   :if (and (string-equal system-type "gnu/linux") (null noninteractive))
   :ensure f
-  :demand
   :bind (("<f2>" . mu4e))
   :config
   (progn
@@ -398,7 +397,6 @@
 ;; Highlight current line number
 ;;
 (use-package hlinum
-  :demand
   :config
   (hlinum-activate)
   (setq linum-highlight-in-all-buffersp t))
@@ -435,7 +433,6 @@
 
 ;; Setup smart-mode-line
 (use-package smart-mode-line
-  :demand
   :config
   (setq sml/theme 'respectful)
   (sml/setup))
@@ -550,7 +547,6 @@
 ;; Better handling of temporary buffers
 ;;
 (use-package popwin
-  :demand
   :config
   (popwin-mode 1))
 
