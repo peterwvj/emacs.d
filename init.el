@@ -72,8 +72,7 @@
   (setq neo-window-width 50)
   (setq neo-fit-to-contents t)
   (setq neo-vc-integration (quote (face)))
-  (setq neo-cwd-line-style 'text)
-  (setq projectile-switch-project-action 'neotree-projectile-action))
+  (setq neo-cwd-line-style 'text))
 
 ;;
 ;; Helm configuration
