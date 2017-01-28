@@ -127,6 +127,7 @@
 (global-set-key (kbd "<f6>") 'helm-show-kill-ring)
 (global-set-key (kbd "C-c ;") 'comment-or-uncomment-region)
 (global-set-key (kbd "<f1>")   'pvj/show-agenda)
+(global-set-key (kbd "M-Q")   'pvj/unfill-paragraph)
 
 ;;
 ;; org-mode configuration
