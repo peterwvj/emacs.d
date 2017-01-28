@@ -566,3 +566,8 @@
 (use-package which-key
   :config
   (which-key-mode))
+
+;; Show tildes in the fringe on empty lines
+(use-package vi-tilde-fringe
+  :init
+  (add-hook 'prog-mode-hook 'vi-tilde-fringe-mode))
