@@ -490,6 +490,9 @@
 ;; Web feed reader
 ;;
 (use-package elfeed
+  :bind
+  (:map elfeed-search-mode-map
+        ("U" . elfeed-search-fetch))
   :config
   (setq elfeed-feeds
         '(("https://newz.dk/rss" it)
