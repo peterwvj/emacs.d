@@ -46,6 +46,9 @@
   (eval-after-load "which-key"
     '(diminish 'which-key-mode))
 
+  (eval-after-load "page-break-lines"
+    '(diminish 'page-break-lines-mode))
+
   (eval-after-load "vi-tilde-fringe"
     '(diminish 'vi-tilde-fringe-mode))
   
