@@ -51,6 +51,8 @@
 
   (eval-after-load "vi-tilde-fringe"
     '(diminish 'vi-tilde-fringe-mode))
+
+  (diminish 'overwrite-mode)
   
   (diminish 'visual-line-mode)
 
