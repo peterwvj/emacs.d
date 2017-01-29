@@ -96,7 +96,10 @@
 ;;
 ;; Show line numbers
 ;;
-(global-linum-mode t)
+(use-package nlinum
+  :pin "gnu"
+  :config
+  (global-nlinum-mode))
 
 ;;
 ;; Setup LateX
@@ -116,7 +119,7 @@
 ;;
 (add-hook 'doc-view-mode-hook
   (lambda ()
-    (linum-mode -1)))
+    (nlinum-mode -1)))
 
 ;;
 ;; Functionality that supports text editing
@@ -284,7 +287,7 @@
 
 ;; Do not show line numbers
 (add-hook 'term-mode-hook (lambda ()
-                            (linum-mode -1)))
+                            (nlinum-mode -1)))
 
 ;; Start ansi-term in /bin/bash/
 (defvar my-term-shell "/bin/bash")
@@ -396,14 +399,6 @@
   (define-key yas-minor-mode-map (kbd "<backtab>") 'yas-expand)
   ;; Alternatively use Control-c + tab
   (define-key yas-minor-mode-map (kbd "\C-c TAB") 'yas-expand))
-
-;;
-;; Highlight current line number
-;;
-(use-package hlinum
-  :config
-  (hlinum-activate)
-  (setq linum-highlight-in-all-buffersp t))
 
 ;;
 ;; For moving buffers around

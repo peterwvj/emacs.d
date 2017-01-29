@@ -31,7 +31,7 @@
 
   ;; Disable line numbers
   (add-hook 'mu4e-main-mode-hook (lambda ()
-                                   (linum-mode -1)))
+                                   (nlinum-mode -1)))
 
   (add-hook 'mu4e-view-mode-hook (lambda ()
                                    (setq-local global-hl-line-mode nil)))
