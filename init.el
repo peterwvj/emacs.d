@@ -38,12 +38,16 @@
       inhibit-startup-echo-area-message t)
 
 ;;
-;; Use persistent scratch buffer
+;; Scratch buffer configuration
 ;;
-(use-package persistent-scratch
+(setq initial-scratch-message "")
+
+;;
+;; Re-spawn scratch buffer when killed
+;;
+(use-package immortal-scratch
   :config
-  (setq initial-scratch-message "")
-  (persistent-scratch-setup-default))
+  (add-hook 'after-init-hook 'immortal-scratch-mode))
 
 ;;
 ;; Remember recently opened files
