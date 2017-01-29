@@ -45,6 +45,9 @@
 
   (eval-after-load "which-key"
     '(diminish 'which-key-mode))
+
+  (eval-after-load "vi-tilde-fringe"
+    '(diminish 'vi-tilde-fringe-mode))
   
   (diminish 'visual-line-mode)
 
