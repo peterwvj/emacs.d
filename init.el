@@ -568,9 +568,9 @@
 ;;
 ;; Show tildes in the fringe on empty lines
 ;;
-(use-package vi-tilde-fringe
+(use-package vim-empty-lines-mode
   :init
-  (add-hook 'prog-mode-hook 'vi-tilde-fringe-mode))
+  (add-hook 'prog-mode-hook 'vim-empty-lines-mode))
 
 ;;
 ;; Distraction free writing
