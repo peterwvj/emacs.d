@@ -99,6 +99,7 @@
 (use-package nlinum
   :pin "gnu"
   :config
+  (setq nlinum-format " %d ")
   (global-nlinum-mode))
 
 ;;
