@@ -129,7 +129,6 @@
 (global-set-key (kbd "C-w") 'pvj/kill-word-or-region)
 (global-set-key (kbd "<f6>") 'helm-show-kill-ring)
 (global-set-key (kbd "C-c ;") 'comment-or-uncomment-region)
-(global-set-key (kbd "<f1>")   'pvj/show-agenda)
 (global-set-key (kbd "M-Q")   'pvj/unfill-paragraph)
 
 ;;
@@ -570,7 +569,32 @@
   :config
   (which-key-mode))
 
+;;
 ;; Show tildes in the fringe on empty lines
+;;
 (use-package vi-tilde-fringe
   :init
   (add-hook 'prog-mode-hook 'vi-tilde-fringe-mode))
+
+;;
+;; Distraction free writing
+;;
+(use-package writeroom-mode
+  :bind
+  (([f1] . writeroom-mode))
+  :config
+  (add-to-list 'writeroom-global-effects
+               (lambda (arg)
+                 (cond
+                  ((= arg 1)
+                   ;; When activated
+                   (progn
+                     (linum-mode -1)
+                     (hlinum-deactivate)))
+                  ((= arg -1)
+                   ;; When deactivated
+                   (progn
+                     (linum-mode 1)
+                     (hlinum-activate))))))
+  (setq writeroom-fringes-outside-margins nil)
+  (setq writeroom-restore-window-config t))
