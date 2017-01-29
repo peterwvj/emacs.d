@@ -11,6 +11,13 @@
       (global-set-key [f13] 'er/expand-region))))
 
 ;;
+;; Display form feed characters as tidy horizontal lines
+;;
+(use-package page-break-lines
+  :config
+  (global-page-break-lines-mode))
+
+;;
 ;; Hungry deletion for programming modes
 ;;
 (use-package hungry-delete
