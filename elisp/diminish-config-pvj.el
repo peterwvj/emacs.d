@@ -49,8 +49,8 @@
   (eval-after-load "page-break-lines"
     '(diminish 'page-break-lines-mode))
 
-  (eval-after-load "vi-tilde-fringe"
-    '(diminish 'vi-tilde-fringe-mode))
+  (eval-after-load "vim-empty-lines-mode"
+    '(diminish 'vim-empty-lines-mode))
 
   (diminish 'overwrite-mode)
   
