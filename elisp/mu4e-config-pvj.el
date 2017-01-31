@@ -44,6 +44,10 @@
   ;; Use helm completion (rather than ido) and ignore the initial
   ;; completion input
   (setq mu4e-completing-read-function 'pvj/mu4e-completing-read)
+
+  ;; Format the reply-quote-string
+  (setq message-citation-line-format "On %a %d %b %Y at %R, %f wrote:\n")
+  (setq message-citation-line-function 'message-insert-formatted-citation-line)
   
   (setq mu4e-maildir "~/Maildir")
 
