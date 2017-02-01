@@ -2,6 +2,7 @@
 \#*
 /session.*
 *.elc
+/.mc-lists.el
 /.persistent-scratch
 /network-security.data
 /projectile-bookmarks.eld

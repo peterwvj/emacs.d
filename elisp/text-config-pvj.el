@@ -18,6 +18,11 @@
   (global-page-break-lines-mode))
 
 ;;
+;; Multiple cursors
+;;
+(use-package multiple-cursors)
+
+;;
 ;; Hungry deletion for programming modes
 ;;
 (use-package hungry-delete
