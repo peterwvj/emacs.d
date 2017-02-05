@@ -69,12 +69,12 @@
 ;;
 ;; Spell checking
 ;;
-(defconst danish-dictionary "danish" "String used to represent the danish dictionary")
-(defconst british-dictionary "british" "String used to represent the british dictionary")
+(defconst danish-dictionary "dansk" "String used to represent the danish dictionary")
+(defconst english-dictionary "en" "String used to represent the british dictionary")
 
 (autoload 'flyspell-mode "flyspell" "On-the-fly spelling checker." t)
-(setq ispell-dictionary british-dictionary)
-(setq ispell-current-dictionary british-dictionary)
+(setq ispell-dictionary english-dictionary)
+(setq ispell-current-dictionary english-dictionary)
 
 (add-hook 'text-mode-hook 'flyspell-mode)
 (add-hook 'prog-mode-hook 'flyspell-prog-mode)
@@ -86,9 +86,9 @@
 (defun pvj/switch-language()
   (interactive)
   (let* ((dic ispell-current-dictionary)
-         (change (if (string= dic british-dictionary)
+         (change (if (string= dic english-dictionary)
                      `(,danish-dictionary . "danish-postfix")
-                   `(,british-dictionary . nil))))
+                   `(,english-dictionary . nil))))
     (ispell-change-dictionary (car change))
     (set-input-method (cdr change))
     (message "Dictionary switched from %s to %s" dic change)))
