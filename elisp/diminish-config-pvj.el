@@ -17,6 +17,9 @@
   (eval-after-load "flyspell"
     '(diminish 'flyspell-mode (string 32 #x2708)))
 
+  (eval-after-load "guess-language"
+    '(diminish 'guess-language-mode "GL"))
+  
   (add-hook 'lisp-mode-hook
             (lambda()
               (setq mode-name "λ"))) 

@@ -162,4 +162,11 @@ there's a region, all lines that region covers will be duplicated."
 (setq prettify-symbols-unprettify-at-point 'right-edge)
 (global-prettify-symbols-mode)
 
+(use-package guess-language
+  :init
+  (add-hook 'text-mode-hook (lambda () (guess-language-mode 1)))
+  :config
+  (setq guess-language-languages '(en da))
+  (setq guess-language-min-paragraph-length 35))
+
 (provide 'text-config-pvj)
