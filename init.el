@@ -335,17 +335,6 @@
   :bind (("<f2>" . mu4e))
   :config
   (progn
-    ;;
-    ;; imapfilter configuration
-    ;; Inspired by https://www.reddit.com/r/emacs/comments/202fon/email_filters_in_mu4e/
-    ;;
-    (add-hook 'mu4e-update-pre-hook 'pvj/imapfilter)
-    (defun pvj/imapfilter ()
-      (with-current-buffer (get-buffer-create " *imapfilter*")
-        (goto-char (point-max))
-        (insert "---\n")
-        (call-process "imapfilter" nil (current-buffer) nil "-v")))
-
     ;; Start mu4e
     (mu4e)
 

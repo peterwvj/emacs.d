@@ -172,14 +172,8 @@
   (define-key mu4e-view-mode-map [end] 'end-of-visual-line)
 
   ;; Fetching emails.
-  ;;
-  ;; The -q argument is used to run a quick synchronisations. From the
-  ;; offlineimap manual: "Ignore any flag updates on IMAP servers. If a
-  ;; flag on the remote IMAP changes, and we have the message locally,
-  ;; it will be left untouched in a quick run. This option is ignored if
-  ;; maxage is set".
   (setq
-   mu4e-get-mail-command "offlineimap -q"
+   mu4e-get-mail-command "imapfilter ; offlineimap -q"
    mu4e-update-interval (* 5 60))
 
   ;; Spell-check emails
