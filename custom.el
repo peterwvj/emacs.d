@@ -14,7 +14,8 @@
     ("c74e83f8aa4c78a121b52146eadb792c9facc5b1f02c917e3dbb454fca931223" "3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" default)))
  '(package-selected-packages
    (quote
-    (vim-empty-lines-mode nlinum vi-tilde-fringe vi-tilde-fringe-mode which-key hl-todo popwin google-translate highlight-numbers auto-highlight-symbol auto-compile google-this elfeed cider diff-hl calfw-ical mu4e-maildirs-extension helm-swoop diminish smooth-scrolling expand-region helm-projectile projectile yasnippet xterm-color w3m undo-tree tangotango-theme symon smart-mode-line-powerline-theme rainbow-delimiters persistent-scratch pdf-tools ox-reveal org-gcal naquadah-theme mu4e-alert move-text monokai-theme molokai-theme markdown-mode magit lua-mode langtool hlinum helm-mu helm-descbinds github-theme focus eshell-z eshell-up elpy edit-server dired+ darkokai-theme cyberpunk-theme color-theme-sanityinc-tomorrow color-theme-sanityinc-solarized color-theme-monokai color-theme-molokai calfw buffer-move browse-kill-ring+ auctex anzu ace-window ace-jump-mode ac-math))))
+    (writeroom-mode vim-empty-lines-mode which-key hl-todo popwin google-translate highlight-numbers auto-highlight-symbol auto-compile google-this elfeed cider elpy ace-jump-mode ace-window diff-hl magit smart-mode-line buffer-move yasnippet company mu4e-maildirs-extension mu4e-alert f eshell-z xterm-color eshell-up move-text naquadah-theme rainbow-delimiters langtool anzu org-bullets guess-language lorem-ipsum markdown-mode volatile-highlights define-word goto-chg hungry-delete multiple-cursors page-break-lines expand-region pdf-tools gscholar-bibtex auctex nlinum undo-tree helm-swoop helm-projectile helm-descbinds helm neotree dired+ immortal-scratch use-package))))
+
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -31,4 +32,4 @@
  '(mu4e-unread-face ((t (:inherit font-lock-keyword-face :foreground "green" :weight bold))))
  '(region ((t (:background "DeepSkyBlue4"))))
  '(show-paren-match ((t (:background "deep sky blue" :foreground "black" :weight extra-bold))))
- '(term-color-blue ((t (:background "deep sky blue" :foreground "deep sky blue"))) t))
+ '(term-color-blue ((t (:background "deep sky blue" :foreground "deep sky blue")))))
