@@ -30,6 +30,15 @@
 (add-to-list 'load-path (expand-file-name "elisp" user-emacs-directory))
 
 ;;
+;; Compile Elisp sources automatically
+;;
+(setq load-prefer-newer t)
+(use-package auto-compile
+  :config
+  (auto-compile-on-load-mode)
+  (auto-compile-on-save-mode))
+
+;;
 ;; Locale
 ;;
 (require 'locale-config-pvj)
@@ -512,15 +521,6 @@
 (setq ediff-window-setup-function 'ediff-setup-windows-plain)
 ;; To make ediff to be horizontally split use:
 (setq ediff-split-window-function 'split-window-horizontally)
-
-;;
-;; Compile Elisp sources automatically
-;;
-(setq load-prefer-newer t)
-(use-package auto-compile
-  :config
-  (auto-compile-on-load-mode)
-  (auto-compile-on-save-mode))
 
 (use-package auto-highlight-symbol
   :init (add-hook 'prog-mode-hook 'auto-highlight-symbol-mode)
