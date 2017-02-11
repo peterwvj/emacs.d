@@ -30,6 +30,14 @@
   :config
   (helm-descbinds-mode))
 
+;;
+;; Helm interface for flyspell
+;;
+(use-package helm-flyspell
+  :bind
+  (:map flyspell-mode-map
+        ("C-;" . helm-flyspell-correct)))
+
 ;; helm interface for projectile
 (use-package helm-projectile
   :config
