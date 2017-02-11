@@ -14,7 +14,7 @@
     ("c74e83f8aa4c78a121b52146eadb792c9facc5b1f02c917e3dbb454fca931223" "3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" default)))
  '(package-selected-packages
    (quote
-    (helm-flyspell writeroom-mode vim-empty-lines-mode which-key hl-todo popwin google-translate highlight-numbers auto-highlight-symbol auto-compile google-this elfeed cider elpy ace-jump-mode ace-window diff-hl magit smart-mode-line buffer-move yasnippet company mu4e-maildirs-extension mu4e-alert f eshell-z xterm-color eshell-up move-text naquadah-theme rainbow-delimiters langtool anzu org-bullets guess-language lorem-ipsum markdown-mode volatile-highlights define-word goto-chg hungry-delete multiple-cursors page-break-lines expand-region pdf-tools gscholar-bibtex auctex nlinum undo-tree helm-swoop helm-projectile helm-descbinds helm neotree dired+ immortal-scratch use-package))))
+    (flycheck helm-flyspell writeroom-mode vim-empty-lines-mode which-key hl-todo popwin google-translate highlight-numbers auto-highlight-symbol auto-compile google-this elfeed cider elpy ace-jump-mode ace-window diff-hl magit smart-mode-line buffer-move yasnippet company mu4e-maildirs-extension mu4e-alert f eshell-z xterm-color eshell-up move-text naquadah-theme rainbow-delimiters langtool anzu org-bullets guess-language lorem-ipsum markdown-mode volatile-highlights define-word goto-chg hungry-delete multiple-cursors page-break-lines expand-region pdf-tools gscholar-bibtex auctex nlinum undo-tree helm-swoop helm-projectile helm-descbinds helm neotree dired+ immortal-scratch use-package))))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

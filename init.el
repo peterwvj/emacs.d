@@ -554,6 +554,13 @@
   :config
   (setq hl-todo-activate-in-modes '(prog-mode)))
 
+;;
+;; Syntax checking
+;;
+(use-package flycheck
+  :init
+  (add-hook 'after-init-hook #'global-flycheck-mode))
+
 ;; Display key bindings
 (use-package which-key
   :config
