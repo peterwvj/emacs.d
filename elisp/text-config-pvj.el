@@ -72,7 +72,15 @@
 (defconst danish-dictionary "dansk" "String used to represent the danish dictionary")
 (defconst english-dictionary "en" "String used to represent the british dictionary")
 
-(autoload 'flyspell-mode "flyspell" "On-the-fly spelling checker." t)
+
+;;
+;; Check spelling
+;;
+(require 'flyspell)
+
+;; To improve performance
+(setq flyspell-issue-message-flag nil)
+
 (setq ispell-dictionary english-dictionary)
 (setq ispell-current-dictionary english-dictionary)
 
