@@ -150,10 +150,16 @@ there's a region, all lines that region covers will be duplicated."
 (global-prettify-symbols-mode)
 
 (use-package guess-language
-  :init
-  (add-hook 'text-mode-hook (lambda () (guess-language-mode 1)))
   :config
   (setq guess-language-languages '(en da))
-  (setq guess-language-min-paragraph-length 35))
+  (setq guess-language-min-paragraph-length 35)
+
+  (add-hook 'guess-language-after-detection-functions
+            (lambda (lang beginning end)
+              (if (string= lang "da")
+                  (set-input-method "danish-postfix")
+                (set-input-method nil))))
+
+  (add-hook 'text-mode-hook (lambda () (guess-language-mode 1))))
 
 (provide 'text-config-pvj)
