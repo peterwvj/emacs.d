@@ -145,6 +145,12 @@
 (delete-selection-mode 1)
 (global-set-key (kbd "C-w") 'pvj/kill-word-or-region)
 (global-set-key (kbd "<f6>") 'helm-show-kill-ring)
+(global-set-key (kbd "<f8>")
+                (lambda ()
+                  (interactive)
+                  (if (null current-input-method)
+                      (set-input-method "danish-postfix")
+                    (set-input-method nil))))
 (global-set-key (kbd "C-c ;") 'comment-or-uncomment-region)
 (global-set-key (kbd "M-Q")   'pvj/unfill-paragraph)
 
