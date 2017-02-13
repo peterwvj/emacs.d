@@ -140,7 +140,6 @@
 ;; Functionality that supports text editing
 ;;
 (require 'text-config-pvj)
-(global-set-key (kbd "<f8>")   'pvj/switch-language)
 (global-set-key (kbd "C-q") 'pvj/duplicate-current-line-or-region)
 (global-set-key (kbd "C-d") 'kill-whole-line)
 (delete-selection-mode 1)

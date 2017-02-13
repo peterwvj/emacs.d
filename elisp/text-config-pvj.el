@@ -67,13 +67,6 @@
   :init (setq markdown-command "multimarkdown"))
 
 ;;
-;; Spell checking
-;;
-(defconst danish-dictionary "dansk" "String used to represent the danish dictionary")
-(defconst english-dictionary "en" "String used to represent the british dictionary")
-
-
-;;
 ;; Check spelling
 ;;
 (require 'flyspell)
@@ -81,25 +74,11 @@
 ;; To improve performance
 (setq flyspell-issue-message-flag nil)
 
-(setq ispell-dictionary english-dictionary)
-(setq ispell-current-dictionary english-dictionary)
+(setq ispell-dictionary "en")
+(setq ispell-current-dictionary "en")
 
 (add-hook 'text-mode-hook 'flyspell-mode)
 (add-hook 'prog-mode-hook 'flyspell-prog-mode)
-
-;; Toggle between british/danish dictionaries and input methods. Note
-;; that when the input mode is set to danish (i.e. danish-postfix)
-;; then 'oe', 'aa' and 'ae' are translated to ø, å and æ,
-;; respectively.
-(defun pvj/switch-language()
-  (interactive)
-  (let* ((dic ispell-current-dictionary)
-         (change (if (string= dic english-dictionary)
-                     `(,danish-dictionary . "danish-postfix")
-                   `(,english-dictionary . nil))))
-    (ispell-change-dictionary (car change))
-    (set-input-method (cdr change))
-    (message "Dictionary switched from %s to %s" dic change)))
 
 ;; Duplicate line or region
 ;; Inspired by http://rejeep.github.io/emacs/elisp/2010/03/11/duplicate-current-line-or-region-in-emacs.html
