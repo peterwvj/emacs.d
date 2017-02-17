@@ -484,6 +484,11 @@
   (elpy-enable))
 
 ;;
+;; Support for Groovy
+;;
+(use-package groovy-mode)
+
+;;
 ;; Diminish
 ;;
 (require 'diminish-config-pvj)
