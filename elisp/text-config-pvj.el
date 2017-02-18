@@ -187,7 +187,9 @@ there's a region, all lines that region covers will be duplicated."
   :config
   (setq guess-language-languages '(en da))
   (setq guess-language-min-paragraph-length 35)
-
+  (setq guess-language-langcodes '((da "dansk" nil)
+                                   (en "en_GB" "English")))
+  
   (add-hook 'guess-language-after-detection-functions
             (lambda (lang beginning end)
               (if (string= lang "da")
