@@ -30,9 +30,13 @@
 (add-to-list 'load-path (expand-file-name "elisp" user-emacs-directory))
 
 ;;
+;; File configuration
+;;
+(require 'file-config-pvj)
+
+;;
 ;; Compile Elisp sources automatically
 ;;
-(setq load-prefer-newer t)
 (use-package auto-compile
   :config
   (auto-compile-on-load-mode)
@@ -47,6 +51,11 @@
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 (load custom-file)
 
+;;
+;; Convenient way to tell emacs 'yes' or 'no'
+;;
+(defalias 'yes-or-no-p 'y-or-n-p)
+
 ;; Get rid of the splash screen and echo area message
 (setq inhibit-startup-message t
       inhibit-startup-echo-area-message t)
@@ -55,12 +64,6 @@
 ;; Scratch buffer configuration
 ;;
 (require 'scratch-config-pvj)
-
-;;
-;; Remember recently opened files
-;;
-(setq recentf-exclude '("/Maildir/" ".aspell."))
-(setq recentf-max-saved-items 50)
 
 ;;
 ;; Version control
@@ -107,20 +110,6 @@
 ;;
 (require 'org-config-pvj)
 
-;;
-;; Put backup files in same directory (to avoid having emacs creating files everywhere)
-;;
-(setq backup-directory-alist `(("." . ,(expand-file-name ".emacs-backup" user-emacs-directory))))
-
-;;
-;; Convenient way to tell emacs 'yes' or 'no'
-;;
-(defalias 'yes-or-no-p 'y-or-n-p)
-
-;; If a file or buffer does not exist when using C-x C-f or C-x b then
-;; skip the confirmation
-(setq confirm-nonexistent-file-or-buffer nil)
-
 ;; Kill buffers that have a live process attached - without asking!
 (setq kill-buffer-query-functions
   (remq 'process-kill-buffer-query-function
@@ -130,9 +119,6 @@
 ;; To avoid typing ESC-ESC-ESC to escape or quit
 ;;
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
-
-;; Always follow symlinks
-(setq vc-follow-symlinks t)
 
 ;;
 ;; eshell configuration
