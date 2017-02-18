@@ -196,6 +196,9 @@ directory to make multiple eshell windows easier."
   (setq eshell-scroll-to-bottom-on-input t)
 
   ;; Jump to recently visited directories
-  (use-package eshell-z))
+  (use-package eshell-z)
+
+  (global-set-key (kbd "<f3>") 'eshell)
+  (global-set-key (kbd "<f4>") 'eshell-here))
 
 (provide 'eshell-config-pvj)

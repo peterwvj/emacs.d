@@ -166,8 +166,6 @@
 ;; eshell configuration
 ;;
 (require 'eshell-config-pvj)
-(global-set-key (kbd "<f3>") 'eshell)
-(global-set-key (kbd "<f4>") 'eshell-here)
 
 ;;
 ;; ansi-term config
