@@ -285,16 +285,6 @@
 
 (global-set-key (kbd "<f9>") 'revert-buffer)
 
-;;
-;;  Mode-line configuration
-;;
-(defun add-current-dictionary ()
-  "Show the current dictionary in the mode-line."
-  (add-to-list 'mode-line-buffer-identification
-               '(:eval (concat ispell-current-dictionary " "))))
-
-(add-hook 'text-mode-hook 'add-current-dictionary)
-
 ;; Setup smart-mode-line
 (use-package smart-mode-line
   :config
