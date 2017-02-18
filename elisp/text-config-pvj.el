@@ -11,6 +11,23 @@
       (global-set-key [f13] 'er/expand-region))))
 
 ;;
+;; Distraction free writing
+;;
+(use-package writeroom-mode
+  :bind
+  (([f1] . writeroom-mode))
+  :config
+  (add-to-list 'writeroom-global-effects
+               (lambda (arg)
+                 (cond
+                  ((= arg 1)
+                   (nlinum-mode -1))
+                  ((= arg -1)
+                   (nlinum-mode 1)))))
+  (setq writeroom-fringes-outside-margins nil)
+  (setq writeroom-restore-window-config t))
+
+;;
 ;; Display form feed characters as tidy horizontal lines
 ;;
 (use-package page-break-lines
@@ -21,6 +38,16 @@
 ;; Multiple cursors
 ;;
 (use-package multiple-cursors)
+
+;;
+;; Enable undo-tree
+;;
+(use-package undo-tree :config (global-undo-tree-mode))
+
+;; Move text
+(use-package move-text
+  :config
+  (move-text-default-bindings))
 
 ;;
 ;; Hungry deletion for programming modes
@@ -127,6 +154,13 @@ there's a region, all lines that region covers will be duplicated."
       (kill-region begining end)
     (backward-kill-word 1)))
 
+;;
+;; Disable auto-copy to clipboard for mouse
+;;
+(setq mouse-drag-copy-region nil)
+
+(put 'upcase-region 'disabled nil)
+
 ;; Use spaces for indentation
 (setq-default indent-tabs-mode nil)
 
@@ -161,5 +195,12 @@ there's a region, all lines that region covers will be duplicated."
                 (set-input-method nil))))
 
   (add-hook 'text-mode-hook (lambda () (guess-language-mode 1))))
+
+;;
+;; For language analysis
+;;
+(use-package langtool
+  :config
+  (setq langtool-language-tool-jar "~/tools/LanguageTool-3.4/languagetool-commandline.jar"))
 
 (provide 'text-config-pvj)

@@ -103,11 +103,6 @@
 (require 'helm-config-pvj)
 
 ;;
-;; Enable undo-tree
-;;
-(use-package undo-tree :config (global-undo-tree-mode))
-
-;;
 ;; Setup LateX
 ;;
 (require 'latex-config-pvj)
@@ -151,18 +146,9 @@
 (require 'org-config-pvj)
 
 ;;
-;; For language analysis
-;;
-(use-package langtool
-  :config
-  (setq langtool-language-tool-jar "~/tools/LanguageTool-3.4/languagetool-commandline.jar"))
-
-;;
 ;; Put backup files in same directory (to avoid having emacs creating files everywhere)
 ;;
 (setq backup-directory-alist `(("." . ,(expand-file-name ".emacs-backup" user-emacs-directory))))
-
-(put 'upcase-region 'disabled nil)
 
 ;;
 ;; Convenient way to tell emacs 'yes' or 'no'
@@ -177,16 +163,6 @@
 (setq kill-buffer-query-functions
   (remq 'process-kill-buffer-query-function
          kill-buffer-query-functions))
-
-;; Move text
-(use-package move-text
-  :config
-  (move-text-default-bindings))
-
-;;
-;; Disable auto-copy to clipboard for mouse
-;;
-(setq mouse-drag-copy-region nil)
 
 ;;
 ;; To avoid typing ESC-ESC-ESC to escape or quit
@@ -344,23 +320,6 @@
 (use-package which-key
   :config
   (which-key-mode))
-
-;;
-;; Distraction free writing
-;;
-(use-package writeroom-mode
-  :bind
-  (([f1] . writeroom-mode))
-  :config
-  (add-to-list 'writeroom-global-effects
-               (lambda (arg)
-                 (cond
-                  ((= arg 1)
-                   (nlinum-mode -1))
-                  ((= arg -1)
-                   (nlinum-mode 1)))))
-  (setq writeroom-fringes-outside-margins nil)
-  (setq writeroom-restore-window-config t))
 
 (require 'programming-config-pvj)
 
