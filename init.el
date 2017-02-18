@@ -269,20 +269,6 @@
   (add-hook 'after-init-hook 'global-company-mode)
   (global-set-key (kbd "M-C-/") 'company-complete))
 
-;;
-;; Use YASnippet templates
-;;
-(use-package yasnippet
-  :config
-  (yas-global-mode 1)
-  ;; Remove Yasnippet's default tab key binding
-  (define-key yas-minor-mode-map (kbd "<tab>") nil)
-  (define-key yas-minor-mode-map (kbd "TAB") nil)
-  ;; Set Yasnippet's key binding to shift+tab
-  (define-key yas-minor-mode-map (kbd "<backtab>") 'yas-expand)
-  ;; Alternatively use Control-c + tab
-  (define-key yas-minor-mode-map (kbd "\C-c TAB") 'yas-expand))
-
 (global-set-key (kbd "<f9>") 'revert-buffer)
 
 ;; Setup smart-mode-line
@@ -290,7 +276,6 @@
   :config
   (setq sml/theme 'respectful)
   (sml/setup))
-
 
 ;;
 ;; Navigation
@@ -304,26 +289,9 @@
 (global-set-key (kbd "C-x o") 'ace-window)
 
 ;;
-;; Support for Python
-;;
-(use-package elpy
-  :config
-  (elpy-enable))
-
-;;
-;; Support for Groovy
-;;
-(use-package groovy-mode)
-
-;;
 ;; Diminish
 ;;
 (require 'diminish-config-pvj)
-
-;;
-;; Clojure Interactive Development Environment that Rocks
-;;
-(use-package cider)
 
 ;;
 ;; Web feed reader
@@ -393,5 +361,7 @@
                    (nlinum-mode 1)))))
   (setq writeroom-fringes-outside-margins nil)
   (setq writeroom-restore-window-config t))
+
+(require 'programming-config-pvj)
 
 (require 'visual-config-pvj)
