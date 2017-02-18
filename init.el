@@ -103,11 +103,6 @@
 (require 'helm-config-pvj)
 
 ;;
-;; Enable winner-mode
-;;
-(winner-mode 1)
-
-;;
 ;; Enable undo-tree
 ;;
 (use-package undo-tree :config (global-undo-tree-mode))
@@ -198,15 +193,6 @@
 ;;
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
 
-;;
-;; Convenient way to move between windows
-;;
-(global-set-key (kbd "C-x <up>") 'windmove-up)
-(global-set-key (kbd "C-x <down>") 'windmove-down)
-(global-set-key (kbd "C-x <right>") 'windmove-right)
-(global-set-key (kbd "C-x <left>") 'windmove-left)
-
-
 ;; Always follow symlinks
 (setq vc-follow-symlinks t)
 
@@ -258,13 +244,6 @@
           smtpmail-auth-credentials (expand-file-name "~/.authinfo.gpg")
           smtpmail-debug-info t)))
 
-;;
-;; Scrolling
-;;
-;; This seems to be the best way to achieve "smooth scrolling"
-;; See - https://www.emacswiki.org/emacs/SmoothScrolling
-(setq scroll-conservatively 10000)
-
 ;; Also applies to new clients that connect to the Emacs server
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 
@@ -304,25 +283,7 @@
   ;; Alternatively use Control-c + tab
   (define-key yas-minor-mode-map (kbd "\C-c TAB") 'yas-expand))
 
-;;
-;; For moving buffers around
-;;
-(use-package buffer-move)
-
 (global-set-key (kbd "<f9>") 'revert-buffer)
-
-;; Page down/up move the point, not the screen.
-;; In practice, this means that they can move the
-;; point to the beginning or end of the buffer.
-(global-set-key [next]
-  (lambda () (interactive)
-    (condition-case nil (scroll-up)
-      (end-of-buffer (goto-char (point-max))))))
-
-(global-set-key [prior]
-                (lambda () (interactive)
-                  (condition-case nil (scroll-down)
-                    (beginning-of-buffer (goto-char (point-min))))))
 
 ;;
 ;;  Mode-line configuration

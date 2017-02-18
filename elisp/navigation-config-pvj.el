@@ -1,7 +1,51 @@
 
+;;
+;; Navigation related configuration
+;;
+
+
+;;
+;; Enable winner-mode
+;;
+(winner-mode 1)
+
+;;
+;; Convenient way to move between windows
+;;
+(global-set-key (kbd "C-x <up>") 'windmove-up)
+(global-set-key (kbd "C-x <down>") 'windmove-down)
+(global-set-key (kbd "C-x <right>") 'windmove-right)
+(global-set-key (kbd "C-x <left>") 'windmove-left)
+
+;;
+;; Scrolling
+;;
+;; This seems to be the best way to achieve "smooth scrolling"
+;; See - https://www.emacswiki.org/emacs/SmoothScrolling
+(setq scroll-conservatively 10000)
+
+;;
+;; For moving buffers around
+;;
+(use-package buffer-move)
+
+;; Page down/up move the point, not the screen.
+;; In practice, this means that they can move the
+;; point to the beginning or end of the buffer.
+(global-set-key [next]
+  (lambda () (interactive)
+    (condition-case nil (scroll-up)
+      (end-of-buffer (goto-char (point-max))))))
+
+(global-set-key [prior]
+                (lambda () (interactive)
+                  (condition-case nil (scroll-down)
+                    (beginning-of-buffer (goto-char (point-min))))))
+
 (use-package ace-window
   :config
   (setq aw-scope 'frame))
+
 
 (use-package ace-jump-mode)
 
