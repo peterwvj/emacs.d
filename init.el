@@ -213,11 +213,6 @@
   :config
   (setq flycheck-display-errors-function #'flycheck-display-error-messages-unless-error-list))
 
-;; Display key bindings
-(use-package which-key
-  :config
-  (which-key-mode))
-
 (require 'programming-config-pvj)
 
 (require 'visual-config-pvj)

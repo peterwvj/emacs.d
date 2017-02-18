@@ -49,6 +49,11 @@
 
 (use-package ace-jump-mode)
 
+;; Display key bindings
+(use-package which-key
+  :config
+  (which-key-mode))
+
 (defun pvj/copy-file-path ()
   "Copy the absolute path of the current file."
   (interactive)
