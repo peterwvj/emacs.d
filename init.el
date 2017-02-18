@@ -126,19 +126,6 @@
 ;; Functionality that supports text editing
 ;;
 (require 'text-config-pvj)
-(global-set-key (kbd "C-q") 'pvj/duplicate-current-line-or-region)
-(global-set-key (kbd "C-d") 'kill-whole-line)
-(delete-selection-mode 1)
-(global-set-key (kbd "C-w") 'pvj/kill-word-or-region)
-(global-set-key (kbd "<f6>") 'helm-show-kill-ring)
-(global-set-key (kbd "<f8>")
-                (lambda ()
-                  (interactive)
-                  (if (null current-input-method)
-                      (set-input-method "danish-postfix")
-                    (set-input-method nil))))
-(global-set-key (kbd "C-c ;") 'comment-or-uncomment-region)
-(global-set-key (kbd "M-Q")   'pvj/unfill-paragraph)
 
 ;;
 ;; org-mode configuration
@@ -244,8 +231,6 @@
   
   (add-hook 'after-init-hook 'global-company-mode)
   (global-set-key (kbd "M-C-/") 'company-complete))
-
-(global-set-key (kbd "<f9>") 'revert-buffer)
 
 ;; Setup smart-mode-line
 (use-package smart-mode-line
