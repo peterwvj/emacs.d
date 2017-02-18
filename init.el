@@ -70,6 +70,11 @@
 (setq recentf-max-saved-items 50)
 
 ;;
+;; Version control
+;;
+(require 'version-control-config-pvj)
+
+;;
 ;; dired+ configuration
 ;;
 (use-package dired+
@@ -444,26 +449,6 @@
   (setq sml/theme 'respectful)
   (sml/setup))
 
-;;
-;; Git Porcelain inside Emacs
-;;
-(use-package magit
-  :bind
-  (("C-x g" . magit-status))
-  :config
-  (setq magit-repository-directories `("~/git-repos/" "~/git-repos/ovt/externals/" ,user-emacs-directory)))
-
-;;
-;; Validate commit messages
-;;
-(use-package git-commit)
-
-;;
-;; Highlight changes in the fringe
-;;
-(use-package diff-hl
-  :config
-  (global-diff-hl-mode))
 
 ;;
 ;; Navigation
@@ -523,14 +508,6 @@
 ;;
 (require 'util-pvj)
 (global-set-key (kbd "<f5>") 'pvj/toggle-window-split)
-
-;;
-;; ediff configuration
-;;
-;; To make ‘ediff’ operate on selected-frame use the following:
-(setq ediff-window-setup-function 'ediff-setup-windows-plain)
-;; To make ediff to be horizontally split use:
-(setq ediff-split-window-function 'split-window-horizontally)
 
 (use-package auto-highlight-symbol
   :init (add-hook 'prog-mode-hook 'auto-highlight-symbol-mode)
