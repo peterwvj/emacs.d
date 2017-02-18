@@ -122,7 +122,7 @@
 ;;
 (use-package pdf-tools
   :if (and (string-equal system-type "gnu/linux") (null noninteractive))
-  :config 
+  :config
   (pdf-tools-install))
 
 ;;
@@ -166,13 +166,6 @@
 ;; Put backup files in same directory (to avoid having emacs creating files everywhere)
 ;;
 (setq backup-directory-alist `(("." . ,(expand-file-name ".emacs-backup" user-emacs-directory))))
-
-;;
-;; Show file name of current buffer
-;;
-;; (setq frame-title-format
-;;      (list (format "%s %%S: %%j " (system-name))
-;;        '(buffer-file-name "%f" (dired-directory dired-directory "%b"))))
 
 (put 'upcase-region 'disabled nil)
 
@@ -273,7 +266,7 @@
 (setq scroll-conservatively 10000)
 
 ;; Also applies to new clients that connect to the Emacs server
-(add-to-list 'default-frame-alist '(fullscreen . maximized)) 
+(add-to-list 'default-frame-alist '(fullscreen . maximized))
 
 ;;
 ;; Company mode (auto completion)
@@ -336,7 +329,7 @@
 ;;
 (defun add-current-dictionary ()
   "Show the current dictionary in the mode-line."
-  (add-to-list 'mode-line-buffer-identification 
+  (add-to-list 'mode-line-buffer-identification
                '(:eval (concat ispell-current-dictionary " "))))
 
 (add-hook 'text-mode-hook 'add-current-dictionary)
