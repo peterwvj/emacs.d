@@ -195,6 +195,9 @@ directory to make multiple eshell windows easier."
 
   (setq eshell-scroll-to-bottom-on-input t)
 
+  ;; Quickly go to a specific parent directory
+  (use-package eshell-up)
+  
   ;; Jump to recently visited directories
   (use-package eshell-z)
 

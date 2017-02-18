@@ -159,9 +159,6 @@
 ;; Always follow symlinks
 (setq vc-follow-symlinks t)
 
-;; go-up for eshell
-(use-package eshell-up)
-
 ;;
 ;; eshell configuration
 ;;
