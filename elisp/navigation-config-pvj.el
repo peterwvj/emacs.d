@@ -5,8 +5,8 @@
 
 (use-package ace-jump-mode)
 
-;; Copy file path
 (defun pvj/copy-file-path ()
+  "Copy the absolute path of the current file."
   (interactive)
   (let ((kill (if (null buffer-file-name)
                   (kill-new default-directory)
@@ -15,10 +15,7 @@
 
 ;; Inspired by http://stackoverflow.com/questions/145291/smart-home-in-emacs/
 (defun pvj/smart-move-to-line-beginning ()
-  "Move point to first non-whitespace character or
-beginning-of-line. Note that if the string begins with ^ and
-shift-select-mode' is non-nil, Emacs first calls the function
-`handle-shift-select'"
+  "Move point to first non-white-space character or 'beginning-of-line'."
   (interactive "^")
   (let ((oldpos (point)))
     (back-to-indentation)
