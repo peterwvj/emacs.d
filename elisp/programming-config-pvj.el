@@ -4,6 +4,14 @@
 ;;
 
 ;;
+;; Compile Elisp sources automatically
+;;
+(use-package auto-compile
+  :config
+  (auto-compile-on-load-mode)
+  (auto-compile-on-save-mode))
+
+;;
 ;; Support for Python
 ;;
 (use-package elpy
