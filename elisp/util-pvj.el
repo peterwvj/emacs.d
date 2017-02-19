@@ -59,4 +59,6 @@
   (let ((fill-column (point-max)))
     (fill-paragraph nil region)))
 
+(global-set-key (kbd "<f5>") 'pvj/toggle-window-split)
+
 (provide 'util-pvj)
