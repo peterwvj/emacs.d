@@ -133,11 +133,10 @@
 
 (require 'company-config-pvj)
 
-;; Setup smart-mode-line
-(use-package smart-mode-line
-  :config
-  (setq sml/theme 'respectful)
-  (sml/setup))
+;;
+;; Mode-line configuration
+;;
+(require 'mode-line-config-pvj)
 
 ;;
 ;; Navigation
