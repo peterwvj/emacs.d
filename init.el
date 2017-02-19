@@ -29,6 +29,18 @@
 
 (add-to-list 'load-path (expand-file-name "elisp" user-emacs-directory))
 
+;; Set the custom file
+(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
+(load custom-file)
+
+;;
+;; Convenient way to tell emacs 'yes' or 'no'
+;;
+(defalias 'yes-or-no-p 'y-or-n-p)
+
+
+(require 'startup-messages-config-pvj)
+
 ;;
 ;; File configuration
 ;;
@@ -39,16 +51,6 @@
 ;;
 (require 'locale-config-pvj)
 
-;; Set the custom file
-(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
-(load custom-file)
-
-;;
-;; Convenient way to tell emacs 'yes' or 'no'
-;;
-(defalias 'yes-or-no-p 'y-or-n-p)
-
-(require 'startup-messages-config-pvj)
 ;;
 ;; Scratch buffer configuration
 ;;
