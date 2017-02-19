@@ -160,20 +160,14 @@
   :config
   (google-this-mode 1))
 
+(require 'programming-config-pvj)
+
+(require 'flycheck-config-pvj)
+
+(require 'visual-config-pvj)
+
 ;;
 ;; Utility functions
 ;;
 (require 'util-pvj)
 
-;;
-;; Syntax checking
-;;
-(use-package flycheck
-  :init
-  (add-hook 'after-init-hook #'global-flycheck-mode)
-  :config
-  (setq flycheck-display-errors-function #'flycheck-display-error-messages-unless-error-list))
-
-(require 'programming-config-pvj)
-
-(require 'visual-config-pvj)
