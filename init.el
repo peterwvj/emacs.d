@@ -14,9 +14,7 @@
                          ("melpa-stable" . "https://stable.melpa.org/packages/")))
 (package-initialize)
 
-;;
-;; Use 'use-package'
-;;
+;; Use 'use-package' to manage packages
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
   (package-install 'use-package))
@@ -29,116 +27,38 @@
 
 (add-to-list 'load-path (expand-file-name "elisp" user-emacs-directory))
 
-;; Set the custom file
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 (load custom-file)
 
-;;
 ;; Convenient way to tell emacs 'yes' or 'no'
-;;
 (defalias 'yes-or-no-p 'y-or-n-p)
 
 
 (require 'startup-messages-config-pvj)
-
-;;
-;; File configuration
-;;
 (require 'file-config-pvj)
-
-;;
-;; Locale
-;;
 (require 'locale-config-pvj)
-
-;;
-;; Scratch buffer configuration
-;;
 (require 'scratch-config-pvj)
-
-;;
-;; Version control
-;;
 (require 'version-control-config-pvj)
-
-;;
-;; File explorer configuration
-;;
 (require 'file-explorer-config-pvj)
-
-;;
-;; Helm configuration
-;;
 (require 'helm-config-pvj)
-
-;;
-;; Setup LateX
-;;
 (require 'latex-config-pvj)
-
 (require 'pdf-tools-config-pvj)
-
 (require 'doc-view-config-pvj)
-
-;;
-;; Functionality that supports text editing
-;;
 (require 'text-config-pvj)
-
-;;
-;; org-mode configuration
-;;
 (require 'org-config-pvj)
-
-;;
-;; Buffer related configuration
-;;
 (require 'buffers-config-pvj)
-
-;;
-;; eshell configuration
-;;
 (require 'eshell-config-pvj)
-
-;;
-;; mu4e configuration
-;;
 (require 'mu4e-config-pvj)
-
 (require 'window-config-pvj)
-
 (require 'company-config-pvj)
-
-;;
-;; Mode-line configuration
-;;
 (require 'mode-line-config-pvj)
-
-;;
-;; Navigation
-;;
 (require 'navigation-config-pvj)
-
-;;
-;; Diminish
-;;
 (require 'diminish-config-pvj)
-
-;;
-;; News feeds
-;;
 (require 'news-config-pvj)
-
 (require 'browser-config-pvj)
-
 (require 'programming-config-pvj)
-
 (require 'flycheck-config-pvj)
-
 (require 'visual-config-pvj)
-
-;;
-;; Utility functions
-;;
 (require 'util-pvj)
 
+;;; init.el ends here
