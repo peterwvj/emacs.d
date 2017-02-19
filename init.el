@@ -102,10 +102,10 @@
 ;;
 (require 'org-config-pvj)
 
-;; Kill buffers that have a live process attached - without asking!
-(setq kill-buffer-query-functions
-  (remq 'process-kill-buffer-query-function
-         kill-buffer-query-functions))
+;;
+;; Buffer related configuration
+;;
+(require 'buffers-config-pvj)
 
 ;;
 ;; To avoid typing ESC-ESC-ESC to escape or quit
@@ -183,13 +183,6 @@
 ;;
 (require 'util-pvj)
 (global-set-key (kbd "<f5>") 'pvj/toggle-window-split)
-
-;;
-;; Better handling of temporary buffers
-;;
-(use-package popwin
-  :config
-  (popwin-mode 1))
 
 ;;
 ;; Syntax checking
