@@ -101,11 +101,6 @@
 (require 'buffers-config-pvj)
 
 ;;
-;; To avoid typing ESC-ESC-ESC to escape or quit
-;;
-(global-set-key (kbd "<escape>") 'keyboard-escape-quit)
-
-;;
 ;; eshell configuration
 ;;
 (require 'eshell-config-pvj)

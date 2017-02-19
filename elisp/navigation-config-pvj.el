@@ -77,5 +77,8 @@
 (global-set-key (kbd "C-a")    'pvj/smart-move-to-line-beginning)
 (global-set-key (kbd "C-z")    'delete-other-windows)
 (global-set-key (kbd "C-x o") 'ace-window)
+;; To avoid typing ESC-ESC-ESC to escape or quit
+(global-set-key (kbd "<escape>") 'keyboard-escape-quit)
+
 
 (provide 'navigation-config-pvj)
