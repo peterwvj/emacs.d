@@ -116,8 +116,7 @@
 ;;
 (require 'mu4e-config-pvj)
 
-;; Also applies to new clients that connect to the Emacs server
-(add-to-list 'default-frame-alist '(fullscreen . maximized))
+(require 'window-config-pvj)
 
 (require 'company-config-pvj)
 
