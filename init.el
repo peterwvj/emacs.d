@@ -118,12 +118,6 @@
 (require 'eshell-config-pvj)
 
 ;;
-;; External browser configuration (use Google Chrome)
-;;
-(setq browse-url-browser-function 'browse-url-generic
-      browse-url-generic-program "google-chrome")
-
-;;
 ;; mu4e configuration
 ;;
 (require 'mu4e-config-pvj)
@@ -153,12 +147,7 @@
 ;;
 (require 'news-config-pvj)
 
-;;
-;; Launch google searches from within Emacs
-;;
-(use-package google-this
-  :config
-  (google-this-mode 1))
+(require 'browser-config-pvj)
 
 (require 'programming-config-pvj)
 
