@@ -48,10 +48,7 @@
 ;;
 (defalias 'yes-or-no-p 'y-or-n-p)
 
-;; Get rid of the splash screen and echo area message
-(setq inhibit-startup-message t
-      inhibit-startup-echo-area-message t)
-
+(require 'startup-messages-config-pvj)
 ;;
 ;; Scratch buffer configuration
 ;;
