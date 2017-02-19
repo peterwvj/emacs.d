@@ -3,7 +3,9 @@
 ;;
 
 (use-package mu4e
+  :if (and (string-equal system-type "gnu/linux") (null noninteractive))
   :load-path "/usr/local/share/emacs/site-lisp/mu4e"
+  :bind (("<f2>" . mu4e))
   :ensure f
   :config
 
@@ -121,10 +123,10 @@
   ;; header fields
   (setq mu4e-headers-fields
         '((:date . 18)
-           (:flags . 6)
-           (:from-or-to . 25) ;; Determined using mu4e-user-mail-address-list
-           (:maildir . 25)
-           (:subject . nil)))
+          (:flags . 6)
+          (:from-or-to . 25) ;; Determined using mu4e-user-mail-address-list
+          (:maildir . 25)
+          (:subject . nil)))
 
   ;; Don't save message to Sent Messages, GMail/IMAP will take care of this
   ;; (setq mu4e-sent-messages-behavior 'delete)
@@ -282,6 +284,19 @@
 
   (use-package mu4e-maildirs-extension
     :config
-    (mu4e-maildirs-extension)))
+    (mu4e-maildirs-extension))
+
+  ;; Make sure the gnutls command-line utils are installed, package
+  ;; 'gnutls-bin' in Debian/Ubuntu.
+  (use-package smtpmail)
+
+  ;; Use same authinfo file for work and private emails
+  (setq message-send-mail-function 'smtpmail-send-it
+        starttls-use-gnutls t
+        smtpmail-auth-credentials (expand-file-name "~/.authinfo.gpg")
+        smtpmail-debug-info t)
+
+  ;; Start mu4e
+  (mu4e))
 
 (provide 'mu4e-config-pvj)

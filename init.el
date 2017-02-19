@@ -126,24 +126,7 @@
 ;;
 ;; mu4e configuration
 ;;
-(use-package mu4e-config-pvj
-  :if (and (string-equal system-type "gnu/linux") (null noninteractive))
-  :ensure f
-  :bind (("<f2>" . mu4e))
-  :config
-  (progn
-    ;; Start mu4e
-    (mu4e)
-
-    ;; Make sure the gnutls command-line utils are installed, package
-    ;; 'gnutls-bin' in Debian/Ubuntu.
-    (use-package smtpmail)
-
-    ;; Use same authinfo file for work and private emails
-    (setq message-send-mail-function 'smtpmail-send-it
-          starttls-use-gnutls t
-          smtpmail-auth-credentials (expand-file-name "~/.authinfo.gpg")
-          smtpmail-debug-info t)))
+(require 'mu4e-config-pvj)
 
 ;; Also applies to new clients that connect to the Emacs server
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
