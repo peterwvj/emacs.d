@@ -199,6 +199,14 @@ there's a region, all lines that region covers will be duplicated."
   (add-hook 'text-mode-hook (lambda () (guess-language-mode 1))))
 
 ;;
+;; Translation
+;;
+(use-package google-translate
+  :config
+  (setq google-translate-default-source-language "da")
+  (setq google-translate-default-target-language "en"))
+
+;;
 ;; For language analysis
 ;;
 (use-package langtool

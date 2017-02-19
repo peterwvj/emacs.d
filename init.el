@@ -192,11 +192,6 @@
 (require 'util-pvj)
 (global-set-key (kbd "<f5>") 'pvj/toggle-window-split)
 
-(use-package google-translate
-  :config
-  (setq google-translate-default-source-language "da")
-  (setq google-translate-default-target-language "en"))
-
 ;;
 ;; Better handling of temporary buffers
 ;;
