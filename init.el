@@ -77,13 +77,7 @@
 ;;
 (require 'latex-config-pvj)
 
-;;
-;; For viewing PDF files
-;;
-(use-package pdf-tools
-  :if (and (string-equal system-type "gnu/linux") (null noninteractive))
-  :config
-  (pdf-tools-install))
+(require 'pdf-tools-config-pvj)
 
 ;;
 ;; Disable line numbers in doc-view-mode (avoid Emacs hanging)
