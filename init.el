@@ -78,12 +78,7 @@
 
 (require 'pdf-tools-config-pvj)
 
-;;
-;; Disable line numbers in doc-view-mode (avoid Emacs hanging)
-;;
-(add-hook 'doc-view-mode-hook
-  (lambda ()
-    (nlinum-mode -1)))
+(require 'doc-view-config-pvj)
 
 ;;
 ;; Functionality that supports text editing
