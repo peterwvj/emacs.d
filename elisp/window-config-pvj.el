@@ -2,6 +2,9 @@
 ;; Windows configuration
 ;;
 
+;; Manual control using the golden-ratio command
+(use-package golden-ratio)
+
 ;; Also applies to new clients that connect to the Emacs server
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 
