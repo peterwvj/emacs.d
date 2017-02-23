@@ -65,19 +65,3 @@ Emacs 24.5, 25.1 and bleeding edge snapshots. The approach that I take
 to testing that the configuration loads successfully is inspired by
 that of [[https://github.com/purcell/emacs.d][Steve Purcell]].
 
-* Screenshots
-
-Below are some examples of how Emacs looks when the configuration is
-loaded.
-
-Using LaTeX:
-
-[[http://i68.tinypic.com/1zo88bt.jpg]]
-
-Managing emails using =mu4e=:
-
-[[http://i66.tinypic.com/21erthj.png]]
-
-Using =eshell=:
-
-[[http://i68.tinypic.com/28m32te.jpg]]
