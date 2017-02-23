@@ -21,7 +21,9 @@
 ;;
 ;; Groovy
 ;;
-(use-package groovy-mode)
+(use-package groovy-mode
+  :init
+  (add-to-list 'auto-mode-alist '("Jenkinsfile" . groovy-mode)))
 
 ;;
 ;; Clojure Interactive Development Environment that Rocks
