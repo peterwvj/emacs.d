@@ -5,6 +5,7 @@
 ;;
 ;; External browser configuration (use Google Chrome)
 ;;
+(require 'browse-url)
 (setq browse-url-browser-function 'browse-url-generic
       browse-url-generic-program "google-chrome")
 
