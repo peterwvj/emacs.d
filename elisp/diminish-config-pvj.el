@@ -19,11 +19,11 @@
 
   (add-hook 'lisp-mode-hook
             (lambda()
-              (setq mode-name "λ"))) 
+              (setq mode-name "λ")))
 
-  (add-hook 'emacs-lisp-mode-hook 
+  (add-hook 'emacs-lisp-mode-hook
             (lambda()
-              (setq mode-name "ξλ"))) 
+              (setq mode-name "ξλ")))
 
   (eval-after-load "reftex"
     '(diminish 'reftex-mode))
