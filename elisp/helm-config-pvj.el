@@ -82,4 +82,7 @@
   ;; If you prefer fuzzy matching
   (setq helm-swoop-use-fuzzy-match t))
 
+;; Use 'helm-make' to list targets
+(use-package helm-make)
+
 (provide 'helm-config-pvj)
