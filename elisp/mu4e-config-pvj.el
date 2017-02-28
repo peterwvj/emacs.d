@@ -53,6 +53,8 @@
   
   (setq mu4e-maildir "~/Maildir")
 
+  (setq mu4e-compose-signature "Best regards,\nPeter")
+  
   ;; Setup environment for main account
   (setq mu4e-sent-folder "/private/[Gmail].Sent Mail"
         mu4e-drafts-folder "/private/[Gmail].Drafts"
