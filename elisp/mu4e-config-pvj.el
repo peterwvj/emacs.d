@@ -3,7 +3,7 @@
 ;;
 
 (use-package mu4e
-  :if (and (string-equal system-type "gnu/linux") (null noninteractive))
+  :if (and (eq system-type 'gnu/linux) (null noninteractive))
   :load-path "/usr/local/share/emacs/site-lisp/mu4e"
   :bind (("<f2>" . mu4e))
   :ensure f

@@ -5,7 +5,7 @@
   ;; On Linux this can be achieve by executing:
   ;; xmodmap -e 'clear Lock' -e 'keycode 66 = F13'
   ;; Inspired by http://sachachua.com/blog/2008/08/emacs-caps-lock-as-m-x/
-  (when (and (string-equal system-type "gnu/linux"))
+  (when (eq system-type 'gnu/linux)
     (progn
       (shell-command "xmodmap -e 'clear Lock' -e 'keycode 66 = F13'")
       (global-set-key [f13] 'er/expand-region))))
