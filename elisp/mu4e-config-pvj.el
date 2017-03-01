@@ -297,8 +297,9 @@
         starttls-use-gnutls t
         smtpmail-auth-credentials (expand-file-name "~/.authinfo.gpg")
         smtpmail-debug-info t)
-
+  
   ;; Start mu4e
-  (mu4e))
+  (add-hook 'after-init-hook
+          (lambda () (mu4e))))
 
 (provide 'mu4e-config-pvj)
