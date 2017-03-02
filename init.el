@@ -8,8 +8,7 @@
 (add-hook 'after-init-hook
           (lambda () (setq gc-cons-threshold pvj/default-gc-cons-threshold)))
 
-(setq package-archives '(
-                         ("gnu" . "https://elpa.gnu.org/packages/")
+(setq package-archives '(("gnu" . "https://elpa.gnu.org/packages/")
                          ("melpa" . "https://melpa.org/packages/")
                          ("melpa-stable" . "https://stable.melpa.org/packages/")))
 (package-initialize)
@@ -32,7 +31,6 @@
 
 ;; Convenient way to tell emacs 'yes' or 'no'
 (defalias 'yes-or-no-p 'y-or-n-p)
-
 
 (require 'startup-messages-config-pvj)
 (require 'file-config-pvj)
@@ -60,5 +58,3 @@
 (require 'flycheck-config-pvj)
 (require 'visual-config-pvj)
 (require 'util-pvj)
-
-;;; init.el ends here
