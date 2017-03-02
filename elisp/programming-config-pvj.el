@@ -44,4 +44,9 @@
   ;; Alternatively use Control-c + tab
   (define-key yas-minor-mode-map (kbd "\C-c TAB") 'yas-expand))
 
+;;
+;; XML configuration
+;;
+(setq nxml-slash-auto-complete-flag t)
+
 (provide 'programming-config-pvj)
