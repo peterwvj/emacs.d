@@ -5,9 +5,9 @@
 (use-package org
   :config
   ;; Allow shift-selection in org-mode
-  (setq org-support-shift-select 'always) 
+  (setq org-support-shift-select 'always)
 
-  (setq org-agenda-files '("~/agenda.org")) 
+  (setq org-agenda-files '("~/agenda.org"))
 
 
   (setq org-src-tab-acts-natively t)

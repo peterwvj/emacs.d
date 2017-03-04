@@ -21,7 +21,6 @@
   (setq neo-smart-open t)
   (setq neo-window-fixed-size nil)
   (setq neo-window-width 50)
-  (setq neo-fit-to-contents t)
   (setq neo-vc-integration (quote (face)))
   (setq neo-cwd-line-style 'text))
 

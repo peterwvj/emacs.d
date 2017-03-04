@@ -1,6 +1,6 @@
 
 ;;
-;; Configuration related to visualisation and highlighting 
+;; Configuration related to visualisation and highlighting
 ;;
 
 ;; Display the current column
@@ -75,9 +75,10 @@
 ;;
 (use-package color)
 
+;; Sets the hl-line face to have no foreground and a background
+;; that is 10% darker than the default face's background.
 (defun set-hl-line-color-based-on-theme ()
-  "Sets the hl-line face to have no foregorund and a background
-    that is 10% darker than the default face's background."
+  "Highlight line based on theme."
   (set-face-attribute 'hl-line nil
                       :foreground nil
                       :background (color-darken-name (face-background 'default) 10)))
@@ -92,7 +93,7 @@
 
 (use-package auto-highlight-symbol
   :init (add-hook 'prog-mode-hook 'auto-highlight-symbol-mode)
-  :config 
+  :config
   (setq ahs-idle-interval 1.0)
   (setq ahs-default-range 'ahs-range-whole-buffer) ;; highlight every occurence in buffer
   :bind (:map auto-highlight-symbol-mode-map

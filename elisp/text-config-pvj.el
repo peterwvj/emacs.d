@@ -113,7 +113,7 @@
 ;; Inspired by http://rejeep.github.io/emacs/elisp/2010/03/11/duplicate-current-line-or-region-in-emacs.html
 (defun pvj/duplicate-current-line-or-region (arg)
   "Duplicates the current line or region ARG times.
-If there's no region, the current line will be duplicated. However, if
+If there's no region, the current line will be duplicated.  However, if
 there's a region, all lines that region covers will be duplicated."
   (interactive "p")
   (let (beg end (origin (point)))
@@ -150,10 +150,13 @@ there's a region, all lines that region covers will be duplicated."
 
 ;; Can be used to overload C-w so if no region is selected then the
 ;; last word is deleted.
-(defun pvj/kill-word-or-region (begining end)
+(defun pvj/kill-word-or-region (beginning end)
+  "Kill region, if selected, otherwise kill word.
+Argument BEGINNING start of region
+Argument END end of region."
   (interactive "r")
   (if (use-region-p)
-      (kill-region begining end)
+      (kill-region beginning end)
     (backward-kill-word 1)))
 
 ;;

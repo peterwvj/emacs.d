@@ -9,6 +9,7 @@
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 
 (defun pvj/toggle-window-split ()
+  "Toggle between vertical and horizontal splitting of two windows."
   (interactive)
   (if (= (count-windows) 2)
       (let* ((this-win-buffer (window-buffer))

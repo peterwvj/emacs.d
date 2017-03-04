@@ -41,7 +41,7 @@
                (local-set-key (kbd "<home>") 'eshell-bol)
                (local-set-key (kbd "C-u") (lambda ()
                                             (interactive)
-                                            (progn 
+                                            (progn
                                               (end-of-buffer)
                                               (eshell-bol)
                                               (kill-visual-line))))))

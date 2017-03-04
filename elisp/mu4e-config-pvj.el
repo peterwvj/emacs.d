@@ -18,7 +18,7 @@
   ;; To prevent issue with long email conversations - see
   ;; https://github.com/djcb/mu/issues/919
   ;;
-  (setq max-specpdl-size 2600)  
+  (setq max-specpdl-size 2600)
 
   (when (fboundp 'imagemagick-register-types)
     (imagemagick-register-types))
@@ -71,8 +71,8 @@
              ;; :enter-func (lambda () (mu4e-message "Switch to the Private context"))
              ;; leave-func not defined
              :match-func (lambda (msg)
-                           (when msg 
-                             (mu4e-message-contact-field-matches msg 
+                           (when msg
+                             (mu4e-message-contact-field-matches msg
                                                                  :to "peter.w.v.jorgensen@gmail.com")))
              :vars '(  ( user-mail-address	     . "peter.w.v.jorgensen@gmail.com"  )
                        ( user-full-name	    . "Peter Würtz Vinther Tran-Jørgensen" )
@@ -87,8 +87,8 @@
              ;; :enter-func (lambda () (mu4e-message "Switch to the Work context"))
              ;; leave-fun not defined
              :match-func (lambda (msg)
-                           (when msg 
-                             (mu4e-message-contact-field-matches msg 
+                           (when msg
+                             (mu4e-message-contact-field-matches msg
                                                                  :to "pvj@eng.au.dk")))
              :vars '(  ( user-mail-address	     . "pvj@eng.au.dk" )
                        ( user-full-name	    . "Peter Würtz Vinther Tran-Jørgensen" )
@@ -107,7 +107,7 @@
   (setq mu4e-context-policy 'pick-first)
 
   ;; compose with the current context is no context matches;
-  ;; default is to ask 
+  ;; default is to ask
   ;; '(setq mu4e-compose-context-policy nil)
 
   (setq mu4e-headers-date-format "%d/%b/%Y %H:%M")
@@ -151,12 +151,12 @@
           ))
 
   ;; a V opens the current message in the default web browsers.
-  (add-to-list 'mu4e-view-actions 
+  (add-to-list 'mu4e-view-actions
                '("ViewInBrowser" . mu4e-action-view-in-browser) t)
 
   ;; a x opens with xwidget
-  (add-to-list 'mu4e-view-actions 
-               '("xViewXWidget" . mu4e-action-view-with-xwidget) t) 
+  (add-to-list 'mu4e-view-actions
+               '("xViewXWidget" . mu4e-action-view-with-xwidget) t)
 
   (setq mu4e-view-show-images t)
   (setq mu4e-html2text-command 'mu4e-shr2text)
