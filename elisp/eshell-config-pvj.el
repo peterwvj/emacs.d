@@ -14,7 +14,7 @@
 
   (setq eshell-aliases-file (expand-file-name ".eshell.aliases" user-emacs-directory))
 
-  (defun eshell-clear-buffer ()
+  (defun pvj/eshell-clear-buffer ()
     (interactive)
     (let ((inhibit-read-only t))
       (erase-buffer)
@@ -27,7 +27,7 @@
                     (setenv "TERM" "xterm-256color")
                     ;; Clearing the buffer ensures that the prompt is rendered
                     ;; using the desired faces
-                    (eshell-clear-buffer)
+                    (pvj/eshell-clear-buffer)
                     )))
 
   (add-to-list 'eshell-preoutput-filter-functions 'xterm-color-filter)
@@ -37,7 +37,7 @@
 
   (add-hook 'eshell-mode-hook
             '(lambda()
-               (local-set-key (kbd "C-l") 'eshell-clear-buffer)
+               (local-set-key (kbd "C-l") 'pvj/eshell-clear-buffer)
                (local-set-key (kbd "<home>") 'eshell-bol)
                (local-set-key (kbd "C-u") (lambda ()
                                             (interactive)
@@ -121,7 +121,7 @@ am redefining it here so that it doesn't screw up my colors"
   (setq eshell-highlight-prompt t)
   (setq eshell-prompt-regexp "\λ ")
 
-  (defun eshell-here ()
+  (defun pvj/eshell-here ()
     "Opens up a new shell in the directory associated with the
 current buffer's file. The eshell is renamed to match that
 directory to make multiple eshell windows easier."
@@ -148,6 +148,6 @@ directory to make multiple eshell windows easier."
   (use-package eshell-z)
 
   (global-set-key (kbd "<f3>") 'eshell)
-  (global-set-key (kbd "<f4>") 'eshell-here))
+  (global-set-key (kbd "<f4>") 'pvj/eshell-here))
 
 (provide 'eshell-config-pvj)
