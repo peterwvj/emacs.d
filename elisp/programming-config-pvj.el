@@ -28,7 +28,10 @@
 ;;
 ;; Clojure Interactive Development Environment that Rocks
 ;;
-(use-package cider)
+(use-package cider
+  :bind
+  (:map cider-repl-mode-map
+        ("C-l" . cider-repl-clear-buffer)))
 
 ;;
 ;; Use YASnippet templates
