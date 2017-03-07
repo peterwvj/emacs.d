@@ -49,6 +49,17 @@
   (eval-after-load "page-break-lines"
     '(diminish 'page-break-lines-mode))
 
+  (eval-after-load "cider"
+    '(diminish 'cider-mode " cid"))
+  
+  (add-hook 'clojure-mode-hook
+            (lambda()
+              (setq mode-name "Cλ")))
+
+  (add-hook 'cider-repl-mode-hook
+            (lambda()
+              (setq mode-name "Ç»")))
+
   (eval-after-load "vim-empty-lines-mode"
     '(diminish 'vim-empty-lines-mode))
 
