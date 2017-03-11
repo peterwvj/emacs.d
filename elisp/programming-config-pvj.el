@@ -31,7 +31,11 @@
 (use-package cider
   :bind
   (:map cider-repl-mode-map
-        ("C-l" . cider-repl-clear-buffer)))
+        ("C-l" . cider-repl-clear-buffer))
+  :config
+  (setq cider-repl-pop-to-buffer-on-connect nil)
+  (setq cider-repl-wrap-history t)
+  (setq  nrepl-hide-special-buffers t))
 
 ;;
 ;; Use YASnippet templates
