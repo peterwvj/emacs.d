@@ -12,6 +12,12 @@
   (auto-compile-on-save-mode))
 
 ;;
+;; Compilation options
+;;
+;; stop scrolling at first error
+(setq compilation-scroll-output 'first-error)
+
+;;
 ;; Support for Python
 ;;
 (use-package elpy
