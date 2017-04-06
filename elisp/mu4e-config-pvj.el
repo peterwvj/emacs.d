@@ -4,16 +4,29 @@
 
 (use-package mu4e
   :if (and (eq system-type 'gnu/linux) (null noninteractive))
+  :init
+  (use-package w3m)
+
+  (defun pvj/mu4e-browse-if-url ()
+    (interactive)
+    (let ((url (w3m-active-region-or-url-at-point)))
+      (if url
+          (browse-url url)
+        ;; Fall back on default behaviour
+        (mu4e-scroll-up))))
+  
   :load-path "/usr/local/share/emacs/site-lisp/mu4e"
   :bind (("<f2>" . mu4e))
   :ensure f
   :config
-
   (use-package org-mu4e
     :ensure f)
   (use-package mu4e-contrib
     :ensure f)
 
+  (bind-keys :map mu4e-view-mode-map
+             ("<return>" . pvj/mu4e-browse-if-url))
+  
   ;;
   ;; To prevent issue with long email conversations - see
   ;; https://github.com/djcb/mu/issues/919
@@ -300,6 +313,6 @@
   
   ;; Start mu4e
   (add-hook 'after-init-hook
-          (lambda () (mu4e))))
+            (lambda () (mu4e))))
 
 (provide 'mu4e-config-pvj)
