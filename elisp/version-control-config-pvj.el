@@ -10,7 +10,8 @@
   :bind
   (("C-x g" . magit-status))
   :config
-  (setq magit-repository-directories `("~/git-repos/" "~/git-repos/ovt/externals/" ,user-emacs-directory)))
+  (setq magit-repository-directories `("~/git-repos/" "~/git-repos/ovt/externals/" ,user-emacs-directory))
+  (setq magit-display-buffer-function 'magit-display-buffer-same-window-except-diff-v1))
 
 ;;
 ;; Validate commit messages
