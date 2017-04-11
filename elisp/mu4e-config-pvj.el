@@ -7,6 +7,14 @@
   :init
   (use-package w3m)
 
+  (defun pvj/remove-signature ()
+    "Remove signature from message."
+    (interactive)
+    (save-excursion
+      (message-goto-signature)
+      (forward-line -1)
+      (delete-region (point) (point-max))))
+  
   (defun pvj/mu4e-browse-if-url ()
     (interactive)
     (let ((url (w3m-active-region-or-url-at-point)))
