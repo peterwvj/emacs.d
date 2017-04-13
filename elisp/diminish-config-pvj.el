@@ -51,6 +51,9 @@
 
   (eval-after-load "cider"
     '(diminish 'cider-mode " cid"))
+
+  (eval-after-load "flycheck"
+    '(diminish 'flycheck-mode))
   
   (add-hook 'clojure-mode-hook
             (lambda()
