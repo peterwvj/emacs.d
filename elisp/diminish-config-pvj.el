@@ -54,7 +54,7 @@
 
   (eval-after-load "flycheck"
     '(diminish 'flycheck-mode))
-  
+
   (add-hook 'clojure-mode-hook
             (lambda()
               (setq mode-name "Cλ")))
@@ -66,6 +66,8 @@
   (eval-after-load "vim-empty-lines-mode"
     '(diminish 'vim-empty-lines-mode))
 
+  (diminish 'auto-revert-mode)
+  
   (diminish 'overwrite-mode)
   
   (diminish 'visual-line-mode)
