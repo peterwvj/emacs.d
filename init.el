@@ -58,3 +58,5 @@
 (require 'flycheck-config-pvj)
 (require 'visual-config-pvj)
 (require 'util-pvj)
+
+(provide 'init)
