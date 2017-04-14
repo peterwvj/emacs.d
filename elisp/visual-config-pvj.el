@@ -34,12 +34,9 @@
 ;;
 (blink-cursor-mode 0)
 
-;; Use the naquadah theme. In addition, the cursor color has been
-;; changed to green, and the text-selection color (the region face)
-;; has been changed to blue
-(use-package naquadah-theme
+(use-package material-theme
   :config
-  (load-theme 'naquadah t))
+  (load-theme 'material t))
 
 ;;
 ;; Hide Emacs toolbar
