@@ -73,18 +73,6 @@
 ;;
 ;; Highlight the current line
 ;;
-(use-package color)
-
-;; Sets the hl-line face to have no foreground and a background
-;; that is 10% darker than the default face's background.
-(defun set-hl-line-color-based-on-theme ()
-  "Highlight line based on theme."
-  (set-face-attribute 'hl-line nil
-                      :foreground nil
-                      :background (color-darken-name (face-background 'default) 10)))
-
-(add-hook 'global-hl-line-mode-hook 'set-hl-line-color-based-on-theme)
-
 (global-hl-line-mode 1)
 
 ;; Do not highlight current line in help mode
