@@ -181,12 +181,10 @@
 
   (setq mu4e-view-show-images t)
   (setq mu4e-html2text-command 'mu4e-shr2text)
-  ;; When using a dark theme the messages are difficult to read
-  (setq shr-color-visible-luminance-min 80)
   (setq mu4e-view-prefer-html t)
   (setq mu4e-use-fancy-chars t)
 
-;;; Save attachment (this can also be a function)
+  ;; Save attachment (this can also be a function)
   (setq mu4e-attachment-dir "~/Downloads")
 
   (define-key mu4e-main-mode-map "q" 'quit-window)
@@ -201,11 +199,7 @@
    mu4e-get-mail-command "imapfilter ; offlineimap -q"
    mu4e-update-interval (* 5 60))
 
-  ;; Spell-check emails
-  ;; (add-hook 'mu4e-compose-mode-hook 'flyspell-mode)
-
-;;; Show Smileys
-  ;;
+  ;; Show Smileys
   (add-hook 'mu4e-view-mode-hook 'smiley-buffer)
 
   ;; Empty the initial bookmark list
