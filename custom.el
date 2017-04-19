@@ -21,10 +21,4 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(anzu-mode-line ((t (:foreground "yellow" :weight bold))))
- '(eshell-prompt ((t (:foreground "green yellow" :weight bold))))
- '(linum ((t (:inherit (shadow default) :foreground "gray40"))))
- '(match ((t (:background "dim gray" :foreground "yellow" :weight bold))))
- '(mode-line ((t (:background "#0c191C" :foreground "#eeeeec" :inverse-video nil :box (:line-width 1 :color "#2e3436" :style released-button)))))
- '(show-paren-match ((t (:background "deep sky blue" :foreground "black" :weight extra-bold))))
- '(term-color-blue ((t (:background "deep sky blue" :foreground "deep sky blue"))) t))
+ '(eshell-prompt ((t (:foreground "green yellow" :weight bold)))))
