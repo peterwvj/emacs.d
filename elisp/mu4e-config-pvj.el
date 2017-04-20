@@ -56,9 +56,6 @@
   (add-hook 'mu4e-main-mode-hook (lambda ()
                                    (nlinum-mode -1)))
 
-  (add-hook 'mu4e-view-mode-hook (lambda ()
-                                   (setq-local global-hl-line-mode nil)))
-
   ;; Invoke built-in completion but ignore the initial input
   (defun pvj/mu4e-completing-read (prompt collection &optional predicate require-match
                                           initial-input hist def inherit-input-method)
