@@ -21,4 +21,5 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(eshell-prompt ((t (:foreground "green yellow" :weight bold)))))
+ '(eshell-prompt ((t (:foreground "green yellow" :weight bold))))
+ '(mode-line ((t (:background "#121212" :foreground "#ffffff" :inverse-video nil :box (:line-width 2 :color "grey75" :style released-button))))))
