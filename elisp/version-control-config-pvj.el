@@ -19,6 +19,15 @@
 (use-package git-commit)
 
 ;;
+;; For editing .gitignore files
+;;
+(use-package gitignore-mode
+  :config
+  (add-hook 'gitignore-mode-hook
+            (lambda ()
+              (electric-indent-mode -1))))
+
+;;
 ;; Highlight changes in the fringe
 ;;
 (use-package diff-hl
