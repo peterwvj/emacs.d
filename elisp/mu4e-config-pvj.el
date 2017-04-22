@@ -177,10 +177,13 @@
                '("xViewXWidget" . mu4e-action-view-with-xwidget) t)
 
   (setq mu4e-view-show-images t)
-  (setq mu4e-html2text-command 'mu4e-shr2text)
   (setq mu4e-view-prefer-html t)
   (setq mu4e-use-fancy-chars t)
 
+    ;; Makes it easier to read messages when using a dark theme
+  (setq shr-color-visible-luminance-min 80)
+  (setq mu4e-html2text-command 'mu4e-shr2text)
+  
   ;; Save attachment (this can also be a function)
   (setq mu4e-attachment-dir "~/Downloads")
 
