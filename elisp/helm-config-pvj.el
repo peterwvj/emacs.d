@@ -43,6 +43,8 @@
   :config
   (projectile-mode)
   (setq projectile-completion-system 'helm)
+  ;; Show project status
+  (setq projectile-switch-project-action 'projectile-vc)
   (helm-projectile-on))
 
 ;; helm swoop
