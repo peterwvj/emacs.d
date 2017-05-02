@@ -183,6 +183,9 @@
     ;; Makes it easier to read messages when using a dark theme
   (setq shr-color-visible-luminance-min 80)
   (setq mu4e-html2text-command 'mu4e-shr2text)
+
+  ;; To convert messages to PDF
+  (setq mu4e-msg2pdf "/usr/bin/msg2pdf")
   
   ;; Save attachment (this can also be a function)
   (setq mu4e-attachment-dir "~/Downloads")
