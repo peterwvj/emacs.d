@@ -52,6 +52,11 @@ Argument STRING the compilation output."
   (add-to-list 'auto-mode-alist '("Jenkinsfile" . groovy-mode)))
 
 ;;
+;; Lua
+;;
+(use-package lua-mode)
+
+;;
 ;; Clojure Interactive Development Environment that Rocks
 ;;
 (use-package cider
