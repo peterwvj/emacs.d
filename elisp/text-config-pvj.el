@@ -189,12 +189,6 @@ Argument END end of region."
   (setq guess-language-min-paragraph-length 35)
   (setq guess-language-langcodes '((da "dansk" nil)
                                    (en "en_GB" "English")))
-  
-  (add-hook 'guess-language-after-detection-functions
-            (lambda (lang beginning end)
-              (if (string= lang "da")
-                  (set-input-method "danish-postfix")
-                (set-input-method nil))))
 
   (add-hook 'text-mode-hook (lambda () (guess-language-mode 1))))
 
