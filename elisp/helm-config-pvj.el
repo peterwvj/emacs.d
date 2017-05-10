@@ -8,7 +8,6 @@
    ("C-x r b" . helm-filtered-bookmarks)
    ("C-x C-f" . helm-find-files)
    ("C-x C-r" . helm-recentf)
-   ("C-c m" . helm-mu-contacts)
    ;; Mark buffers with C-SPACE and kill them with M-D
    ("C-x C-b" . helm-buffers-list))
   :config

@@ -318,6 +318,8 @@
 
   ;; Use helm for searching
   (use-package helm-mu
+    :bind
+    (("C-c m" . helm-mu-contacts))
     :config
     (define-key mu4e-main-mode-map "s" 'helm-mu)
     (define-key mu4e-headers-mode-map "s" 'helm-mu)
