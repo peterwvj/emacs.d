@@ -22,4 +22,5 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(eshell-prompt ((t (:foreground "green yellow" :weight bold))))
- '(mode-line ((t (:background "#121212" :foreground "#ffffff" :inverse-video nil :box (:line-width 2 :color "grey75" :style released-button))))))
+ '(mode-line ((t (:background "#121212" :foreground "#ffffff" :inverse-video nil :box (:line-width 2 :color "grey75" :style released-button)))))
+ '(nlinum-current-line ((t (:inherit linum :foreground "gold" :weight bold)))))

@@ -16,9 +16,16 @@
 ;; Show line numbers
 ;;
 (use-package nlinum
-  :pin "gnu"
+  ;; :pin "gnu"
+  ;;
+  ;; nlinum version 1.6, which offers highlighting of the current line
+  ;; number, has not yet been made available via the GNU ELPA package
+  ;; archive. Therefore, I have included this package in my
+  ;; "site-lisp" folder.
+  :ensure f
   :config
   (setq nlinum-format " %d ")
+  (setq nlinum-highlight-current-line t)
   (global-nlinum-mode))
 
 ;;
