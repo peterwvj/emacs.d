@@ -13,7 +13,6 @@ alias phds cd ~/svn-repos/joint/phds/
 alias joint cd ~/svn-repos/joint/
 alias dev cd ~/dev/
 alias ovt cd ~/git-repos/ovt/
-alias d cd ..
 alias ls ls -1 $*
 alias v view-file $1
 alias e find-file $1
