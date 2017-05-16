@@ -6,6 +6,9 @@
   :ensure auctex
   :config
 
+  ;; Indent items by two spaces.
+  (setq LaTeX-item-indent 0)
+  
   (setq TeX-PDF-mode t)
 
   ;; Generate sync file and sync with C-v
