@@ -21,4 +21,12 @@
   (add-hook 'after-init-hook 'global-company-mode)
   (global-set-key (kbd "M-C-/") 'company-complete))
 
+;;
+;; Show documentation popups when idling on a completion candidate
+;;
+(use-package company-quickhelp
+  :config
+  (setq company-quickhelp-delay 0.1)
+  (company-quickhelp-mode 1))
+
 (provide 'company-config-pvj)
