@@ -85,4 +85,7 @@
 ;; Use 'helm-make' to list targets
 (use-package helm-make)
 
+;; Helm interface for The Silver Searcher
+(use-package helm-ag)
+
 (provide 'helm-config-pvj)
