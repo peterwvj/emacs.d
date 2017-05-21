@@ -1,3 +1,6 @@
+;;
+;; Grep configuration
+;;
 
 (defun rgrep-fullscreen () 
   "Run `rgrep' in full screen."
