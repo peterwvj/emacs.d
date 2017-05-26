@@ -46,8 +46,12 @@
   :config
   (setq aw-scope 'frame))
 
-
-(use-package ace-jump-mode)
+(use-package ace-jump-mode
+  :bind
+  (("C-z" . ace-jump-char-mode))
+  :config
+  ;; Respect case
+  (setq ace-jump-mode-case-fold nil))
 
 ;; Display key bindings
 (use-package which-key
@@ -75,7 +79,6 @@
 (global-set-key (kbd "C-l") 'goto-line)
 (global-set-key (kbd "<home>") 'pvj/smart-move-to-line-beginning)
 (global-set-key (kbd "C-a")    'pvj/smart-move-to-line-beginning)
-(global-set-key (kbd "C-z")    'delete-other-windows)
 (global-set-key (kbd "C-x o") 'ace-window)
 ;; To avoid typing ESC-ESC-ESC to escape or quit
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
