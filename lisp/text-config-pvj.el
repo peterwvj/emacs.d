@@ -207,8 +207,7 @@ Argument END end of region."
   :config
   (setq langtool-language-tool-jar "~/tools/LanguageTool-3.4/languagetool-commandline.jar"))
 
-(global-set-key (kbd "C-q") 'pvj/duplicate-current-line-or-region)
-(global-set-key (kbd "C-d") 'kill-whole-line)
+
 (defun pvj/smart-kill-whole-line (&optional arg)
   "Wrapper for the function `kill-whole-line' that respects indentation.
 Argument ARG the argument passed to 'kill-whole-line'."
@@ -216,6 +215,8 @@ Argument ARG the argument passed to 'kill-whole-line'."
   (kill-whole-line arg)
   (back-to-indentation))
 
+(global-set-key (kbd "C-c q") 'pvj/duplicate-current-line-or-region)
+(global-set-key (kbd "C-c d") 'pvj/smart-kill-whole-line)
 (delete-selection-mode 1)
 (global-set-key (kbd "C-w") 'pvj/kill-word-or-region)
 (global-set-key (kbd "<f6>") 'helm-show-kill-ring)
