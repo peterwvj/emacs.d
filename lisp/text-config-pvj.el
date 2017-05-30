@@ -209,6 +209,13 @@ Argument END end of region."
 
 (global-set-key (kbd "C-q") 'pvj/duplicate-current-line-or-region)
 (global-set-key (kbd "C-d") 'kill-whole-line)
+(defun pvj/smart-kill-whole-line (&optional arg)
+  "Wrapper for the function `kill-whole-line' that respects indentation.
+Argument ARG the argument passed to 'kill-whole-line'."
+  (interactive "P")
+  (kill-whole-line arg)
+  (back-to-indentation))
+
 (delete-selection-mode 1)
 (global-set-key (kbd "C-w") 'pvj/kill-word-or-region)
 (global-set-key (kbd "<f6>") 'helm-show-kill-ring)
