@@ -86,6 +86,8 @@
 (use-package helm-make)
 
 ;; Helm interface for The Silver Searcher
-(use-package helm-ag)
+(use-package helm-ag
+  :bind
+  (("C-c a" . helm-ag)))
 
 (provide 'helm-config-pvj)
