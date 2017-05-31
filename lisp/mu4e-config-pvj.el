@@ -146,7 +146,10 @@
           (:flags . 6)
           (:from-or-to . 25) ;; Determined using mu4e-user-mail-address-list
           (:maildir . 25)
-          (:subject . nil)))
+          ;; Using an unrestricted subject WIDTH (by passing 'nil')
+          ;; causes mails with very long subjects to span more than a
+          ;; single line, which is a bit of an annoyance.
+          (:subject . 50)))
 
   ;; Don't save message to Sent Messages, GMail/IMAP will take care of this
   ;; (setq mu4e-sent-messages-behavior 'delete)
