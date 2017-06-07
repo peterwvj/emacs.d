@@ -10,6 +10,10 @@
     "Enable yasnippet for all backends.")
   :config
 
+  ;; Tell dabbrev not to downcase candidates. See
+  ;; https://emacs.stackexchange.com/questions/10837/how-to-make-company-mode-be-case-sensitive-on-plain-text
+  (setq company-dabbrev-downcase nil)
+  
   (defun company-mode/backend-with-yas (backend)
     (if (or (not company-mode/enable-yas) (and (listp backend) (member 'company-yasnippet backend)))
         backend
