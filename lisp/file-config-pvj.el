@@ -22,4 +22,6 @@
 ;; Always follow symlinks
 (setq vc-follow-symlinks t)
 
+(global-set-key (kbd "C-c v") 'view-file)
+
 (provide 'file-config-pvj)
