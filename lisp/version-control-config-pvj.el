@@ -18,6 +18,12 @@
 ;;
 (use-package git-commit)
 
+
+;;
+;; Walk through revisions of a file
+;;
+(use-package git-timemachine)
+
 ;;
 ;; For editing .gitignore files
 ;;
