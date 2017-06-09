@@ -87,4 +87,12 @@ Argument STRING the compilation output."
 ;;
 (setq nxml-slash-auto-complete-flag t)
 
+;;
+;; "Jump to definition" feature
+;;
+(use-package dumb-jump
+  :config
+  (setq dumb-jump-selector 'helm)
+  (dumb-jump-mode 1))
+
 (provide 'programming-config-pvj)
