@@ -106,7 +106,7 @@
 ;;
 (use-package vim-empty-lines-mode
   :init
-  (add-hook 'prog-mode-hook 'vim-empty-lines-mode))
+  (global-vim-empty-lines-mode))
 
 ;;
 ;; Display current match and total matches in the mode-line in various search modes
