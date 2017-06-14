@@ -260,7 +260,31 @@
     ;; (setq mu4e-alert-notify-repeated-mails t)
     (setq mu4e-alert-interesting-mail-query unread))
 
-  ;; C-c C-a	` attach a file (pro-tip: drag & drop works as well)
+  ;; Single file attachment:
+  ;;
+  ;; C-c C-a ` attach a file (pro-tip: drag & drop works as well)
+
+  ;; Attach multiple files:
+  ;;
+  ;; Inspired by
+  ;; http://www.djcbsoftware.nl/code/mu/mu4e/Attaching-files-with-dired.html
+  ;; Mark the file(s) in dired and press C-c RET C-a.
+  (require 'gnus-dired)
+  ;; make the `gnus-dired-mail-buffers' function also work on
+  ;; message-mode derived modes, such as mu4e-compose-mode
+  (defun gnus-dired-mail-buffers ()
+    "Return a list of active message buffers."
+    (let (buffers)
+      (save-current-buffer
+        (dolist (buffer (buffer-list t))
+          (set-buffer buffer)
+          (when (and (derived-mode-p 'message-mode)
+                     (null message-sent-message-via))
+            (push (buffer-name buffer) buffers))))
+      (nreverse buffers)))
+
+  (setq gnus-dired-mail-mode 'mu4e-user-agent)
+  (add-hook 'dired-mode-hook 'turn-on-gnus-dired-mode)
 
   ;; Check for supposed attachments prior to sending an email
   ;; Inspired by https://github.com/munen/emacs.d
