@@ -68,10 +68,6 @@
 (add-hook 'term-mode-hook (lambda ()
                             (nlinum-mode -1)))
 
-(use-package beacon
-  :config
-  (beacon-mode 1))
-
 ;;
 ;; Highlight the current line
 ;;
