@@ -25,6 +25,11 @@
   (add-hook 'after-init-hook 'global-company-mode)
   (global-set-key (kbd "M-C-/") 'company-complete))
 
+(use-package company-flx
+  :config
+  (with-eval-after-load 'company
+    (company-flx-mode +1)))
+
 ;;
 ;; Show documentation popups when idling on a completion candidate
 ;;
