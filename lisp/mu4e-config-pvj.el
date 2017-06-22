@@ -117,16 +117,7 @@
                        (smtpmail-smtp-server . "asmtp.au.dk")
                        (smtpmail-smtp-service . 587)))))
 
-  ;; Set `mu4e-context-policy` and `mu4e-compose-policy` to tweak when mu4e should
-  ;; guess or ask the correct context, e.g.
-
-  ;; Start with the first (default) context; 
-  ;; default is to ask-if-none (ask when there's no context yet, and none match)
   (setq mu4e-context-policy 'pick-first)
-
-  ;; compose with the current context is no context matches;
-  ;; default is to ask
-  ;; '(setq mu4e-compose-context-policy nil)
 
   (setq mu4e-headers-date-format "%d/%b/%Y %H:%M")
 
@@ -137,10 +128,9 @@
   ;; Don't split the headers view when viewing messages
   (setq mu4e-split-view nil)
   
-  ;; a  list of user's e-mail addresses
+  ;; A list of user's e-mail addresses
   (setq mu4e-user-mail-address-list '("peter.w.v.jorgensen@gmail.com" "pvj@eng.au.dk"))
   
-  ;; header fields
   (setq mu4e-headers-fields
         '((:date . 18)
           (:flags . 6)
@@ -157,7 +147,7 @@
   ;; Don't keep message buffers around
   (setq message-kill-buffer-on-exit t)
 
-  ;; Show the email in the address field (rather than only the name)
+  ;; Show the email in the address field (in addition to the name)
   (setq mu4e-view-show-addresses t)
 
   ;; Setup some handy shortcuts
@@ -171,11 +161,11 @@
           ("/work/PhD.Projects.CGen"     . ?c)
           ))
 
-  ;; a V opens the current message in the default web browsers.
+  ;; a V opens the current message in the default web browser.
   (add-to-list 'mu4e-view-actions
                '("ViewInBrowser" . mu4e-action-view-in-browser) t)
 
-  ;; a x opens with xwidget
+  ;; a x opens the current message using xwidget
   (add-to-list 'mu4e-view-actions
                '("xViewXWidget" . mu4e-action-view-with-xwidget) t)
 
@@ -183,7 +173,7 @@
   (setq mu4e-view-prefer-html t)
   (setq mu4e-use-fancy-chars t)
 
-    ;; Makes it easier to read messages when using a dark theme
+  ;; Make it easier to read messages when using a dark theme
   (setq shr-color-visible-luminance-min 80)
   (setq mu4e-html2text-command 'mu4e-shr2text)
 
@@ -229,7 +219,7 @@
   ;;
   ;; Since I have configured imapfilter to flag spam as 'read' (or seen)
   ;; these mails are not considered in this bookmark (as they will never
-  ;; be 'unread' anyway)
+  ;; appear as 'unread' anyway)
   ;;
   (defvar unread "flag:unread AND (maildir:/private/INBOX OR maildir:/work/*)")
   (defvar spam-folders "maildir:/private/[Gmail].Spam OR maildir:/work/\"Junk E-Mail\"")
