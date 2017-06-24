@@ -27,8 +27,7 @@
                     (setenv "TERM" "xterm-256color")
                     ;; Clearing the buffer ensures that the prompt is rendered
                     ;; using the desired faces
-                    (pvj/eshell-clear-buffer)
-                    )))
+                    (pvj/eshell-clear-buffer))))
 
   (add-to-list 'eshell-preoutput-filter-functions 'xterm-color-filter)
 
