@@ -41,6 +41,9 @@ Argument STRING the compilation output."
 ;; Support for Python
 ;;
 (use-package elpy
+  :bind
+  (:map inferior-python-mode-map
+        ("C-c l" . comint-clear-buffer))
   :config
   (elpy-enable))
 
