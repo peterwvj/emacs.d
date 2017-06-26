@@ -91,7 +91,7 @@
          (beginning-of-line))))
 
 (define-key global-map (kbd "C-c C-SPC") 'ace-jump-mode)
-(global-set-key (kbd "C-l") 'goto-line)
+(global-set-key (kbd "C-c l") 'goto-line)
 (global-set-key (kbd "<home>") 'pvj/smart-move-to-line-beginning)
 (global-set-key (kbd "C-a")    'pvj/smart-move-to-line-beginning)
 (global-set-key (kbd "C-x o") 'ace-window)
