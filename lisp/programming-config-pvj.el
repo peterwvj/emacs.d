@@ -91,6 +91,13 @@ Argument STRING the compilation output."
   (define-key yas-minor-mode-map (kbd "\C-c TAB") 'yas-expand))
 
 ;;
+;; Company mode backend for C/C++ header files
+;;
+(use-package company-c-headers
+  :config
+  (add-to-list 'company-backends 'company-c-headers))
+
+;;
 ;; XML configuration
 ;;
 (setq nxml-slash-auto-complete-flag t)
