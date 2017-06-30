@@ -1,14 +1,5 @@
 
-(use-package expand-region
-  :config
-  ;; Assumes that some key (e.g. CAPS LOCK) is mapped to f13.
-  ;; On Linux this can be achieve by executing:
-  ;; xmodmap -e 'clear Lock' -e 'keycode 66 = F13'
-  ;; Inspired by http://sachachua.com/blog/2008/08/emacs-caps-lock-as-m-x/
-  (when (eq system-type 'gnu/linux)
-    (progn
-      (shell-command "xmodmap -e 'clear Lock' -e 'keycode 66 = F13'")
-      (global-set-key [f13] 'er/expand-region))))
+(use-package expand-region)
 
 ;;
 ;; Distraction free writing

@@ -30,7 +30,11 @@
     ("l" dumb-jump-quick-look "look")
     ("e" dumb-jump-go-prefer-external "external")
     ("w" dumb-jump-go-other-window "window")
-    ("q" nil "Quit")))
+    ("q" nil "Quit"))
 
+  (defhydra hydra-expand (global-map "C-c" :columns 1)
+    "expand-region"
+    ("c" er/contract-region "Contract" :bind nil)
+    ("e" er/expand-region "Expand")))
 
 (provide 'hydra-config-pvj)
