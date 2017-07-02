@@ -59,6 +59,7 @@
 (require 'flycheck-config-pvj)
 (require 'visual-config-pvj)
 (require 'hydra-config-pvj)
+(require 'restart-config-pvj)
 (require 'util-pvj)
 
 (provide 'init)
