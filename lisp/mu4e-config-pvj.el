@@ -22,6 +22,12 @@
           (browse-url url)
         ;; Fall back on default behaviour
         (mu4e-scroll-up))))
+
+  (defun pvj/update-inboxes ()
+    "Quickly update inboxes for private and work accounts."
+    (interactive)
+    (let ((mu4e-get-mail-command "offlineimap -q -f INBOX"))
+      (mu4e-update-mail-and-index nil)))
   
   :load-path "/usr/local/share/emacs/site-lisp/mu4e"
   :bind (("<f2>" . mu4e))
