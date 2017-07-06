@@ -28,6 +28,18 @@
     (interactive)
     (let ((mu4e-get-mail-command "offlineimap -q -f INBOX"))
       (mu4e-update-mail-and-index nil)))
+
+  (defun pvj/insert-detailed-work-signature ()
+    "Insert detailed work signature in the current message."
+    (interactive)
+    (progn
+      (pvj/remove-signature)
+      (let ((message-signature (concat "Best regards,\n"
+                                       "Peter W. V. Tran-Jørgensen\n"
+                                       "Postdoc, Software Engineering\n"
+                                       "Aarhus University, Department of Engineering\n"
+                                       "Finlandsgade 22, DK-8200, Aarhus N")))
+        (message-insert-signature))))
   
   :load-path "/usr/local/share/emacs/site-lisp/mu4e"
   :bind (("<f2>" . mu4e))
