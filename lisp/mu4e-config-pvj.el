@@ -137,7 +137,7 @@
 
   (setq mu4e-context-policy 'pick-first)
 
-  (setq mu4e-headers-date-format "%d/%b/%Y %H:%M")
+  (setq mu4e-headers-date-format "%d/%b/%y %H:%M")
 
   ;; Set the number of lines to be shown in the headers view when it
   ;; is split
@@ -150,7 +150,7 @@
   (setq mu4e-user-mail-address-list '("peter.w.v.jorgensen@gmail.com" "pvj@eng.au.dk"))
   
   (setq mu4e-headers-fields
-        '((:date . 18)
+        '((:date . 16)
           (:flags . 6)
           (:from-or-to . 25) ;; Determined using mu4e-user-mail-address-list
           (:maildir . 25)
