@@ -189,7 +189,9 @@
 
   (setq mu4e-view-show-images t)
   (setq mu4e-view-prefer-html t)
-  (setq mu4e-use-fancy-chars t)
+  ;; Use of fancy characters may introduce quite a performance
+  ;; hit. See https://github.com/djcb/mu/issues/163
+  (setq mu4e-use-fancy-chars nil)
 
   ;; Make it easier to read messages when using a dark theme
   (setq shr-color-visible-luminance-min 80)
