@@ -192,6 +192,7 @@
   ;; Use of fancy characters may introduce quite a performance
   ;; hit. See https://github.com/djcb/mu/issues/163
   (setq mu4e-use-fancy-chars nil)
+  (setq mu4e-headers-results-limit 100)
 
   ;; Make it easier to read messages when using a dark theme
   (setq shr-color-visible-luminance-min 80)
