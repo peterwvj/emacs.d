@@ -158,7 +158,11 @@
           ;; causes mails with very long subjects to span more than a
           ;; single line, which is a bit of an annoyance.
           (:subject . 50)))
-
+  
+  (add-hook 'mu4e-headers-mode-hook (lambda ()
+                                      (visual-line-mode -1)
+                                      (toggle-truncate-lines 1)))
+  
   ;; Don't save message to Sent Messages, GMail/IMAP will take care of this
   ;; (setq mu4e-sent-messages-behavior 'delete)
 
