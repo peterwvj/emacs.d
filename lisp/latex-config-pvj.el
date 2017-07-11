@@ -76,4 +76,7 @@
 ;; Scholar, ACM Digital Library, IEEE Xplore and DBLP.
 (use-package gscholar-bibtex)
 
+(add-hook 'bibtex-mode-hook (lambda ()
+                              (electric-indent-mode -1)))
+
 (provide 'latex-config-pvj)
