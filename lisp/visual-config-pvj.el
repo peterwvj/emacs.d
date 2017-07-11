@@ -58,7 +58,12 @@
 ;;
 ;; Alarm bell config
 ;;
-(setq ring-bell-function 'ignore) ;; Completely turn off the alarm bell
+
+;; Visual bell that works in all terminal types. Inspired by Purcell's
+;; configuration.
+(setq-default  ring-bell-function (lambda ()
+                                    (invert-face 'mode-line)
+                                    (run-with-timer 0.05 nil 'invert-face 'mode-line)))
 
 ;; Disable hl-line-mode for ansi-term
 (add-hook 'term-mode-hook (lambda ()
