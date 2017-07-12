@@ -8,6 +8,22 @@
 ;; Also applies to new clients that connect to the Emacs server
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 
+;; Manage multiple window configurations.
+(use-package elscreen
+  :config
+  (progn
+    (set-face-attribute 'elscreen-tab-background-face nil :inherit 'default :background nil)
+    (setq-default elscreen-tab-display-control nil)
+    (setq-default elscreen-tab-display-kill-screen nil)
+
+    (use-package helm-elscreen
+      :bind
+      (:map elscreen-map
+            ("h" . helm-elscreen)))
+    
+    (elscreen-set-prefix-key "\C-cs")
+    (elscreen-start)))
+
 (defun pvj/toggle-window-split ()
   "Toggle between vertical and horizontal splitting of two windows."
   (interactive)
