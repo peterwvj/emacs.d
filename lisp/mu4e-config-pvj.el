@@ -154,10 +154,7 @@
           (:flags . 6)
           (:from-or-to . 25) ;; Determined using mu4e-user-mail-address-list
           (:maildir . 25)
-          ;; Using an unrestricted subject WIDTH (by passing 'nil')
-          ;; causes mails with very long subjects to span more than a
-          ;; single line, which is a bit of an annoyance.
-          (:subject . 50)))
+          (:subject . nil)))
   
   (add-hook 'mu4e-headers-mode-hook (lambda ()
                                       (visual-line-mode -1)
