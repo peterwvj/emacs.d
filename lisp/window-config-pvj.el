@@ -22,6 +22,10 @@
             ("h" . helm-elscreen)))
     
     (elscreen-set-prefix-key "\C-cs")
+
+    (global-set-key [C-prior] 'elscreen-previous)
+    (global-set-key [C-next] 'elscreen-next)
+    
     (elscreen-start)))
 
 (defun pvj/toggle-window-split ()
