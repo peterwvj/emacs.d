@@ -9,4 +9,8 @@
   (select-window (get-buffer-window "*grep*"))
   (delete-other-windows))
 
+
+;; Writable grep buffer
+(use-package wgrep)
+
 (provide 'grep-config-pvj)
