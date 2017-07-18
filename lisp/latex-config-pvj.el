@@ -40,10 +40,6 @@
 
   (add-hook 'pdf-view-mode-hook
             (lambda ()
-              (nlinum-mode -1) ))
-
-  (add-hook 'pdf-view-mode-hook
-            (lambda ()
               (pdf-view-fit-page-to-window) ))
 
   ;; LateX keywords that need colouring

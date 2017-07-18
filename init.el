@@ -42,7 +42,6 @@
 (require 'helm-config-pvj)
 (require 'pdf-tools-config-pvj)
 (require 'latex-config-pvj)
-(require 'doc-view-config-pvj)
 (require 'text-config-pvj)
 (require 'org-config-pvj)
 (require 'buffers-config-pvj)

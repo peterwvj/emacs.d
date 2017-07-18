@@ -47,10 +47,6 @@
 
   (add-hook 'eshell-mode-hook
             (lambda ()
-              (nlinum-mode -1)))
-
-  (add-hook 'eshell-mode-hook
-            (lambda ()
               (setq-local global-hl-line-mode nil)))
 
   (add-hook 'eshell-mode-hook

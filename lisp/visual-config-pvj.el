@@ -13,16 +13,6 @@
 (setq show-paren-delay 0)
 
 ;;
-;; Show line numbers
-;;
-(use-package nlinum
-  :pin "gnu"
-  :config
-  (setq nlinum-format " %d ")
-  (setq nlinum-highlight-current-line t)
-  (global-nlinum-mode))
-
-;;
 ;; Highlights delimiters such as parentheses, brackets or braces according to their depth
 ;;
 (use-package rainbow-delimiters
@@ -68,10 +58,6 @@
 ;; Disable hl-line-mode for ansi-term
 (add-hook 'term-mode-hook (lambda ()
                             (setq-local global-hl-line-mode nil)))
-
-;; Do not show line numbers
-(add-hook 'term-mode-hook (lambda ()
-                            (nlinum-mode -1)))
 
 ;;
 ;; Highlight the current line

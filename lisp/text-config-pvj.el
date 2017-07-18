@@ -8,13 +8,6 @@
   :bind
   (([f1] . writeroom-mode))
   :config
-  (add-to-list 'writeroom-global-effects
-               (lambda (arg)
-                 (cond
-                  ((= arg 1)
-                   (nlinum-mode -1))
-                  ((= arg -1)
-                   (nlinum-mode 1)))))
   (setq writeroom-fringes-outside-margins nil)
   (setq writeroom-restore-window-config t))
 
