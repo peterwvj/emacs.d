@@ -107,4 +107,9 @@
 ;;
 (global-visual-line-mode 1)
 
+;; Display time format
+(setq display-time-day-and-date t
+      display-time-default-load-average nil
+      display-time-24hr-format t)
+
 (provide 'visual-config-pvj)
