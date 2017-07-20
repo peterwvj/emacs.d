@@ -107,6 +107,17 @@
 ;;
 (global-visual-line-mode 1)
 
+
+;; Show line numbers
+;;
+(use-package nlinum
+  :pin "gnu"
+  :bind
+  (("C-c n" . nlinum-mode))
+  :config
+  (setq nlinum-format " %d ")
+  (setq nlinum-highlight-current-line t))
+
 ;; Display time format
 (setq display-time-day-and-date t
       display-time-default-load-average nil
