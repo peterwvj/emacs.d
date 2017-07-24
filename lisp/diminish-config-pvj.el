@@ -54,9 +54,6 @@
 
   (eval-after-load "flycheck"
     '(diminish 'flycheck-mode))
-
-  (eval-after-load "beacon"
-    '(diminish 'beacon-mode))
   
   (add-hook 'clojure-mode-hook
             (lambda()
