@@ -15,6 +15,7 @@
     (set-face-attribute 'elscreen-tab-background-face nil :inherit 'default :background nil)
     (setq-default elscreen-tab-display-control nil)
     (setq-default elscreen-tab-display-kill-screen nil)
+    (setq-default elscreen-display-screen-number nil)
 
     (use-package helm-elscreen
       :bind
