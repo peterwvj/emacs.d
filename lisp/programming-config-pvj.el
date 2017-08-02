@@ -113,4 +113,10 @@ Argument STRING the compilation output."
   (setq dumb-jump-selector 'helm)
   (dumb-jump-mode 1))
 
+;;
+;; C configuration
+;;
+(setq c-default-style "linux"
+      c-basic-offset 4)
+
 (provide 'programming-config-pvj)
