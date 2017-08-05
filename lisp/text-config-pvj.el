@@ -144,6 +144,11 @@ Argument END end of region."
     (backward-kill-word 1)))
 
 ;;
+;; Yank without formatting
+;;
+(setq yank-excluded-properties t)
+
+;;
 ;; Disable auto-copy to clipboard for mouse
 ;;
 (setq mouse-drag-copy-region nil)
