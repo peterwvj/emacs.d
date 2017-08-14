@@ -16,6 +16,7 @@
     (setq-default elscreen-tab-display-control nil)
     (setq-default elscreen-tab-display-kill-screen nil)
     (setq-default elscreen-display-screen-number nil)
+    (setq-default elscreen-display-tab nil)
 
     (use-package helm-elscreen
       :bind
