@@ -166,7 +166,11 @@ Argument END end of region."
 (electric-indent-mode 1)
 
 ;; Enable smart pairing
-(electric-pair-mode)
+(use-package smartparens
+  :config
+  (progn
+    (require 'smartparens-config)
+    (smartparens-global-mode 1)))
 
 ;; Make lambdas appear as λ and so on
 (setq prettify-symbols-unprettify-at-point 'right-edge)

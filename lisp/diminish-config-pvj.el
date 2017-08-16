@@ -34,6 +34,9 @@
   (eval-after-load "hungry-delete"
     '(diminish 'hungry-delete-mode))
 
+  (eval-after-load "smartparens"
+    '(diminish 'smartparens-mode))
+  
   (eval-after-load "volatile-highlights"
     '(diminish 'volatile-highlights-mode))
 
