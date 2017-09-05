@@ -25,9 +25,9 @@
 ;;
 (blink-cursor-mode 0)
 
-(use-package material-theme
+(use-package tangotango-theme
   :config
-  (load-theme 'material t))
+  (load-theme 'tangotango t))
 
 ;;
 ;; Hide Emacs toolbar
