@@ -28,4 +28,17 @@ Argument REGION the paragraph region."
               (kill-buffer)))
       (message "Not a file!"))))
 
+(defun pvj/create-buffer-copy ()
+  (interactive)
+  (let ((buf (current-buffer))
+        (win (get-buffer-window))
+        (name (generate-new-buffer-name "BUFFERCOPY")))
+    (generate-new-buffer name)
+    ;; (get-buffer-create name)
+    (copy-to-buffer name (point-min) (point-max))
+    (split-window-horizontally)
+    (other-window 1)
+    (switch-to-buffer name)
+    (other-window -1)))
+
 (provide 'util-pvj)
