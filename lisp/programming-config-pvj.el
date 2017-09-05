@@ -119,4 +119,9 @@ Argument STRING the compilation output."
 (setq c-default-style "linux"
       c-basic-offset 4)
 
+;;
+;; Increment/decrement numbers at point
+;;
+(use-package evil-numbers)
+
 (provide 'programming-config-pvj)
