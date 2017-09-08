@@ -55,6 +55,12 @@
   (eval-after-load "cider"
     '(diminish 'cider-mode " cid"))
 
+  (eval-after-load "company"
+    '(diminish 'company-mode))
+
+  (eval-after-load "yasnippet"
+    '(diminish 'yas-minor-mode))
+
   (eval-after-load "flycheck"
     '(diminish 'flycheck-mode))
   
