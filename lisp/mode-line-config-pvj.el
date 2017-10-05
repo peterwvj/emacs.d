@@ -2,10 +2,11 @@
 ;; Mode-line configuration
 ;;
 
-;; Setup smart-mode-line
-(use-package smart-mode-line
+(use-package spaceline
+  :demand t
   :config
-  (setq sml/theme 'respectful)
-  (sml/setup))
+  (require 'spaceline-config)
+  (spaceline-spacemacs-theme)
+  (spaceline-helm-mode))
 
 (provide 'mode-line-config-pvj)
