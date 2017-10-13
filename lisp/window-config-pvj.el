@@ -9,26 +9,11 @@
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 
 ;; Manage multiple window configurations.
-(use-package elscreen
+(use-package eyebrowse
   :config
-  (progn
-    (set-face-attribute 'elscreen-tab-background-face nil :inherit 'default :background nil)
-    (setq-default elscreen-tab-display-control nil)
-    (setq-default elscreen-tab-display-kill-screen nil)
-    (setq-default elscreen-display-screen-number nil)
-    (setq-default elscreen-display-tab nil)
-
-    (use-package helm-elscreen
-      :bind
-      (:map elscreen-map
-            ("h" . helm-elscreen)))
-    
-    (elscreen-set-prefix-key "\C-cs")
-
-    (global-set-key [C-prior] 'elscreen-previous)
-    (global-set-key [C-next] 'elscreen-next)
-    
-    (elscreen-start)))
+  (setq eyebrowse-wrap-around t
+        eyebrowse-new-workspace t)
+  (eyebrowse-mode t))
 
 (defun pvj/toggle-window-split ()
   "Toggle between vertical and horizontal splitting of two windows."
