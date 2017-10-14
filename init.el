@@ -35,6 +35,7 @@
 (require 'startup-messages-config-pvj)
 (require 'file-config-pvj)
 (require 'locale-config-pvj)
+(require 'font-config-pvj)
 (require 'scratch-config-pvj)
 (require 'version-control-config-pvj)
 (require 'file-explorer-config-pvj)
