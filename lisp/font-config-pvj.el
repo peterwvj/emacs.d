@@ -3,8 +3,11 @@
 ;;
 
 (defun pvj/setup-font ()
-  (if (member "DejaVu Sans Mono" (font-family-list))
-      (set-frame-font "DejaVu Sans Mono-14")))
+  (let ((fonts (font-family-list)))
+    (cond ((member "Source Code Pro" fonts)
+           (set-frame-font "Source Code Pro-14"))
+          ((member "DejaVu Sans Mono" fonts)
+           (set-frame-font "DejaVu Sans Mono-14")))))
 
 (defun pvj/configure-frame (frame)
   "Configure faces on frame creation"
