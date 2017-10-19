@@ -9,7 +9,8 @@
    ("C-x C-f" . helm-find-files)
    ;; Mark buffers with C-SPACE and kill them with M-D
    ("C-x C-b" . helm-buffers-list)
-   ("C-c r" . helm-resume))
+   ("C-c r" . helm-resume)
+   ("C-c b" . helm-bookmarks))
   :config
   (helm-mode 1)
   (setq helm-M-x-fuzzy-match t)
