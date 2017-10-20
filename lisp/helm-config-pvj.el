@@ -10,7 +10,8 @@
    ;; Mark buffers with C-SPACE and kill them with M-D
    ("C-x C-b" . helm-buffers-list)
    ("C-c r" . helm-resume)
-   ("C-c b" . helm-bookmarks))
+   ("C-c b" . helm-bookmarks)
+   ("C-c o" . helm-occur))
   :config
   (helm-mode 1)
   (setq helm-M-x-fuzzy-match t)
