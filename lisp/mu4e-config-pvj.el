@@ -140,7 +140,7 @@
   ;; (setq mu4e-headers-visible-lines 18)
 
   ;; Don't split the headers view when viewing messages
-  (setq mu4e-split-view nil)
+  ;; (setq mu4e-split-view nil)
   
   ;; A list of user's e-mail addresses
   (setq mu4e-user-mail-address-list '("peter.w.v.jorgensen@gmail.com" "pvj@eng.au.dk"))
