@@ -15,7 +15,22 @@
   (setq company-dabbrev-downcase nil)
   
   (add-hook 'after-init-hook 'global-company-mode)
-  (global-set-key (kbd "M-C-/") 'company-complete))
+  (global-set-key (kbd "M-C-/") 'company-complete)
+
+  ;; Remove irrelevant suggestions from generated LaTeX related
+  ;; files. For details, see issue
+  ;; https://github.com/syl20bnr/spacemacs/issues/9706
+  (require 'company-files)
+  (dolist (extension '(".fbd_latexmk"
+                       ".aux"
+                       ".log"
+                       ".pdf"
+                       ".bbl"
+                       ".bcf"
+                       ".gz"
+                       ".blg"
+                       ".fls"))
+    (push extension company-files-exclusions)))
 
 (use-package company-flx
   :config
