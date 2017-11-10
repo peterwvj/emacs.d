@@ -71,6 +71,7 @@
 ;; Display key bindings
 (use-package which-key
   :config
+  (setq which-key-max-description-length 60)
   (which-key-mode))
 
 (defun pvj/copy-file-path ()
