@@ -70,7 +70,7 @@
 
 ;; highlight every occurence in buffer
 (use-package auto-highlight-symbol
-  :init (add-hook 'prog-mode-hook 'auto-highlight-symbol-mode)
+  ;; :init (add-hook 'prog-mode-hook 'auto-highlight-symbol-mode)
   :config
   (setq ahs-idle-interval 1.0)
   (setq ahs-default-range 'ahs-range-whole-buffer))
