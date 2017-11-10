@@ -93,4 +93,10 @@
   :bind
   (("C-c a" . helm-ag)))
 
+;; Helm interface for swiper
+(use-package swiper-helm
+  :bind
+  ;; Use swiper-helm instead of isearch
+  (("C-s" . swiper-helm)))
+
 (provide 'helm-config-pvj)
