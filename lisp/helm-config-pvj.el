@@ -51,7 +51,7 @@
 ;; helm swoop
 (use-package helm-swoop
   :bind
-  (("C-s"     . helm-swoop-without-pre-input))
+  (("C-c s"     . helm-swoop-without-pre-input))
   :config
   ;; Move up and down like isearch
   (bind-keys :map helm-swoop-map
