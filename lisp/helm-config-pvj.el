@@ -20,10 +20,7 @@
   (setq helm-ff-newfile-prompt-p nil)
 
   (setq helm-display-header-line nil)
-
-  ;; Turn off the source header line
-  (set-face-attribute 'helm-source-header nil :height 0.1)
-
+  
   ;; I used to have a problem where C-x C-f, i.e. helm-find-files would make emacs hang.
   ;; Workaround: by setting this flag I can prevent Emacs from hanging...
   (setq helm-split-window-in-side-p t))
