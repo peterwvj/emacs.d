@@ -9,7 +9,8 @@
   :config
   (setq diredp-hide-details-initially-flag nil)
   (setq diredp-hide-details-propagate-flag nil)
-  (setq dired-listing-switches "-alh"))
+  (setq dired-listing-switches "-alh")
+  (setq dired-dwim-target t))
 
 ;;
 ;; Tree-based file explorer
