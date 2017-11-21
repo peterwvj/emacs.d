@@ -7,7 +7,7 @@
 ;;
 (require 'browse-url)
 (setq browse-url-browser-function 'browse-url-generic
-      browse-url-generic-program "google-chrome")
+      browse-url-generic-program "firefox")
 
 ;;
 ;; Launch google searches from within Emacs
