@@ -124,4 +124,18 @@ Argument STRING the compilation output."
 ;;
 (use-package evil-numbers)
 
+;;
+;; web-mode
+;;
+(use-package web-mode
+  :mode (("\\.html\\'" . web-mode)
+         ("\\.vm\\'" . web-mode)
+         )
+  :config
+  (setq web-mode-enable-current-element-highlight t
+        web-mode-enable-current-column-highlight t
+        web-mode-enable-auto-closing t
+        web-mode-enable-auto-expanding t
+        web-mode-enable-auto-indentation t))
+
 (provide 'programming-config-pvj)
