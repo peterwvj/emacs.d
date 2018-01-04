@@ -138,4 +138,6 @@ Argument STRING the compilation output."
         web-mode-enable-auto-expanding t
         web-mode-enable-auto-indentation t))
 
+(require 'alloy-mode)
+
 (provide 'programming-config-pvj)
