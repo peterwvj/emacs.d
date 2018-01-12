@@ -35,6 +35,10 @@
   (defhydra hydra-expand (global-map "C-c" :columns 1)
     "expand-region"
     ("c" er/contract-region "Contract" :bind nil)
-    ("e" er/expand-region "Expand")))
+    ("e" er/expand-region "Expand"))
+
+  (defhydra hydra-kill-whole-line (global-map "C-c" :columns 1)
+    "kill-line"
+    ("d" pvj/smart-kill-whole-line)))
 
 (provide 'hydra-config-pvj)

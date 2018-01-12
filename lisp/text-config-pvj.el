@@ -209,7 +209,6 @@ Argument ARG the argument passed to 'kill-whole-line'."
   (back-to-indentation))
 
 (global-set-key (kbd "C-c q") 'pvj/duplicate-current-line-or-region)
-(global-set-key (kbd "C-c d") 'pvj/smart-kill-whole-line)
 (delete-selection-mode 1)
 (global-set-key (kbd "C-w") 'pvj/kill-word-or-region)
 (global-set-key (kbd "<f6>") 'helm-show-kill-ring)
