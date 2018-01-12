@@ -70,6 +70,11 @@
   (add-hook 'mu4e-main-mode-hook (lambda ()
                                    (setq-local global-hl-line-mode nil)))
 
+  ;; Turn off auto-fill-mode in the mu4e message buffer
+  (add-hook 'mu4e-compose-mode-hook
+            (lambda ()
+              (auto-fill-mode -1)))
+
   ;; Invoke built-in completion but ignore the initial input
   (defun pvj/mu4e-completing-read (prompt collection &optional predicate require-match
                                           initial-input hist def inherit-input-method)
