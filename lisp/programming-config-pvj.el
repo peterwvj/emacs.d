@@ -34,9 +34,6 @@ Argument STRING the compilation output."
                     buffer)))
 (add-hook 'compilation-finish-functions 'pvj/bury-compile-buffer-if-successful)
 
-(add-hook 'conf-mode-hook (lambda ()
-                            (electric-indent-mode -1)))
-
 ;; stop scrolling at first error
 (setq compilation-scroll-output 'first-error)
 

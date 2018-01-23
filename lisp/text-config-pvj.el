@@ -162,8 +162,8 @@ Argument END end of region."
 (setq-default tab-width 2)
 (setq indent-line-function 'insert-tab)
 
-;; Indent lines automatically
-(electric-indent-mode 1)
+;; Disable electric-indent globally
+(electric-indent-mode -1)
 
 ;; Enable smart pairing
 (use-package smartparens
