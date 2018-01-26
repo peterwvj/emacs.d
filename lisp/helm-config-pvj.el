@@ -48,7 +48,7 @@
   (projectile-mode)
   (setq projectile-completion-system 'helm)
   ;; Show project status
-  (setq projectile-switch-project-action 'projectile-vc)
+  (setq projectile-switch-project-action 'projectile-dired)
   (helm-projectile-on))
 
 ;; helm swoop
