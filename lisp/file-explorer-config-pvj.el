@@ -3,12 +3,11 @@
 ;;
 
 ;;
-;; dired+ configuration
+;; diredfl configuration
 ;;
-(use-package dired+
+(use-package diredfl
   :config
-  (setq diredp-hide-details-initially-flag nil)
-  (setq diredp-hide-details-propagate-flag nil)
+  (diredfl-global-mode)
   (setq dired-listing-switches "-alh")
   (setq dired-dwim-target t))
 
