@@ -135,6 +135,24 @@ Argument STRING the compilation output."
         web-mode-enable-auto-expanding t
         web-mode-enable-auto-indentation t))
 
+;;
+;; Octave mode
+;;
+(add-to-list 'auto-mode-alist '("\\.m$" . octave-mode))
+
+(add-hook 'inferior-octave-mode-hook
+          (lambda ()
+            (smartparens-mode -1)
+            (setq-local global-hl-line-mode nil)))
+
+;; Make the up and down arrow keys behave as in a shell
+(add-hook 'inferior-octave-mode-hook
+          (lambda ()
+            (define-key inferior-octave-mode-map [up]
+              'comint-previous-input)
+            (define-key inferior-octave-mode-map [down]
+              'comint-next-input))) 
+
 (require 'alloy-mode)
 
 (provide 'programming-config-pvj)
