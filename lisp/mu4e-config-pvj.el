@@ -138,6 +138,8 @@
 
   (setq mu4e-context-policy 'pick-first)
 
+  (setq mu4e-headers-include-related nil)
+
   (setq mu4e-headers-date-format "%d/%b/%y %H:%M")
 
   ;; Set the number of lines to be shown in the headers view when it
