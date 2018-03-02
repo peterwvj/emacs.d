@@ -11,7 +11,13 @@
    ("C-x C-b" . helm-buffers-list)
    ("C-c r" . helm-resume)
    ("C-c b" . helm-bookmarks)
-   ("C-c o" . helm-occur))
+   ("C-c o" . helm-occur)
+   :map helm-map
+   ("<left>" . backward-char)
+   ("<right>" . forward-char)
+   :map helm-find-files-map
+   ("<left>" . backward-char)
+   ("<right>" . forward-char))
   :config
   (helm-mode 1)
   (setq helm-M-x-fuzzy-match t)
