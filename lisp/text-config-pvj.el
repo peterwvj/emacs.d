@@ -5,8 +5,6 @@
 ;; Distraction free writing
 ;;
 (use-package writeroom-mode
-  :bind
-  (([f1] . writeroom-mode))
   :config
   (setq writeroom-fringes-outside-margins nil)
   (setq writeroom-restore-window-config t))
