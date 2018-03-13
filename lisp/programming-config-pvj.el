@@ -90,6 +90,10 @@ Argument STRING the compilation output."
   ;; Alternatively use Control-c + tab
   (define-key yas-minor-mode-map (kbd "\C-c TAB") 'yas-expand))
 
+;; Official Yasnippet collections
+(use-package yasnippet-snippets
+  :after (yasnippet))
+
 ;;
 ;; Company mode backend for C/C++ header files
 ;;
