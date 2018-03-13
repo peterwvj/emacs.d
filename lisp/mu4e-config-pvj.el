@@ -57,7 +57,7 @@
   ;; To prevent issue with long email conversations - see
   ;; https://github.com/djcb/mu/issues/919
   ;;
-  (setq max-specpdl-size 2600)
+  (setq max-specpdl-size 32000)
 
   (when (fboundp 'imagemagick-register-types)
     (imagemagick-register-types))
