@@ -55,5 +55,8 @@ With a prefix ARG always prompt for command to use."
                     " "
                     (shell-quote-argument buffer-file-name)))))
 
+(defun pvj/open-gnome-terminal ()
+  (interactive)
+  (shell-command "gnome-terminal"))
 
 (provide 'util-pvj)
