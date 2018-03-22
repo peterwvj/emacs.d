@@ -25,11 +25,7 @@
         helm-recentf-fuzzy-match t)
   (setq helm-ff-newfile-prompt-p nil)
 
-  (setq helm-display-header-line nil)
-  
-  ;; I used to have a problem where C-x C-f, i.e. helm-find-files would make emacs hang.
-  ;; Workaround: by setting this flag I can prevent Emacs from hanging...
-  (setq helm-split-window-in-side-p t))
+  (setq helm-display-header-line nil))
 
 (global-set-key (kbd "C-x k") 'kill-this-buffer)
 
