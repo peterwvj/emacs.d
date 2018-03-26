@@ -176,12 +176,8 @@
   (setq mu4e-maildir-shortcuts
         '(("/private/INBOX"             . ?i)
           ("/private/[Gmail].Sent Mail" . ?s)
-          ("/private/[Gmail].Smuk"     . ?m)
           ("/work/INBOX"     . ?k)
-          ("/work/Sent Items"     . ?x)
-          ("/work/Overture"     . ?d)
-          ("/work/PhD.Projects.CGen"     . ?c)
-          ))
+          ("/work/Sent Items"     . ?x)))
 
   ;; a V opens the current message in the default web browser.
   (add-to-list 'mu4e-view-actions
