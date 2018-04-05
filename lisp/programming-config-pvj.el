@@ -158,5 +158,6 @@ Argument STRING the compilation output."
               'comint-next-input))) 
 
 (require 'alloy-mode)
+(require 'tla-mode)
 
 (provide 'programming-config-pvj)
