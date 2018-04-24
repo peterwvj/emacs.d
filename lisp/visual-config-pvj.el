@@ -25,6 +25,11 @@
 ;;
 (blink-cursor-mode 0)
 
+;;
+;; Change cursor to a bar
+;;
+(setq-default cursor-type 'bar) 
+
 (use-package tangotango-theme
   :config
   (load-theme 'tangotango t))
