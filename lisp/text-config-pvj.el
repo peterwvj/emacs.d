@@ -24,7 +24,9 @@
 ;;
 ;; Enable undo-tree
 ;;
-(use-package undo-tree :config (global-undo-tree-mode))
+(use-package undo-tree
+  :pin "gnu"
+  :config (global-undo-tree-mode))
 
 ;; Move text
 (use-package move-text
