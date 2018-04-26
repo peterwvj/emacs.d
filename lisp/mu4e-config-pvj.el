@@ -262,14 +262,14 @@
                '(unread "Unread messages" ?u))
 
   ;; Email notifications
-  (use-package mu4e-alert
-    :init
-    ;; (add-hook 'after-init-hook #'mu4e-alert-enable-notifications)
-    (add-hook 'after-init-hook #'mu4e-alert-enable-mode-line-display)
-    :config
-    (mu4e-alert-set-default-style 'libnotify)
-    ;; (setq mu4e-alert-notify-repeated-mails t)
-    (setq mu4e-alert-interesting-mail-query unread))
+  ;; (use-package mu4e-alert
+  ;;   :init
+  ;;   ;; (add-hook 'after-init-hook #'mu4e-alert-enable-notifications)
+  ;;   (add-hook 'after-init-hook #'mu4e-alert-enable-mode-line-display)
+  ;;   :config
+  ;;   (mu4e-alert-set-default-style 'libnotify)
+  ;;   ;; (setq mu4e-alert-notify-repeated-mails t)
+  ;;   (setq mu4e-alert-interesting-mail-query unread))
 
   ;; Single file attachment:
   ;;
