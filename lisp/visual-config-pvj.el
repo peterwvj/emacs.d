@@ -110,15 +110,20 @@
 (global-visual-line-mode 1)
 
 
+
+;;
 ;; Show line numbers
 ;;
-(use-package nlinum
-  :pin "gnu"
-  :bind
-  (("C-c n" . nlinum-mode))
-  :config
-  (setq nlinum-format " %d ")
-  (setq nlinum-highlight-current-line t))
+(let ((emacs26 "26.1"))
+  (if (version= emacs-version emacs26)
+      (global-set-key (kbd "C-c n") 'display-line-numbers-mode)
+    (use-package nlinum
+      :pin "gnu"
+      :bind
+      (("C-c n" . nlinum-mode))
+      :config
+      (setq nlinum-format " %d ")
+      (setq nlinum-highlight-current-line t))))
 
 ;; Display time format
 (setq display-time-day-and-date t
