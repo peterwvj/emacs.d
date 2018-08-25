@@ -169,11 +169,12 @@ Argument END end of region."
 
 ;; Enable smart pairing
 (use-package smartparens
+  :bind
+  (("C-c k" . sp-unwrap-sexp))
   :config
   (progn
     (require 'smartparens-config)
-    (smartparens-global-mode 1)
-    (setq sp-autoinsert-pair nil)))
+    (smartparens-global-mode 1)))
 
 ;; Make lambdas appear as λ and so on
 (setq prettify-symbols-unprettify-at-point 'right-edge)
