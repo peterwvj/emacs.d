@@ -75,12 +75,9 @@ Argument STRING the compilation output."
 ;; Use YASnippet templates
 ;;
 (use-package yasnippet
+  :bind
+  (("C-c y" . yas-insert-snippet))
   :config
-  (use-package helm-c-yasnippet
-    :config
-    (setq helm-yas-space-match-any-greedy t)
-    (global-set-key (kbd "C-c y") 'helm-yas-complete))
-  
   (yas-global-mode 1)
   ;; Remove Yasnippet's default tab key binding
   (define-key yas-minor-mode-map (kbd "<tab>") nil)
