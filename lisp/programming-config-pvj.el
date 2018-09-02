@@ -156,6 +156,11 @@ Argument STRING the compilation output."
 
 (use-package package-lint)
 
+(use-package flycheck-package
+  :config
+  (eval-after-load 'flycheck
+    '(flycheck-package-setup)))
+
 (require 'alloy-mode)
 (require 'tla-mode)
 
