@@ -154,6 +154,8 @@ Argument STRING the compilation output."
             (define-key inferior-octave-mode-map [down]
               'comint-next-input))) 
 
+(use-package package-lint)
+
 (require 'alloy-mode)
 (require 'tla-mode)
 
