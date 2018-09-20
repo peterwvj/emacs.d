@@ -125,6 +125,7 @@
       (setq nlinum-format " %d ")
       (setq nlinum-highlight-current-line t))))
 
+(require 'time)
 ;; Display time format
 (setq display-time-day-and-date t
       display-time-default-load-average nil
