@@ -161,9 +161,6 @@ Argument STRING the compilation output."
   (eval-after-load 'flycheck
     '(flycheck-package-setup)))
 
-(require 'alloy-mode)
-(require 'tla-mode)
-
 (use-package flycheck-vdm)
 (use-package vdm-snippets)
 (use-package vdm-mode
