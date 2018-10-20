@@ -45,6 +45,9 @@ Argument STRING the compilation output."
   (:map inferior-python-mode-map
         ("C-c l" . comint-clear-buffer))
   :config
+  (setq elpy-rpc-python-command "python3")
+  (setq python-shell-interpreter "python3")
+  (setq elpy-rpc-backend "jedi")
   (elpy-enable))
 
 ;;
