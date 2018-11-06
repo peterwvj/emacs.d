@@ -146,7 +146,6 @@ Argument STRING the compilation output."
 
 (add-hook 'inferior-octave-mode-hook
           (lambda ()
-            (smartparens-mode -1)
             (setq-local global-hl-line-mode nil)))
 
 ;; Make the up and down arrow keys behave as in a shell
