@@ -174,7 +174,8 @@ Argument END end of region."
   :config
   (progn
     (require 'smartparens-config)
-    (smartparens-global-mode 1)))
+    (smartparens-global-mode 1)
+    (setq sp-autoinsert-pair nil)))
 
 ;; Make lambdas appear as λ and so on
 (setq prettify-symbols-unprettify-at-point 'right-edge)
