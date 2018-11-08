@@ -164,9 +164,6 @@ Argument END end of region."
 (setq-default tab-width 2)
 (setq indent-line-function 'insert-tab)
 
-;; Disable electric-indent globally
-(electric-indent-mode -1)
-
 ;; Indent only based on indentation of the line above
 ;; Use M-backspace to unindent a single level
 (use-package clean-aindent-mode
