@@ -5,7 +5,7 @@
 (use-package company
   :config
 
-  (setq company-idle-delay 0.0)
+  (setq company-idle-delay 0.3)
   (setq company-minimum-prefix-length 1)
 
   ;; Tell dabbrev not to downcase candidates. See
