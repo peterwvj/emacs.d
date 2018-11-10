@@ -4,6 +4,8 @@
 
 (setq initial-scratch-message "")
 
+(setq initial-major-mode 'text-mode)
+
 ;;
 ;; Re-spawn scratch buffer when killed
 ;;
