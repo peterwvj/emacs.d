@@ -30,9 +30,9 @@
 ;;
 (setq-default cursor-type 'bar) 
 
-(use-package tangotango-theme
+(use-package naquadah-theme
   :config
-  (load-theme 'tangotango t))
+  (load-theme 'naquadah t))
 
 ;;
 ;; Hide Emacs toolbar
