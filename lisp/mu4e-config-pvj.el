@@ -191,7 +191,7 @@
   (setq mu4e-view-prefer-html t)
   ;; Use of fancy characters may introduce quite a performance
   ;; hit. See https://github.com/djcb/mu/issues/163
-  (setq mu4e-use-fancy-chars nil)
+  (setq mu4e-use-fancy-chars t)
   (setq mu4e-headers-results-limit 100)
 
   ;; Make it easier to read messages when using a dark theme
@@ -216,7 +216,7 @@
    mu4e-update-interval (* 5 60))
 
   ;; Show Smileys
-  (add-hook 'mu4e-view-mode-hook 'smiley-buffer)
+  ;; (add-hook 'mu4e-view-mode-hook 'smiley-buffer)
 
   ;; Empty the initial bookmark list
   (setq mu4e-bookmarks '())
