@@ -171,7 +171,7 @@ Argument STRING the compilation output."
 (use-package vdm-snippets)
 (use-package vdm-mode
   :config
-  (setq flycheck-vdm-tool-jar-path "/home/peter/dev/vdmj/vdmj-4.1.0-P-180112.jar")
+  (setq flycheck-vdm-tool-jar-path "/home/peter/dev/vdmj/vdmj.jar")
   (vdm-mode-setup))
 
 
