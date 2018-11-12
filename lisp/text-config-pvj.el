@@ -179,6 +179,7 @@ Argument END end of region."
   :config
   (progn
     (require 'smartparens-config)
+    (setq sp-highlight-pair-overlay nil)
     (smartparens-global-mode 1)))
 
 ;; Make lambdas appear as λ and so on
