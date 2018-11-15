@@ -203,6 +203,12 @@
   ;; Save attachment (this can also be a function)
   (setq mu4e-attachment-dir "~/Downloads")
 
+  ;; Use gnus article view
+  (setq mu4e-view-use-gnus t)
+
+  (require 'gnus-icalendar)
+  (gnus-icalendar-setup)
+  
   (define-key mu4e-main-mode-map "q" 'quit-window)
   (define-key mu4e-main-mode-map "Q" 'mu4e-quit)
   (define-key mu4e-view-mode-map (kbd "C-n") 'org-next-link)
@@ -363,7 +369,8 @@
     (define-key mu4e-view-mode-map "s" 'helm-mu))
   
   ;; Start mu4e
-  (add-hook 'after-init-hook
-            (lambda () (mu4e))))
+  ;; (add-hook 'after-init-hook
+  ;;           (lambda () (mu4e)))
+  )
 
 (provide 'mu4e-config-pvj)
