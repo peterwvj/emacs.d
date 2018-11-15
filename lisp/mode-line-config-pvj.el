@@ -3,7 +3,6 @@
 ;;
 
 (use-package spaceline
-  :demand t
   :config
   (require 'spaceline-config)
   (spaceline-spacemacs-theme)
