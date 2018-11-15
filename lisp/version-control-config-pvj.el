@@ -38,11 +38,6 @@
   (global-diff-hl-mode))
 
 ;;
-;; Subverion
-;;
-(use-package dsvn)
-
-;;
 ;; ediff configuration
 ;;
 ;; To make ‘ediff’ operate on selected-frame use the following:
