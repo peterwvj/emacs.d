@@ -5,8 +5,6 @@
 (use-package mu4e
   :if (and (eq system-type 'gnu/linux) (null noninteractive))
   :init
-  (use-package w3m)
-
   (defun pvj/remove-signature ()
     "Remove signature from message."
     (interactive)
