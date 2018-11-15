@@ -2,14 +2,6 @@
 (use-package expand-region)
 
 ;;
-;; Distraction free writing
-;;
-(use-package writeroom-mode
-  :config
-  (setq writeroom-fringes-outside-margins nil)
-  (setq writeroom-restore-window-config t))
-
-;;
 ;; Display form feed characters as tidy horizontal lines
 ;;
 (use-package page-break-lines
