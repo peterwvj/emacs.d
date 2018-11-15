@@ -232,4 +232,9 @@ Argument ARG the argument passed to 'kill-whole-line'."
 (global-set-key (kbd "M-Q")   'pvj/unfill-paragraph)
 (global-set-key (kbd "<f9>") 'revert-buffer)
 
+;; Writable grep buffer
+(use-package wgrep
+  :config
+  (setq wgrep-auto-save-buffer t))
+
 (provide 'text-config-pvj)
