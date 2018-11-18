@@ -1,5 +1,12 @@
 
-(use-package expand-region)
+(use-package expand-region
+  :config
+  (add-hook 'text-mode-hook
+            (lambda ()
+              (append
+               er/try-expand-list
+               '(mark-paragraph
+                 mark-page)))))
 
 ;;
 ;; Display form feed characters as tidy horizontal lines
