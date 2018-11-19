@@ -51,7 +51,6 @@
   (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
   (projectile-mode)
   (setq projectile-completion-system 'helm)
-  ;; Show project status
   (setq projectile-switch-project-action 'projectile-dired)
   (helm-projectile-on))
 
