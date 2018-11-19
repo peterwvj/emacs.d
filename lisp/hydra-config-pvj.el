@@ -32,7 +32,9 @@
     ("w" dumb-jump-go-other-window "window")
     ("q" nil "Quit"))
 
-  (defhydra hydra-expand (global-map "C-c" :columns 1)
+  (defhydra hydra-expand (:pre (setq hydra-is-helpful nil)
+                          :after-exit (setq hydra-is-helpful t)
+                          global-map "C-c" :columns 1)
     "expand-region"
     ("c" er/contract-region "Contract" :bind nil)
     ("e" er/expand-region "Expand"))
