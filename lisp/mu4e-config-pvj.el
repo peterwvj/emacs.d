@@ -15,7 +15,7 @@
   
   (defun pvj/mu4e-browse-if-url ()
     (interactive)
-    (let ((url (w3m-active-region-or-url-at-point)))
+    (let ((url (shr-url-at-point nil)))
       (if url
           (browse-url url)
         ;; Fall back on default behaviour
