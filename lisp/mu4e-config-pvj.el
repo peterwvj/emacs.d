@@ -341,7 +341,7 @@
 
   (setq mu4e-maildirs-extension-propertize-func 'pvj/mu4e-maildirs-extension-propertize-unread-only)
 
-  (setq mu4e-maildirs-extension-custom-list '("/private/INBOX" "/private/[Gmail].Announcements" "/work/INBOX" "/work/Overture" "/work/JML" "/work/PhD.Announcements"))
+  (setq mu4e-maildirs-extension-custom-list '("/private/INBOX"  "/work/INBOX" "/work/Overture"))
 
   (use-package mu4e-maildirs-extension
     :config
