@@ -2,6 +2,11 @@
 ;; Increase the buffer size of *Messages*
 (setq message-log-max 20000)
 
+(add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
+(add-to-list 'load-path (expand-file-name "site-lisp" user-emacs-directory))
+
+(require 'ui-config-pvj)
+
 ;; Increase the garbage collection threshold during startup
 (defconst pvj/default-gc-cons-threshold gc-cons-threshold)
 (setq gc-cons-threshold (* 256 1024 1024))
@@ -23,9 +28,6 @@
   (setq use-package-always-ensure t)
   (setq use-package-always-demand t)
   (setq use-package-always-pin "melpa"))
-
-(add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
-(add-to-list 'load-path (expand-file-name "site-lisp" user-emacs-directory))
 
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 (load custom-file)

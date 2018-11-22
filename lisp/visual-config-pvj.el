@@ -34,22 +34,6 @@
   (load-theme 'naquadah t))
 
 ;;
-;; Hide Emacs toolbar
-;;
-(tool-bar-mode -1)
-
-;;
-;; Hide menu-bar
-;;
-(menu-bar-mode -1)
-
-;;
-;; Hide scroll-bar
-;;
-(when (null noninteractive)
-  (scroll-bar-mode -1))
-
-;;
 ;; Visual mode-line bell
 ;;
 (use-package mode-line-bell
