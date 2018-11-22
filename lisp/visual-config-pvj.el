@@ -20,15 +20,11 @@
   ;; To start the mode automatically in most programming modes (Emacs 24 and above):
   (add-hook 'prog-mode-hook #'rainbow-delimiters-mode))
 
-;;
-;; No blinking cursor
-;;
-(blink-cursor-mode 0)
-
-;;
-;; Change cursor to a bar
-;;
-(setq-default cursor-type 'bar) 
+(use-package beacon
+  :config
+  (setq-default beacon-lighter "")
+  (setq-default beacon-size 5)
+  (add-hook 'after-init-hook 'beacon-mode))
 
 (use-package naquadah-theme
   :config
@@ -60,11 +56,6 @@
 ;; Disable hl-line-mode for ansi-term
 (add-hook 'term-mode-hook (lambda ()
                             (setq-local global-hl-line-mode nil)))
-
-;;
-;; Highlight the current line
-;;
-(global-hl-line-mode 1)
 
 ;; Do not highlight current line in help mode
 (add-hook 'help-mode-hook (lambda ()
