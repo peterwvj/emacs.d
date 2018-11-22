@@ -3,6 +3,9 @@
 ;; Configuration related to visualisation and highlighting
 ;;
 
+(setq use-file-dialog nil)
+(setq use-dialog-box nil)
+
 ;; Display the current column
 (setq column-number-mode t)
 
