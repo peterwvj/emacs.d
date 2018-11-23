@@ -146,17 +146,14 @@ Argument END end of region."
       (kill-region beginning end)
     (backward-kill-word 1)))
 
-;;
 ;; Yank without formatting
-;;
 (setq yank-excluded-properties t)
 
-;;
 ;; Disable auto-copy to clipboard for mouse
-;;
 (setq mouse-drag-copy-region nil)
 
-(put 'upcase-region 'disabled nil)
+;; Enable all disabled commands
+(setq disabled-command-function nil)
 
 ;; Use spaces for indentation
 (setq-default indent-tabs-mode nil)
