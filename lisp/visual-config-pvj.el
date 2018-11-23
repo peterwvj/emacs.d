@@ -3,6 +3,10 @@
 ;; Configuration related to visualisation and highlighting
 ;;
 
+(use-package naquadah-theme
+  :config
+  (load-theme 'naquadah t))
+
 (setq use-file-dialog nil)
 (setq use-dialog-box nil)
 
@@ -28,10 +32,6 @@
   (setq-default beacon-lighter "")
   (setq-default beacon-size 5)
   (add-hook 'after-init-hook 'beacon-mode))
-
-(use-package naquadah-theme
-  :config
-  (load-theme 'naquadah t))
 
 ;;
 ;; Visual mode-line bell
