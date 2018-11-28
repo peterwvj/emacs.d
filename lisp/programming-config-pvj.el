@@ -161,6 +161,7 @@ Argument STRING the compilation output."
   (eval-after-load 'flycheck
     '(flycheck-package-setup)))
 
+(use-package vdm-comint)
 (use-package flycheck-vdm)
 (use-package vdm-snippets)
 (use-package vdm-mode
@@ -168,6 +169,11 @@ Argument STRING the compilation output."
   (setq flycheck-vdm-tool-jar-path "/home/peter/dev/vdmj/vdmj.jar")
   (vdm-mode-setup))
 
+;; Inconvenient to treat ` as a pair in vdm-mode and vdm-comint-mode
+(eval-after-load 'smartparens
+  '(sp-local-pair #'vdm-mode "`" nil :actions nil))
 
+(eval-after-load 'smartparens
+  '(sp-local-pair #'vdm-comint-mode "`" nil :actions nil))
 
 (provide 'programming-config-pvj)
