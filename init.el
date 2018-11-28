@@ -30,15 +30,15 @@
   (setq use-package-always-pin "melpa"))
 
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
-(load custom-file)
+(load custom-file nil t nil nil)
 
 ;; Convenient way to tell emacs 'yes' or 'no'
 (defalias 'yes-or-no-p 'y-or-n-p)
 
 (require 'visual-config-pvj)
+(require 'startup-messages-config-pvj)
 (require 'mode-line-config-pvj)
 (require 'diminish-config-pvj)
-(require 'startup-messages-config-pvj)
 (require 'file-config-pvj)
 (require 'locale-config-pvj)
 (require 'font-config-pvj)

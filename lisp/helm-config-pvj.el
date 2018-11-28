@@ -52,7 +52,8 @@
   (projectile-mode)
   (setq projectile-completion-system 'helm)
   (setq projectile-switch-project-action 'projectile-dired)
-  (helm-projectile-on))
+  (shut-up
+    (helm-projectile-on)))
 
 ;; helm swoop
 (use-package helm-swoop

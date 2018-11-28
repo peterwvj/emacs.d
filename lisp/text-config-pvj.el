@@ -93,8 +93,13 @@
 (setq ispell-dictionary "en")
 (setq ispell-current-dictionary "en")
 
-(add-hook 'text-mode-hook 'flyspell-mode)
-(add-hook 'prog-mode-hook 'flyspell-prog-mode)
+(add-hook 'text-mode-hook (lambda ()
+                            (shut-up
+                              (flyspell-mode))))
+
+(add-hook 'prog-mode-hook (lambda ()
+                            (shut-up
+                              (flyspell-prog-mode))))
 
 ;; Duplicate line or region
 ;; Inspired by http://rejeep.github.io/emacs/elisp/2010/03/11/duplicate-current-line-or-region-in-emacs.html

@@ -85,6 +85,7 @@ Argument STRING the compilation output."
   :bind
   (("C-c y" . yas-insert-snippet))
   :config
+  (setq yas-verbosity 2)
   (yas-global-mode 1)
   ;; Remove Yasnippet's default tab key binding
   (define-key yas-minor-mode-map (kbd "<tab>") nil)

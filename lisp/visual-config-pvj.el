@@ -3,6 +3,8 @@
 ;; Configuration related to visualisation and highlighting
 ;;
 
+(setq frame-inhibit-implied-resize t)
+
 (use-package naquadah-theme
   :config
   (load-theme 'naquadah t))

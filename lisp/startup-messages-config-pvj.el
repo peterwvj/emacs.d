@@ -6,4 +6,6 @@
 (setq inhibit-startup-message t
       inhibit-startup-echo-area-message t)
 
+(use-package shut-up)
+
 (provide 'startup-messages-config-pvj)
