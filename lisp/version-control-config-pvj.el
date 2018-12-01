@@ -11,6 +11,9 @@
   (("C-x g" . magit-status))
   :config
   (setq magit-no-message '("Turning on magit-auto-revert-mode..."))
+  ;; Show recent unpushed and unpulled commits
+  (setq magit-section-initial-visibility-alist '((unpushed . show)
+                                                 (unpulled . show)))
   (setq magit-repository-directories `("~/git-repos/" "~/git-repos/ovt/externals/" ,user-emacs-directory))
   (setq magit-display-buffer-function 'magit-display-buffer-same-window-except-diff-v1)
   (magit-define-popup-switch 'magit-push-popup ?u "Set upstream" "--set-upstream"))
