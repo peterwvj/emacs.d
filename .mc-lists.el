@@ -7,6 +7,8 @@
       end-of-visual-line
       hungry-delete-backward
       hungry-delete-forward
+      indent-for-tab-command
+      org-self-insert-command
       pvj/smart-move-to-line-beginning
       ))
 
