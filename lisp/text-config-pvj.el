@@ -171,6 +171,7 @@ Argument END end of region."
 ;; Use M-backspace to unindent a single level
 (use-package clean-aindent-mode
   :config
+  (electric-indent-mode -1)
   (clean-aindent-mode t)
   (setq clean-aindent-is-simple-indent t)
   (define-key global-map (kbd "RET") 'newline-and-indent))
