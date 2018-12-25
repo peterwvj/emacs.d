@@ -10,6 +10,10 @@
                '(mark-paragraph
                  mark-page)))))
 
+(use-package zop-to-char
+  :config
+  (global-set-key [remap zap-to-char] 'zop-to-char))
+
 ;;
 ;; Display form feed characters as tidy horizontal lines
 ;;
