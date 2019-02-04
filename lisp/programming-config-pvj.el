@@ -15,25 +15,6 @@
 ;; Compilation options
 ;;
 
-(defun pvj/bury-compile-buffer-if-successful (buffer string)
-  "Bury compilation buffer if compilation succeeded without warnings.
-Argument BUFFER the buffer to be buried.
-Argument STRING the compilation output."
-  (when (and
-         (buffer-live-p buffer)
-         (string-match "compilation" (buffer-name buffer))
-         (string-match "finished" string)
-         (not
-          (with-current-buffer buffer
-            (goto-char (point-min))
-            (search-forward "warning" nil t))))
-    (run-with-timer 1 nil
-                    (lambda (buf)
-                      (bury-buffer buf)
-                      (delete-windows-on buf))
-                    buffer)))
-(add-hook 'compilation-finish-functions 'pvj/bury-compile-buffer-if-successful)
-
 ;; stop scrolling at first error
 (setq compilation-scroll-output 'first-error)
 
@@ -166,7 +147,7 @@ Argument STRING the compilation output."
 (use-package vdm-snippets)
 (use-package vdm-mode
   :config
-  (setq flycheck-vdm-tool-jar-path "/home/peter/dev/vdmj/vdmj.jar")
+  (setq flycheck-vdm-tool-jar-path "/home/peter/dev/ovt-cli/Overture-2.6.4.jar")
   (vdm-mode-setup))
 
 ;; Inconvenient to treat ` as a pair in vdm-mode and vdm-comint-mode
