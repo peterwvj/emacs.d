@@ -36,6 +36,11 @@
   (add-hook 'after-init-hook 'beacon-mode))
 
 ;;
+;; Blink cursor
+;;
+(blink-cursor-mode 1)
+
+;;
 ;; Visual mode-line bell
 ;;
 (use-package mode-line-bell
