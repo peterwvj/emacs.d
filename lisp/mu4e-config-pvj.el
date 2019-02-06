@@ -216,8 +216,8 @@
 
   ;; Fetching emails.
   (setq
-   mu4e-get-mail-command "imapfilter ; offlineimap -q"
-   mu4e-update-interval (* 5 60))
+   mu4e-get-mail-command "offlineimap -q"
+   mu4e-update-interval (* 1 60))
 
   ;; Show Smileys
   ;; (add-hook 'mu4e-view-mode-hook 'smiley-buffer)
@@ -245,9 +245,9 @@
   ;; these mails are not considered in this bookmark (as they will never
   ;; appear as 'unread' anyway)
   ;;
-  (defvar unread "flag:unread AND (maildir:/private/INBOX OR maildir:/work/*)")
   (defvar spam-folders "maildir:/private/[Gmail].Spam OR maildir:/work/\"Junk E-Mail\"")
   (defvar not-spam (concat "NOT (" spam-folders ")"))
+  (defvar unread (concat "flag:unread AND (maildir:/private/INBOX OR maildir:/work/*)" "AND " not-spam))
   (defvar draft-folders "maildir:/private/[Gmail].Drafts OR maildir:/work/Drafts")
 
 
