@@ -135,6 +135,10 @@
             (define-key inferior-octave-mode-map [down]
               'comint-next-input))) 
 
+(use-package dockerfile-mode
+  :init
+  (add-to-list 'auto-mode-alist '("Dockerfile\\'" . dockerfile-mode)))
+
 (use-package package-lint)
 
 (use-package flycheck-package
