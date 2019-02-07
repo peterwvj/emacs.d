@@ -161,13 +161,15 @@
     '(sp-local-pair #'vdm-comint-mode "`" nil :actions nil))
   (vdm-mode-setup))
 
-(use-package meghanada
-  :config
-  (add-hook 'java-mode-hook
-            (lambda ()
-              (setq c-basic-offset 4
-                    tab-width 4
-                    indent-tabs-mode t)
-              (meghanada-mode t))))
+(use-package imenu-list)
+
+(use-package lsp-java
+  :hook (java-mode . (lambda ()
+                       (setq c-basic-offset 4
+                             tab-width 4
+                             indent-tabs-mode t
+                             imenu-list-auto-resize t)
+                       (imenu-list-minor-mode)
+                       (lsp))))
 
 (provide 'programming-config-pvj)
