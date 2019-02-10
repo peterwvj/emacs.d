@@ -37,6 +37,11 @@
   (helm-descbinds-mode))
 
 ;;
+;; Tramp/helm interface for ssh, docker and vagrant
+;;
+(use-package helm-tramp)
+
+;;
 ;; Helm interface for flyspell
 ;;
 (use-package helm-flyspell
