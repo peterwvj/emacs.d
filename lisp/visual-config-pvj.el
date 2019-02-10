@@ -95,7 +95,10 @@
 ;;
 (global-visual-line-mode 1)
 
-
+;;
+;; Highlight current line
+;;
+(global-set-key (kbd "C-c l") 'hl-line-mode)
 
 ;;
 ;; Show line numbers
