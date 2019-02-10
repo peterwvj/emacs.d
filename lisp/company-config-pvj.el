@@ -5,8 +5,8 @@
 (use-package company
   :config
 
-  (setq company-idle-delay 0.5)
-  (setq company-minimum-prefix-length 3)
+  (setq company-idle-delay 0.0)
+  (setq company-minimum-prefix-length 1)
 
   ;; Tell dabbrev not to downcase candidates. See
   ;; https://emacs.stackexchange.com/questions/10837/how-to-make-company-mode-be-case-sensitive-on-plain-text
