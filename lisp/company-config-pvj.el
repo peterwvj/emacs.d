@@ -30,10 +30,17 @@
                        ".fls"))
     (push extension company-files-exclusions)))
 
-(use-package company-flx
+;;
+;; Rank candidates based on statistics
+;;
+(use-package company-statistics
   :config
-  (with-eval-after-load 'company
-    (company-flx-mode +1)))
+  (company-statistics-mode))
+
+;; (use-package company-flx
+;;   :config
+;;   (with-eval-after-load 'company
+;;     (company-flx-mode +1)))
 
 ;;
 ;; Show documentation popups when idling on a completion candidate
