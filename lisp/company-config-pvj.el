@@ -15,6 +15,8 @@
   (add-hook 'after-init-hook 'global-company-mode)
   (global-set-key (kbd "M-C-/") 'company-complete)
 
+  (setq company-show-numbers t)
+
   ;; Remove irrelevant suggestions from generated LaTeX related
   ;; files. For details, see issue
   ;; https://github.com/syl20bnr/spacemacs/issues/9706
