@@ -74,14 +74,6 @@
   (setq hl-todo-activate-in-modes '(prog-mode)))
 
 ;;
-;; Show tildes in the fringe on empty lines
-;;
-(use-package vim-empty-lines-mode
-  :init
-  (add-hook 'prog-mode-hook 'vim-empty-lines-mode)
-  (add-hook 'text-mode-hook 'vim-empty-lines-mode))
-
-;;
 ;; Display current match and total matches in the mode-line in various search modes
 ;;
 (use-package anzu

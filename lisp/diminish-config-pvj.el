@@ -72,9 +72,6 @@
             (lambda()
               (setq mode-name "Ç»")))
 
-  (eval-after-load "vim-empty-lines-mode"
-    '(diminish 'vim-empty-lines-mode))
-
   (diminish 'auto-revert-mode)
   
   (diminish 'overwrite-mode)
