@@ -7,8 +7,12 @@
 ;;
 ;; Remember recently opened files
 ;;
+(recentf-mode 1)
 (setq recentf-exclude '("/Maildir/" ".aspell."))
 (setq recentf-max-saved-items 50)
+;; Convenient to save the list of recent files when running Emacs as a
+;; daemon.
+(run-at-time nil (* 5 60) 'recentf-save-list)
 
 ;;
 ;; Put backup files in same directory (to avoid having emacs creating files everywhere)
