@@ -72,4 +72,12 @@
 ;; Scholar, ACM Digital Library, IEEE Xplore and DBLP.
 (use-package gscholar-bibtex)
 
+;;
+;; Reformat BibTeX using bibclean
+;;
+(use-package bibclean-format
+  :bind (:map
+         bibtex-mode-map
+         ("C-c f" . bibclean-format)))
+
 (provide 'latex-config-pvj)
