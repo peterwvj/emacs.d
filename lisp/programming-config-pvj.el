@@ -169,7 +169,6 @@
                              tab-width 4
                              indent-tabs-mode t
                              imenu-list-auto-resize t)
-                       (imenu-list-minor-mode)
                        (lsp))))
 
 (provide 'programming-config-pvj)
