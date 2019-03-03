@@ -218,6 +218,9 @@ Argument END end of region."
   :config
   (setq langtool-language-tool-jar "~/tools/LanguageTool-3.4/languagetool-commandline.jar"))
 
+(use-package comment-dwim-2
+  :bind
+  (("M-;" . comment-dwim-2)))
 
 (defun pvj/smart-kill-whole-line (&optional arg)
   "Wrapper for the function `kill-whole-line' that respects indentation.
@@ -236,7 +239,6 @@ Argument ARG the argument passed to 'kill-whole-line'."
                   (if (null current-input-method)
                       (set-input-method "danish-postfix")
                     (set-input-method nil))))
-(global-set-key (kbd "C-c ;") 'comment-or-uncomment-region)
 (global-set-key (kbd "M-Q")   'pvj/unfill-paragraph)
 (global-set-key (kbd "<f9>") 'revert-buffer)
 
