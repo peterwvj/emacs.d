@@ -9,6 +9,7 @@
    ("C-x C-f" . helm-find-files)
    ;; Mark buffers with C-SPACE and kill them with M-D
    ("C-x C-b" . helm-buffers-list)
+   ("C-x C-r" . helm-recentf)
    ("C-c r" . helm-resume)
    ("C-c b" . helm-bookmarks)
    ("C-c o" . helm-occur)
