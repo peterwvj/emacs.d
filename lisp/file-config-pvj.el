@@ -12,7 +12,9 @@
 (setq recentf-max-saved-items 50)
 ;; Convenient to save the list of recent files when running Emacs as a
 ;; daemon.
-(run-at-time nil (* 5 60) 'recentf-save-list)
+(run-at-time nil (* 5 60) (lambda ()
+                            (shut-up
+                              (recentf-save-list))))
 
 ;;
 ;; Put backup files in same directory (to avoid having emacs creating files everywhere)
