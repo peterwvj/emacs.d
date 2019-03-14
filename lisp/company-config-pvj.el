@@ -17,6 +17,16 @@
 
   (setq company-show-numbers t)
 
+  (setq company-dabbrev-other-buffers t)
+
+  ;; (defun pvj/company-dabbrev-ignore (buffer)
+  ;;   (let (res)
+  ;;     ;; don't encrypted files or hidden buffers
+  ;;     (dolist (re '("\.gpg$" "^ [*]") res)
+  ;;       (if (string-match-p re (buffer-name buffer))
+  ;;           (setq res t)))))
+  ;; (setq company-dabbrev-ignore-buffers 'pvj/company-dabbrev-ignore)
+
   ;; Remove irrelevant suggestions from generated LaTeX related
   ;; files. For details, see issue
   ;; https://github.com/syl20bnr/spacemacs/issues/9706
