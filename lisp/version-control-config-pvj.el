@@ -17,6 +17,11 @@
   (setq magit-repository-directories `("~/git-repos/" "~/git-repos/ovt/externals/" ,user-emacs-directory))
   (setq magit-display-buffer-function 'magit-display-buffer-same-window-except-diff-v1))
 
+;; Show TODOs and FIXMEs in the Magit status buffer
+(use-package magit-todos
+  :config
+  (add-hook 'magit-status-mode-hook #'magit-todos-mode))
+
 ;;
 ;; Validate commit messages
 ;;
