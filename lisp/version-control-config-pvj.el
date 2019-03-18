@@ -18,9 +18,11 @@
   (setq magit-display-buffer-function 'magit-display-buffer-same-window-except-diff-v1))
 
 ;; Show TODOs and FIXMEs in the Magit status buffer
-(use-package magit-todos
-  :config
-  (add-hook 'magit-status-mode-hook #'magit-todos-mode))
+
+(when (version<= "25.2" emacs-version)
+  (use-package magit-todos
+    :config
+    (add-hook 'magit-status-mode-hook #'magit-todos-mode)))
 
 ;;
 ;; Validate commit messages
