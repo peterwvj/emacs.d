@@ -96,7 +96,7 @@
 ;; Show line numbers
 ;;
 (let ((emacs26 "26.1"))
-  (if (version= emacs-version emacs26)
+  (if (version<= emacs-version emacs26)
       (global-set-key (kbd "C-c n") 'display-line-numbers-mode)
     (use-package nlinum
       :pin "gnu"
