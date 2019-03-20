@@ -9,25 +9,13 @@ efficiently carry out my daily work in Emacs. This repository contains
 these configuration files in the hope that they will be useful to
 others.
 
-* Repository structure
+* Quick start
 
-The Emacs initialisation file, =init.el=, is located in the root of
-this repository. It loads several other configuration files contained
-in the =elisp= folder. As an example, =elisp/mu4e-config.el= contains
-my [[http://www.djcbsoftware.nl/code/mu/mu4e.html][mu4e]] (email client) configuration.
+To install this Emacs configuration run:
 
-* Configuration highlights
-
-The configuration files are used to:
-
-- Manage multiple email accounts using mu4e
-  - To synchronise and filter emails I use OfflineIMAP and
-    [[https://github.com/lefcha/imapfilter][imapfilter]]. I keep my OfflineIMAP and imapfilter configuration
-    files in one of my other [[https://github.com/peterwvj/offlineimap-config-pvj/][repositories]].
-- Work with LaTeX using [[https://www.gnu.org/software/auctex/][AUCTeX]] and [[https://github.com/politza/pdf-tools][pdf-tools]]
-- Configure my terminal, =eshell=
-- Manage Git repositories
-- Etc.
+#+BEGIN_SRC bash
+git clone git@github.com:peterwvj/emacs.d.git ~/.emacs.d
+#+END_SRC
 
 * Using the configuration
 
@@ -47,7 +35,7 @@ In addition, I use a function =e= to launch Emacs as a client:
 
 #+BEGIN_SRC bash
 function e {
-  emacsclient -c -a emacs "$@" > /dev/null 2>&1 & disown
+  emacsclient -c "$@" > /dev/null 2>&1 & disown
 }
 #+END_SRC
 
