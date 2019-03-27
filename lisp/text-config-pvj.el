@@ -12,7 +12,8 @@
 
 (use-package zop-to-char
   :config
-  (global-set-key [remap zap-to-char] 'zop-to-char))
+  (global-set-key [remap zap-to-char] 'zop-to-char)
+  (global-set-key "\M-Z" 'zop-up-to-char))
 
 ;;
 ;; Display form feed characters as tidy horizontal lines
