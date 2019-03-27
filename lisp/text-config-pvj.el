@@ -200,7 +200,8 @@ Argument END end of region."
 ;; Enable smart pairing
 (use-package smartparens
   :bind
-  (("C-c k" . sp-unwrap-sexp))
+  (("C-c k" . sp-unwrap-sexp)
+   ("C-c t" . sp-up-sexp))
   :config
   (progn
     (require 'smartparens-config)
