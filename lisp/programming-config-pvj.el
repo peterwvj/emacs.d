@@ -163,12 +163,12 @@
 
 (use-package imenu-list)
 
+;; Execute (lsp) to start a language server
 (use-package lsp-java
   :hook (java-mode . (lambda ()
                        (setq c-basic-offset 4
                              tab-width 4
                              indent-tabs-mode t
-                             imenu-list-auto-resize t)
-                       (lsp))))
+                             imenu-list-auto-resize t))))
 
 (provide 'programming-config-pvj)
