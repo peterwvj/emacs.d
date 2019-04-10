@@ -9,7 +9,7 @@
 ;;
 (recentf-mode 1)
 (setq recentf-exclude '("/Maildir/" ".aspell."))
-(setq recentf-max-saved-items 50)
+(setq recentf-max-saved-items 1000)
 ;; Convenient to save the list of recent files when running Emacs as a
 ;; daemon.
 (run-at-time nil (* 5 60) (lambda ()
