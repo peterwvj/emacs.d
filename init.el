@@ -39,6 +39,7 @@
 (require 'startup-messages-config-pvj)
 (require 'mode-line-config-pvj)
 (require 'diminish-config-pvj)
+(require 'session-config-pvj)
 (require 'file-config-pvj)
 (require 'locale-config-pvj)
 (require 'font-config-pvj)
