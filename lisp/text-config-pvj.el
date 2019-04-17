@@ -10,6 +10,14 @@
                '(mark-paragraph
                  mark-page)))))
 
+;;
+;; Distraction free writing
+;;
+(use-package writeroom-mode
+  :config
+  (setq writeroom-fringes-outside-margins nil)
+  (setq writeroom-restore-window-config t))
+
 (use-package zop-to-char
   :config
   (global-set-key [remap zap-to-char] 'zop-to-char)
