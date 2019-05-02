@@ -30,13 +30,6 @@
   (:map inferior-python-mode-map
         ("C-c l" . comint-clear-buffer))
   :config
-  (add-hook 'python-mode-hook '(lambda ()
-                                 (progn
-                                   (when (bound-and-true-p clean-aindent-mode)
-                                     (clean-aindent-mode -1))
-                                   (electric-indent-local-mode 1))))
-  (setq elpy-rpc-python-command "python3")
-  (setq python-shell-interpreter "python3")
   (add-to-list 'python-shell-completion-native-disabled-interpreters "python")
   (setq elpy-rpc-backend "jedi")
   (elpy-enable))
