@@ -9,6 +9,9 @@
 (use-package xterm-color)
 
 (use-package eshell
+  :init
+  (defmacro with-face (str &rest properties)
+    `(propertize ,str 'face (list ,@properties)))
   :config
   (setq eshell-banner-message "")
 
@@ -23,12 +26,14 @@
   ;; Coloring output
   (add-hook 'eshell-mode-hook
             (lambda () (progn
+                    (beacon-mode -1)
                     (setq xterm-color-preserve-properties t)
                     (setenv "TERM" "xterm-256color")
                     ;; Clearing the buffer ensures that the prompt is rendered
                     ;; using the desired faces
                     (pvj/eshell-clear-buffer))))
 
+  (require 'esh-mode)
   (add-to-list 'eshell-preoutput-filter-functions 'xterm-color-filter)
 
   (setq eshell-output-filter-functions
@@ -52,9 +57,6 @@
   (add-hook 'eshell-mode-hook
             (lambda ()
               (face-remap-add-relative 'default '(:foreground "green yellow"))))
-
-  (defmacro with-face (str &rest properties)
-    `(propertize ,str 'face (list ,@properties)))
 
   (defun pvj/curr-dir-git-branch (pwd)
     "Returns current git branch as a string, or the empty string if
