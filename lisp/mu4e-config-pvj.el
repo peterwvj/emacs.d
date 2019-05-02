@@ -204,8 +204,9 @@
   ;; Use gnus article view
   (setq mu4e-view-use-gnus t)
 
-  (require 'gnus-icalendar)
-  (gnus-icalendar-setup)
+  (require 'mu4e-icalendar)
+  (mu4e-icalendar-setup)
+  (setq mu4e-icalendar-trash-after-reply t)
   
   (define-key mu4e-main-mode-map "q" 'quit-window)
   (define-key mu4e-main-mode-map "Q" 'mu4e-quit)
