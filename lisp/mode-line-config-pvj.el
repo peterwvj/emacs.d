@@ -2,22 +2,10 @@
 ;; Mode-line configuration
 ;;
 
-(use-package spaceline
+(use-package doom-modeline
+  :hook (after-init . doom-modeline-mode)
   :config
-  (require 'spaceline-config)
-  (setq powerline-default-separator 'wave)
-  (spaceline-spacemacs-theme)
-  (spaceline-helm-mode)
-  (spaceline-toggle-major-mode-off)
-  (spaceline-toggle-helm-help-off)
-  (spaceline-toggle-helm-done-off)
-  (spaceline-toggle-helm-follow-off)
-  (spaceline-toggle-helm-number-off)
-  (spaceline-toggle-helm-buffer-id-off)
-  (spaceline-toggle-version-control-off)
-  (spaceline-toggle-buffer-size-off)
-  (spaceline-toggle-buffer-encoding-abbrev-off)
-  (spaceline-toggle-helm-number-on))
+  (setq doom-modeline-icon nil))
 
 (use-package winum
   :config
