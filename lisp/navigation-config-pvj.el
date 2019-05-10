@@ -24,21 +24,6 @@
 ;; See - https://www.emacswiki.org/emacs/SmoothScrolling
 (setq scroll-conservatively 10000)
 
-;; Inspired by http://pragmaticemacs.com/emacs/scrolling-and-moving-by-line/
-
-;; Keep cursor at same position when scrolling
-;; (setq scroll-preserve-screen-position 1)
-;; Scroll window up/down by one line
-(global-set-key (kbd "M-n")
-                (lambda ()
-                  (interactive)
-                  (scroll-up-command 1)))
-
-(global-set-key (kbd "M-p")
-                (lambda ()
-                  (interactive)
-                  (scroll-down-command 1)))
-
 ;;
 ;; For moving buffers around
 ;;
