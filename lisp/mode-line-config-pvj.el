@@ -5,7 +5,9 @@
 (use-package doom-modeline
   :hook (after-init . doom-modeline-mode)
   :config
-  (setq doom-modeline-icon nil))
+  (setq doom-modeline-icon nil)
+  (doom-modeline-def-modeline 'helm
+    '(bar helm-buffer-id helm-number helm-follow helm-prefix-argument)))
 
 (use-package winum
   :config
