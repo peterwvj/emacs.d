@@ -5,9 +5,9 @@
 
 (setq frame-inhibit-implied-resize t)
 
-(use-package naquadah-theme
+(use-package doom-themes
   :config
-  (load-theme 'naquadah t))
+  (load-theme 'doom-one t))
 
 (setq use-file-dialog nil)
 (setq use-dialog-box nil)
@@ -57,16 +57,6 @@
 
 ;; highlight every occurence in buffer
 (use-package symbol-overlay
-  :custom-face
-  (symbol-overlay-default-face ((t (:inherit 'region))))
-  (symbol-overlay-face-1 ((t (:inherit 'highlight))))
-  (symbol-overlay-face-2 ((t (:inherit 'font-lock-builtin-face :inverse-video t))))
-  (symbol-overlay-face-3 ((t (:inherit 'warning :inverse-video t))))
-  (symbol-overlay-face-4 ((t (:inherit 'font-lock-constant-face :inverse-video t))))
-  (symbol-overlay-face-5 ((t (:inherit 'error :inverse-video t))))
-  (symbol-overlay-face-6 ((t (:inherit 'dired-mark :inverse-video t :bold nil))))
-  (symbol-overlay-face-7 ((t (:inherit 'success :inverse-video t))))
-  (symbol-overlay-face-8 ((t (:inherit 'dired-symlink :inverse-video t :bold nil))))
   :bind (("M-i" . symbol-overlay-put)
          ("M-n" . symbol-overlay-jump-next)
          ("M-p" . symbol-overlay-jump-prev)
