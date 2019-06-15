@@ -109,11 +109,7 @@ am redefining it here so that it doesn't screw up my colors"
                                                                         "/" f)))
                                 (setq eshell-cmpl-ignore-case t
                                       eshell-hist-ignoredups t)
-                                ;; Use helm completion in eshell
-                                ;; (define-key eshell-mode-map [remap eshell-pcomplete] 'helm-esh-pcomplete)
-                                (setq pcomplete-cycle-completions nil)
-                                ;; Use helm to browse history
-                                (define-key eshell-mode-map (kbd "M-p") 'helm-eshell-history)))
+                                (setq pcomplete-cycle-completions nil)))
 
   (setq eshell-highlight-prompt t)
   (setq eshell-prompt-regexp "\λ ")

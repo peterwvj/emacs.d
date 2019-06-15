@@ -73,11 +73,11 @@
             (lambda ()
               (auto-fill-mode -1)))
 
-  ;; Invoke built-in completion but ignore the initial input
+  ;; Use ivy completion but ignore the initial input
   (defun pvj/mu4e-completing-read (prompt collection &optional predicate require-match
                                           initial-input hist def inherit-input-method)
-    (completing-read prompt collection predicate require-match nil hist def inherit-input-method))
-  
+    (ivy-completing-read prompt collection predicate require-match nil hist def inherit-input-method))
+
   ;; Use different completion method and ignore the initial completion
   ;; input
   (setq mu4e-completing-read-function 'pvj/mu4e-completing-read)
@@ -358,15 +358,6 @@
         smtpmail-auth-credentials (expand-file-name "~/.authinfo.gpg")
         smtpmail-debug-info t)
 
-  ;; Use helm for searching
-  (use-package helm-mu
-    :bind
-    (("C-c m" . helm-mu-contacts))
-    :config
-    (define-key mu4e-main-mode-map "s" 'helm-mu)
-    (define-key mu4e-headers-mode-map "s" 'helm-mu)
-    (define-key mu4e-view-mode-map "s" 'helm-mu))
-  
   ;; Start mu4e
   ;; (add-hook 'after-init-hook
   ;;           (lambda () (mu4e)))

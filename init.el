@@ -46,7 +46,7 @@
 (require 'scratch-config-pvj)
 (require 'version-control-config-pvj)
 (require 'file-explorer-config-pvj)
-(require 'helm-config-pvj)
+(require 'counsel-config-pvj)
 (require 'pdf-tools-config-pvj)
 (require 'latex-config-pvj)
 (require 'text-config-pvj)

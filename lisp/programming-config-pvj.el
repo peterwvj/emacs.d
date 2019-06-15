@@ -89,7 +89,7 @@
 ;;
 (use-package dumb-jump
   :config
-  (setq dumb-jump-selector 'helm)
+  (setq dumb-jump-selector 'ivy)
   (dumb-jump-mode 1))
 
 ;;

@@ -10,9 +10,6 @@
   (eval-after-load "projectile"
     '(diminish 'projectile-mode))
 
-  (eval-after-load "helm-mode"
-    '(diminish 'helm-mode))
-
   ;; Use '✈' to show that flyspell is enabled
   (eval-after-load "flyspell"
     '(diminish 'flyspell-mode (string 32 #x2708)))
