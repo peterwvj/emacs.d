@@ -13,6 +13,7 @@
   (ivy-mode 1))
 
 (use-package ivy-rich
+  :after ivy
   :config
   (ivy-rich-mode 1))
 
