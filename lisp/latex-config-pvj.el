@@ -42,25 +42,6 @@
             (lambda ()
               (pdf-view-fit-page-to-window) ))
 
-  ;; LateX keywords that need colouring
-  (setq font-latex-match-reference-keywords
-        '(
-          ("ac" "[{")
-          ("todo" "[{")
-          ("kw" "[{")
-          ("vsl" "[{")
-          ("vpp" "[{")
-          ("vrt" "[{")
-          ("acp" "[{")
-          ("contribution" "[{")
-          ("acrodef" "[{")
-          ("crefName" "[{")
-          ("cref" "[{")
-          ("Cref" "[{")
-          ("cnref" "[{")
-          ("vdmkw" "[{")
-          ))
-
   (add-hook 'LaTeX-mode-hook
             '(lambda ()
                (reftex-mode))))
