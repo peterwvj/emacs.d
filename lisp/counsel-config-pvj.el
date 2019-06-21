@@ -12,6 +12,10 @@
   (setq ivy-initial-inputs-alist nil)
   (ivy-mode 1))
 
+(use-package swiper
+  :bind
+  (("C-c s" . swiper)))
+
 (use-package counsel
   :bind
   (("M-x" . counsel-M-x)
