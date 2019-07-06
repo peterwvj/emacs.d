@@ -358,6 +358,14 @@
         smtpmail-auth-credentials (expand-file-name "~/.authinfo.gpg")
         smtpmail-debug-info t)
 
+  (use-package helm-mu
+    :bind
+    (("C-c m" . helm-mu-contacts))
+    :config
+    (define-key mu4e-main-mode-map "s" 'helm-mu)
+    (define-key mu4e-headers-mode-map "s" 'helm-mu)
+    (define-key mu4e-view-mode-map "s" 'helm-mu))
+
   ;; Start mu4e
   ;; (add-hook 'after-init-hook
   ;;           (lambda () (mu4e)))
