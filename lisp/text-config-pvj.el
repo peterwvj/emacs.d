@@ -180,14 +180,15 @@ Argument END end of region."
 (setq-default tab-width 2)
 (setq indent-line-function 'insert-tab)
 
-;; Indent only based on indentation of the line above
-;; Use M-backspace to unindent a single level
-(use-package clean-aindent-mode
-  :config
-  (electric-indent-mode -1)
-  (clean-aindent-mode t)
-  (setq clean-aindent-is-simple-indent t)
-  (define-key global-map (kbd "RET") 'newline-and-indent))
+(electric-indent-mode 1)
+;; Disable electric-indent-mode for certain major modes.
+(mapc
+ (lambda (language-mode-hook)
+   (add-hook language-mode-hook
+             (lambda ()
+               (electric-indent-local-mode -1))))
+ '(text-mode-hook
+   gitignore-mode-hook))
 
 ;; Inspired by https://stackoverflow.com/questions/22107501/set-emacs-to-smart-auto-line-after-a-parentheses-pair/22109370#22109370
 (defun pvj/newline-dwim ()
