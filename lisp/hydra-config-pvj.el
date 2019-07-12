@@ -4,8 +4,7 @@
 
 (use-package hydra
   :bind
-  (("C-c j" . hydra-dumb-jump/body)
-   ("C-c f" . hydra-flycheck/body))
+  (("C-c j" . hydra-dumb-jump/body))
   :config
   (defhydra hydra-zoom ()
     "zoom"
@@ -35,18 +34,6 @@
 
   (defhydra hydra-kill-whole-line (global-map "C-c" :columns 1)
     "kill-line"
-    ("d" pvj/smart-kill-whole-line))
-  
-  (defhydra hydra-flycheck
-    (:pre (progn (setq hydra-lv t) (flycheck-list-errors))
-          :post (progn (setq hydra-lv nil) (quit-windows-on "*Flycheck errors*"))
-          :hint nil)
-    "Errors"
-    ("n"  flycheck-next-error                                       "Next")
-    ("p"  flycheck-previous-error                                   "Previous")
-    ("g" flycheck-first-error                                      "First")
-    ("G"  (progn (goto-char (point-max)) (flycheck-previous-error)) "Last")
-    ("f"  flycheck-error-list-set-filter                            "Filter")
-    ("q"  nil)))
+    ("d" pvj/smart-kill-whole-line)))
 
 (provide 'hydra-config-pvj)
