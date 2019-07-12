@@ -206,15 +206,7 @@ Argument END end of region."
 (global-set-key (kbd "M-RET") 'pvj/newline-dwim)
 
 ;; Enable smart pairing
-(use-package smartparens
-  :bind
-  (("C-c k" . sp-unwrap-sexp)
-   ("C-c t" . sp-up-sexp))
-  :config
-  (progn
-    (require 'smartparens-config)
-    (setq sp-highlight-pair-overlay nil)
-    (smartparens-global-mode 1)))
+(electric-pair-mode 1)
 
 ;; Make lambdas appear as λ and so on
 (setq prettify-symbols-unprettify-at-point 'right-edge)
