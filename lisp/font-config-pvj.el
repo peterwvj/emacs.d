@@ -4,7 +4,9 @@
 
 (defun pvj/setup-font ()
   (let ((fonts (font-family-list)))
-    (cond ((member "Source Code Pro" fonts)
+    (cond ((member "Iosevka" fonts)
+           (set-frame-font "Iosevka-14"))
+          ((member "Source Code Pro" fonts)
            (set-frame-font "Source Code Pro-14"))
           ((member "DejaVu Sans Mono" fonts)
            (set-frame-font "DejaVu Sans Mono-12")))))
