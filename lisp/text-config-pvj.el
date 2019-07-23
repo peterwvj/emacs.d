@@ -188,6 +188,7 @@ Argument END end of region."
              (lambda ()
                (electric-indent-local-mode -1))))
  '(text-mode-hook
+   bibtex-mode-hook
    gitignore-mode-hook))
 
 ;; Inspired by https://stackoverflow.com/questions/22107501/set-emacs-to-smart-auto-line-after-a-parentheses-pair/22109370#22109370
