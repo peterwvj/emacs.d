@@ -53,7 +53,6 @@
 (require 'org-config-pvj)
 (require 'buffers-config-pvj)
 (require 'eshell-config-pvj)
-(require 'mu4e-config-pvj)
 (require 'window-config-pvj)
 (require 'company-config-pvj)
 (require 'navigation-config-pvj)
