@@ -1,22 +1,7 @@
-alias mvnt mvn test -Dmaven.test.skip=false -Dmaven.javadoc.skip=true -DexternalTestsPath=/home/peter/git-repos/ext-tests/ -q -Dmaven.test.redirectTestOutputToFile=true
-alias mvni mvn install -DskipTests -Dmaven.javadoc.skip=true
-alias mvnc mvn clean -Dtycho.mode=maven
-alias mvncall mvn clean -PWith-IDE -Dtycho.mode=maven
-alias mvnall mvn install -Dmaven.test.skip=true -Dmaven.javadoc.skip=true -PWith-IDE
-alias mvnci mvn clean install -DskipTests -Dmaven.javadoc.skip=true
 alias up eshell-up $1
 alias pk eshell-up-peek $1
-alias phd cd ~/Dropbox/PhD/
-alias dl cd ~/Downloads/
-alias pvj cd ~/svn-repos/joint/phds/PeterJorgensen/
-alias phds cd ~/svn-repos/joint/phds/
-alias joint cd ~/svn-repos/joint/
-alias dev cd ~/dev/
-alias ovt cd ~/git-repos/ovt/
 alias ls ls -1 $*
 alias v view-file $1
 alias e find-file $1
-alias f dired .
-alias m meld $1
 alias cplink kill-new {readlink -f $1}
 alias cpf pvj/copy-file-contents $1
