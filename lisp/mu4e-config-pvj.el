@@ -2,8 +2,13 @@
 ;; Configuration related to emails
 ;;
 
+(defvar pvj/mu4e-dir "/usr/local/share/emacs/site-lisp/mu4e")
+
 (use-package mu4e
-  :if (and (eq system-type 'gnu/linux) (null noninteractive))
+  :if (and
+       (eq system-type 'gnu/linux)
+       (null noninteractive)
+       (file-directory-p pvj/mu4e-dir))
   :init
   (defun pvj/remove-signature ()
     "Remove signature from message."
@@ -39,7 +44,7 @@
                                        "Finlandsgade 22, DK-8200, Aarhus N")))
         (message-insert-signature))))
   
-  :load-path "/usr/local/share/emacs/site-lisp/mu4e"
+  :load-path pvj/mu4e-dir
   :bind (("<f2>" . mu4e))
   :ensure f
   :config
