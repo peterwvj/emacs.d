@@ -43,6 +43,10 @@
   (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
   (counsel-projectile-mode))
 
+(use-package counsel-tramp
+  :config
+  (setq tramp-default-method "ssh"))
+
 (use-package flyspell-correct-ivy
   :init
   (setq flyspell-correct-interface #'flyspell-correct-ivy)
