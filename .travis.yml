@@ -2,7 +2,6 @@ language: nix
 
 os:
   - linux
-  - osx
 
 env:
   - EMACS_CI=emacs-26-3
