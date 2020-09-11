@@ -21,9 +21,7 @@
 
 (when (version<= "25.2" emacs-version)
   (use-package magit-todos
-    :config
-    (add-hook 'magit-status-mode-hook #'magit-todos-mode)))
-
+    :config (magit-todos-mode)))
 ;;
 ;; Validate commit messages
 ;;
