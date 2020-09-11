@@ -42,11 +42,6 @@
   (add-to-list 'auto-mode-alist '("Jenkinsfile" . groovy-mode)))
 
 ;;
-;; Lua
-;;
-(use-package lua-mode)
-
-;;
 ;; Clojure Interactive Development Environment that Rocks
 ;;
 (use-package cider
@@ -166,5 +161,27 @@
                              tab-width 4
                              indent-tabs-mode t
                              imenu-list-auto-resize t))))
+
+(use-package lsp-dart 
+  :ensure t 
+  :hook (dart-mode . lsp))
+
+   (use-package lsp-ui
+     :init (setq lsp-ui-doc-enable t
+                 lsp-ui-doc-use-webkit nil
+                 lsp-ui-doc-delay 2
+                 lsp-ui-doc-include-signature t
+                 lsp-ui-doc-position 'top
+                 lsp-ui-doc-border (face-foreground 'default)
+                 lsp-ui-sideline-enable t
+                 lsp-ui-sideline-show-hover nil
+                 lsp-ui-sideline-show-diagnostics nil
+                 lsp-ui-sideline-ignore-duplicate t
+                 lsp-eldoc-enable-hover nil))
+
+(use-package flutter
+  :after dart-mode
+  :bind (:map dart-mode-map
+              ("C-M-x" . #'flutter-run-or-hot-reload)))
 
 (provide 'programming-config-pvj)
