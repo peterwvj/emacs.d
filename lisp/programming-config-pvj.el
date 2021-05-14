@@ -41,6 +41,8 @@
   :init
   (add-to-list 'auto-mode-alist '("Jenkinsfile" . groovy-mode)))
 
+(add-to-list 'auto-mode-alist '("Fastfile" . ruby-mode))
+
 ;;
 ;; Clojure Interactive Development Environment that Rocks
 ;;
