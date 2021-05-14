@@ -96,11 +96,6 @@
       c-basic-offset 4)
 
 ;;
-;; Increment/decrement numbers at point
-;;
-(use-package evil-numbers)
-
-;;
 ;; web-mode
 ;;
 (use-package web-mode
