@@ -160,8 +160,14 @@
                              imenu-list-auto-resize t))))
 
 (use-package lsp-dart 
-  :ensure t 
-  :hook (dart-mode . lsp))
+  :ensure t
+  :init
+  (with-eval-after-load "dart-mode"
+    (add-to-list 'dart-mode-hook (lambda () (setq electric-indent-inhibit t))))
+  :hook (dart-mode . lsp)
+  :config
+  (setq lsp-dart-sdk-dir "/home/peter/snap/flutter/common/flutter/bin/cache/dart-sdk"
+        lsp-dart-flutter-sdk-dir "/snap/"))
 
    (use-package lsp-ui
      :init (setq lsp-ui-doc-enable t
