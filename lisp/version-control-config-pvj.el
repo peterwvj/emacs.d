@@ -14,7 +14,7 @@
   ;; Show recent unpushed and unpulled commits
   (setq magit-section-initial-visibility-alist '((unpushed . show)
                                                  (unpulled . show)))
-  (setq magit-repository-directories `("~/git-repos/" "~/git-repos/ovt/externals/" ,user-emacs-directory))
+  (setq magit-repository-directories `("~/git/" ,user-emacs-directory))
   (setq magit-display-buffer-function 'magit-display-buffer-same-window-except-diff-v1))
 
 ;; Show TODOs and FIXMEs in the Magit status buffer
@@ -32,11 +32,6 @@
 ;; Walk through revisions of a file
 ;;
 (use-package git-timemachine)
-
-;;
-;; For editing .gitignore files
-;;
-(use-package gitignore-mode)
 
 ;;
 ;; Highlight changes in the fringe
