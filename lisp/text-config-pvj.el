@@ -40,7 +40,10 @@
 ;;
 (use-package undo-tree
   :pin "gnu"
-  :config (global-undo-tree-mode))
+  :config
+  (progn
+    (setq undo-tree-history-directory-alist '(("." . "~/.emacs.d/undo")))
+    (global-undo-tree-mode)))
 
 ;; Move text
 (use-package move-text
